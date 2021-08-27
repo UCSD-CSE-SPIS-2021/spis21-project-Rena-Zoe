@@ -6,7 +6,7 @@ import os
  #background = pygame.image.load(os.path.join("curt","curt.background.png"))
 
 #Curt
-def curt(screen_length,screen_height, dim_field,screen, player_rect):
+def curt(screen_length,screen_height, dim_field, screen, player_rect):
 
   background = pygame.image.load(os.path.join("curt","curt.background.png"))
 
@@ -111,27 +111,22 @@ def curt(screen_length,screen_height, dim_field,screen, player_rect):
     screen.blit(lives,(385, 7))
 
   #Curt's Maze: game
-  #Player
-
-  player_x = 45
-  player_y = 200
-  player_width = 35
-  player_height = 35
-  #player_rect = pygame.Rect(player_x, player_y, player_width, player_height)
-  #pygame.draw.rect(screen, (0,0,0), player_rect)
-  player = pygame.image.load(os.path.join("curt", "camel.png")).convert()
-  player.set_colorkey((0, 0, 0))
-  player = pygame.transform.scale(player, (player_width, player_height))
-  screen.blit(player, player_rect)
-
-  #Enemies
-  #player_rect = pygame.Rect(player_x, player_y, player_width, player_height)
-  #pygame.draw.rect(screen, (0,0,0), player_rect)
+  
+  #Movement
+  if player_rect.left < 0:
+    player_rect.left = 0
+  if player_rect.right > screen_length:
+   player_rect.right = screen_length
+  if player_rect.bottom > 340:
+    player_rect.bottom = 340
+  if player_rect.top < 30:
+    player_rect.top = 30
 
   #When coding collisions/masking
   #mask_player = pygame.mask.from_surface(player)
   #mask_wall = pygame.mask.from_surface(wall)
 
+def walls(screen_length,screen_height, dim_field, screen, player_rect):
   #Walls:
   g_rect1 = pygame.Rect(40, 120, 45, 15)
   pygame.draw.rect(screen, (64, 224,208), g_rect1)
@@ -139,12 +134,12 @@ def curt(screen_length,screen_height, dim_field,screen, player_rect):
   pygame.draw.rect(screen, (64, 224,208), g_rect2)
   g_rect3 = pygame.Rect(40, 170, 45, 15)
   pygame.draw.rect(screen, (64, 224, 208), g_rect3)
-  g_rect4 = pygame.Rect(90, 120, 15, 115)
+  g_rect4 = pygame.Rect(90, 120, 15, 105)
   pygame.draw.rect(screen, (64, 224,208), g_rect4)
-  g_rect5 = pygame.Rect(40, 240, 65, 15)
+  g_rect5 = pygame.Rect(40, 230, 65, 15)
   pygame.draw.rect(screen, (64, 224,208), g_rect5)
 
-  g_walls = [g_rect1,g_rect2, g_rect3, g_rect4,g_rect5]
+  #Letter A
 
   a_rect1 = pygame.Rect(140, 120, 35, 15)
   pygame.draw.rect(screen, (64, 224, 208), a_rect1)
@@ -159,7 +154,7 @@ def curt(screen_length,screen_height, dim_field,screen, player_rect):
   a_rect6 = pygame.Rect(140, 180, 15, 45)
   pygame.draw.rect(screen, (64, 224,208), a_rect6)
 
-  a_walls = [a_rect1, a_rect2, a_rect3, a_rect4, a_rect5, a_rect6]
+  #Letter M
 
   m_rect1 = pygame.Rect(230, 120, 15, 125)
   pygame.draw.rect(screen, (64, 224,208), m_rect1)
@@ -172,7 +167,7 @@ def curt(screen_length,screen_height, dim_field,screen, player_rect):
   m_rect5 = pygame.Rect(310, 120, 15, 125)
   pygame.draw.rect(screen, (64, 224,208), m_rect5)
 
-  m_walls = [m_rect1, m_rect2, m_rect3, m_rect4, m_rect5]
+    #Letter E
 
   e_rect1 = pygame.Rect(360, 120, 15, 55)
   pygame.draw.rect(screen, (64, 224,208), e_rect1)
@@ -187,17 +182,47 @@ def curt(screen_length,screen_height, dim_field,screen, player_rect):
   e_rect6 = pygame.Rect(380, 230, 35, 15)
   pygame.draw.rect(screen, (64, 224,208), e_rect6)
 
-  #e_walls = [e_rect1, e_rect2, e_rect3, e_rect4, e_rect5]
+    #Other rectangles
+    #corner rectangle (top left)
+  wall1 = pygame.Rect(0, 70, 50, 15)
+  pygame.draw.rect(screen, (64, 224,208), wall1)
+    #corner rectangle (top right)
+  wall2 = pygame.Rect(415, 70, 50, 15)
+  pygame.draw.rect(screen, (64, 224,208), wall2)
+    #corner rectangle (bottom left)
+  wall3 = pygame.Rect(0, 300, 50, 15)
+  pygame.draw.rect(screen, (64, 224,208), wall3)
+    #corner rectangle (bottom right)
+  wall4 = pygame.Rect(415, 300, 50, 15)
+  pygame.draw.rect(screen, (64, 224,208), wall4)
+    #middle top rectangle
+  wall5 = pygame.Rect(170, 70, 130, 15)
+  pygame.draw.rect(screen, (64, 224,208), wall5)
+    #middle bottom rectangle
+  wall6 = pygame.Rect(170, 300, 130, 15)
+  pygame.draw.rect(screen, (64, 224,208), wall6)
+    #top, left of middle rectangle
+  wall7 = pygame.Rect(100, 30, 15, 55)
+  pygame.draw.rect(screen, (64, 224,208), wall7)
+    #top, right of middle rectangle
+  wall8 = pygame.Rect(350, 30, 15, 55)
+  pygame.draw.rect(screen, (64, 224,208), wall8)
+    #bottom, left of middle rectangle
+  wall9 = pygame.Rect(100, 295, 15, 55)
+  pygame.draw.rect(screen, (64, 224,208), wall9)
+    #bottom, right of middle rectangle
+  wall10 = pygame.Rect(350, 295, 15, 55)
+  pygame.draw.rect(screen, (64, 224,208), wall10)
+    #middle of G
+  wall11 = pygame.Rect(0, 170, 35, 15)
+  pygame.draw.rect(screen, (64, 224,208), wall11)
+    #middle of E
+  wall12 = pygame.Rect(420, 170, 45, 15)
+  pygame.draw.rect(screen, (64, 224,208), wall12)
 
-  #Don't want to leave the game area (Boundaries)
-  if player_rect.left < 0:
-    player_rect.left = 0
-  if player_rect.right > screen_length:
-   player_rect.right = screen_length
-  if player_rect.bottom > 340:
-    player_rect.bottom = 340
-  if player_rect.top < 30:
-    player_rect.top = 30
+  curt_walls = [g_rect1,g_rect2, g_rect3, g_rect4,g_rect5, a_rect1, a_rect2, a_rect3, a_rect4, a_rect5, a_rect6, m_rect1, m_rect2, m_rect3, m_rect4, m_rect5, e_rect1, e_rect2, e_rect3, e_rect4, e_rect5, e_rect6, wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall7, wall8, wall9,wall10, wall11, wall12]
 
-  #if player_rect.collidelist(g_walls):
-    #print("collision!")
+  return curt_walls
+
+#def curt_points(screen_length,screen_height, dim_field, screen, player_rect):
+  #Make lots of starts and like 4 hats
