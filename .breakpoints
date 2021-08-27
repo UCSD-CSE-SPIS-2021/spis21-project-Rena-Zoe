@@ -1,3 +1,12 @@
 {
-  "files": {}
+  "files": {
+    "players": [
+      {
+        "id": "2c7ce300-c415-4ca4-8bdc-6e6d3e4dd57f",
+        "line": 1,
+        "version": 0,
+        "index": 0
+      }
+    ]
+  }
 }

@@ -3,7 +3,7 @@ import pygame
 import os
 
 #Home screen
-def homescreen(screen_length,screen_height, dim_field,screen,event):
+def homescreen(screen_length,screen_height, dim_field,screen,player_rect):
 
   #This is where we set the background
   background = pygame.image.load(os.path.join("homepage","home.background.jpg"))
@@ -164,7 +164,8 @@ def homescreen(screen_length,screen_height, dim_field,screen,event):
   if (show_click_here):
     screen.blit(click_here,(108, 265))
   
-  if event.type == pygame.MOUSEBUTTONUP:
+  for event in pygame.event.get():
+    if event.type == pygame.MOUSEBUTTONUP:
       #print("Josh has a weird symbol.")
       pos = pygame.mouse.get_pos()
       if curt_rect.collidepoint(pos):
@@ -174,3 +175,5 @@ def homescreen(screen_length,screen_height, dim_field,screen,event):
         return "gary"
       elif niema_rect.collidepoint(pos):
         return "niema"
+
+  return "home"

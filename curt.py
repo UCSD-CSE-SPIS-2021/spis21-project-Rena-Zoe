@@ -2,9 +2,12 @@ import pygame
 
 import os
 
+#def loadassets():
+ #background = pygame.image.load(os.path.join("curt","curt.background.png"))
+
 #Curt
-def curt(screen_length,screen_height, dim_field,screen,event):
-  
+def curt(screen_length,screen_height, dim_field,screen, player_rect):
+
   background = pygame.image.load(os.path.join("curt","curt.background.png"))
 
   background = pygame.transform.scale(background, dim_field)
@@ -108,26 +111,93 @@ def curt(screen_length,screen_height, dim_field,screen,event):
     screen.blit(lives,(385, 7))
 
   #Curt's Maze: game
+  #Player
 
-  g_rect1 = pygame.Rect(100, 150, 50, 10)
+  player_x = 45
+  player_y = 200
+  player_width = 35
+  player_height = 35
+  #player_rect = pygame.Rect(player_x, player_y, player_width, player_height)
+  #pygame.draw.rect(screen, (0,0,0), player_rect)
+  player = pygame.image.load(os.path.join("curt", "camel.png")).convert()
+  player.set_colorkey((0, 0, 0))
+  player = pygame.transform.scale(player, (player_width, player_height))
+  screen.blit(player, player_rect)
+
+  #Enemies
+  #player_rect = pygame.Rect(player_x, player_y, player_width, player_height)
+  #pygame.draw.rect(screen, (0,0,0), player_rect)
+
+  #When coding collisions/masking
+  #mask_player = pygame.mask.from_surface(player)
+  #mask_wall = pygame.mask.from_surface(wall)
+
+  #Walls:
+  g_rect1 = pygame.Rect(40, 120, 45, 15)
   pygame.draw.rect(screen, (64, 224,208), g_rect1)
-  g_rect2 = pygame.Rect(100, 150, 10, 50)
+  g_rect2 = pygame.Rect(40, 120, 15, 45)
   pygame.draw.rect(screen, (64, 224,208), g_rect2)
-  g_rect3 = pygame.Rect(100, 200, 50, 10)
-  pygame.draw.rect(screen, (64, 224,208), g_rect3)
-  #g_rect4 = pygame.Rect(100, 170,10, 60)
-  #pygame.draw.rect(screen, (64, 224,208), g_rect4)
-  #g_rect5 = pygame.Rect(100, 200, 20, 30)
-  #pygame.draw.rect(screen, (64, 224,208), g_rect5)
-  #g_rect6 = pygame.Rect(80, 170, 10, 30)
-  #pygame.draw.rect(screen, (64, 224,208), g_rect6)
+  g_rect3 = pygame.Rect(40, 170, 45, 15)
+  pygame.draw.rect(screen, (64, 224, 208), g_rect3)
+  g_rect4 = pygame.Rect(90, 120, 15, 115)
+  pygame.draw.rect(screen, (64, 224,208), g_rect4)
+  g_rect5 = pygame.Rect(40, 240, 65, 15)
+  pygame.draw.rect(screen, (64, 224,208), g_rect5)
 
-  #a_rect = pygame.Rect(0, 0, 465, 30)
-  #pygame.draw.rect(screen, (255,239,219), a_rect)
+  g_walls = [g_rect1,g_rect2, g_rect3, g_rect4,g_rect5]
 
-  #m_rect = pygame.Rect(0, 0, 465, 30)
-  #pygame.draw.rect(screen, (255,239,219), m_rect)
+  a_rect1 = pygame.Rect(140, 120, 35, 15)
+  pygame.draw.rect(screen, (64, 224, 208), a_rect1)
+  a_rect2 = pygame.Rect(180, 120, 15, 55)
+  pygame.draw.rect(screen, (64, 224, 208), a_rect2)
+  a_rect3 = pygame.Rect(140, 180, 35, 15)
+  pygame.draw.rect(screen, (64, 224,208), a_rect3)
+  a_rect4 = pygame.Rect(180, 180, 15, 65)
+  pygame.draw.rect(screen, (64, 224,208), a_rect4)
+  a_rect5 = pygame.Rect(140, 230, 35, 15)
+  pygame.draw.rect(screen, (64, 224,208), a_rect5)
+  a_rect6 = pygame.Rect(140, 180, 15, 45)
+  pygame.draw.rect(screen, (64, 224,208), a_rect6)
 
-  #e_rect = pygame.Rect(0, 0, 465, 30)
-  #pygame.draw.rect(screen, (255,239,219), e_rect)
+  a_walls = [a_rect1, a_rect2, a_rect3, a_rect4, a_rect5, a_rect6]
 
+  m_rect1 = pygame.Rect(230, 120, 15, 125)
+  pygame.draw.rect(screen, (64, 224,208), m_rect1)
+  m_rect2 = pygame.Rect(250, 120, 15, 15)
+  pygame.draw.rect(screen, (64, 224,208), m_rect2)
+  m_rect3 = pygame.Rect(270, 120, 15, 125)
+  pygame.draw.rect(screen, (64, 224,208), m_rect3)
+  m_rect4 = pygame.Rect(290, 120, 15, 15)
+  pygame.draw.rect(screen, (64, 224,208), m_rect4)
+  m_rect5 = pygame.Rect(310, 120, 15, 125)
+  pygame.draw.rect(screen, (64, 224,208), m_rect5)
+
+  m_walls = [m_rect1, m_rect2, m_rect3, m_rect4, m_rect5]
+
+  e_rect1 = pygame.Rect(360, 120, 15, 55)
+  pygame.draw.rect(screen, (64, 224,208), e_rect1)
+  e_rect2 = pygame.Rect(380, 120, 20, 15)
+  pygame.draw.rect(screen, (64, 224,208), e_rect2)
+  e_rect3 = pygame.Rect(380, 160, 20, 15)
+  pygame.draw.rect(screen, (64, 224,208), e_rect3)
+  e_rect4 = pygame.Rect(400, 120, 15, 55)
+  pygame.draw.rect(screen, (64, 224,208), e_rect4)
+  e_rect5 = pygame.Rect(360, 180, 15, 65)
+  pygame.draw.rect(screen, (64, 224,208), e_rect5)
+  e_rect6 = pygame.Rect(380, 230, 35, 15)
+  pygame.draw.rect(screen, (64, 224,208), e_rect6)
+
+  #e_walls = [e_rect1, e_rect2, e_rect3, e_rect4, e_rect5]
+
+  #Don't want to leave the game area (Boundaries)
+  if player_rect.left < 0:
+    player_rect.left = 0
+  if player_rect.right > screen_length:
+   player_rect.right = screen_length
+  if player_rect.bottom > 340:
+    player_rect.bottom = 340
+  if player_rect.top < 30:
+    player_rect.top = 30
+
+  #if player_rect.collidelist(g_walls):
+    #print("collision!")
