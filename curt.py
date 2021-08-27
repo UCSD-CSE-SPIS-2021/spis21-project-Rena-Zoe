@@ -160,7 +160,7 @@ def walls(screen_length,screen_height, dim_field, screen, player_rect):
   pygame.draw.rect(screen, (64, 224,208), m_rect1)
   m_rect2 = pygame.Rect(250, 120, 15, 15)
   pygame.draw.rect(screen, (64, 224,208), m_rect2)
-  m_rect3 = pygame.Rect(270, 120, 15, 125)
+  m_rect3 = pygame.Rect(272, 120, 10, 125)
   pygame.draw.rect(screen, (64, 224,208), m_rect3)
   m_rect4 = pygame.Rect(290, 120, 15, 15)
   pygame.draw.rect(screen, (64, 224,208), m_rect4)
@@ -190,16 +190,16 @@ def walls(screen_length,screen_height, dim_field, screen, player_rect):
   wall2 = pygame.Rect(415, 70, 50, 15)
   pygame.draw.rect(screen, (64, 224,208), wall2)
     #corner rectangle (bottom left)
-  wall3 = pygame.Rect(0, 300, 50, 15)
+  wall3 = pygame.Rect(0, 295, 50, 15)
   pygame.draw.rect(screen, (64, 224,208), wall3)
     #corner rectangle (bottom right)
-  wall4 = pygame.Rect(415, 300, 50, 15)
+  wall4 = pygame.Rect(415, 295, 50, 15)
   pygame.draw.rect(screen, (64, 224,208), wall4)
     #middle top rectangle
   wall5 = pygame.Rect(170, 70, 130, 15)
   pygame.draw.rect(screen, (64, 224,208), wall5)
     #middle bottom rectangle
-  wall6 = pygame.Rect(170, 300, 130, 15)
+  wall6 = pygame.Rect(170, 295, 130, 15)
   pygame.draw.rect(screen, (64, 224,208), wall6)
     #top, left of middle rectangle
   wall7 = pygame.Rect(100, 30, 15, 55)
@@ -214,10 +214,10 @@ def walls(screen_length,screen_height, dim_field, screen, player_rect):
   wall10 = pygame.Rect(350, 295, 15, 55)
   pygame.draw.rect(screen, (64, 224,208), wall10)
     #middle of G
-  wall11 = pygame.Rect(0, 170, 35, 15)
+  wall11 = pygame.Rect(0, 170, 35, 10)
   pygame.draw.rect(screen, (64, 224,208), wall11)
     #middle of E
-  wall12 = pygame.Rect(420, 170, 45, 15)
+  wall12 = pygame.Rect(420, 170, 45, 10)
   pygame.draw.rect(screen, (64, 224,208), wall12)
 
   curt_walls = [g_rect1,g_rect2, g_rect3, g_rect4,g_rect5, a_rect1, a_rect2, a_rect3, a_rect4, a_rect5, a_rect6, m_rect1, m_rect2, m_rect3, m_rect4, m_rect5, e_rect1, e_rect2, e_rect3, e_rect4, e_rect5, e_rect6, wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall7, wall8, wall9,wall10, wall11, wall12]

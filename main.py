@@ -135,22 +135,22 @@ while running:
       
 
   if direction == "left":
-    player_rect.move_ip(-5, 0)
+    player_rect.move_ip(-1, 0)
     if player_rect.collidelist(curt_walls) != -1:
-      player_rect.move_ip(5,0)
+      player_rect.move_ip(1,0)
     #print("Left!")
   elif direction == "right":
-    player_rect.move_ip(5, 0)
+    player_rect.move_ip(1, 0)
     if player_rect.collidelist(curt_walls) != -1:
-      player_rect.move_ip(-5,0)
+      player_rect.move_ip(-1,0)
   elif direction == "up":
-    player_rect.move_ip(0, -5)
+    player_rect.move_ip(0, -1)
     if player_rect.collidelist(curt_walls) != -1:
-      player_rect.move_ip(0, 5)
+      player_rect.move_ip(0, 1)
   elif direction == "down":
-    player_rect.move_ip(0, 5)
+    player_rect.move_ip(0, 1)
     if player_rect.collidelist(curt_walls) != -1:
-      player_rect.move_ip(0, -5)
+      player_rect.move_ip(0, -1)
   else:
     pass #Skips over it, doesn't do anything
   
