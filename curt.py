@@ -531,6 +531,91 @@ def curt(screen_length,screen_height, dim_field, screen, player_rect):
   star78 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
   star78 = pygame.transform.scale(star78, (15, 15))
   screen.blit(star78, star_78)
+
+  star_79 = pygame.Rect(70, 290, 15, 15)
+  star79 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star79 = pygame.transform.scale(star79, (15, 15))
+  screen.blit(star79, star_79)
+
+  star_80 = pygame.Rect(70, 320, 15, 15)
+  star80 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star80 = pygame.transform.scale(star80, (15, 15))
+  screen.blit(star80, star_80)
+
+  star_81 = pygame.Rect(40, 320, 15, 15)
+  star81 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star81 = pygame.transform.scale(star81, (15, 15))
+  screen.blit(star81, star_81)
+
+  star_82 = pygame.Rect(10, 320, 15, 15)
+  star82 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star82 = pygame.transform.scale(star82, (15, 15))
+  screen.blit(star82, star_82)
+
+  star_79 = pygame.Rect(130, 290, 15, 15)
+  star79 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star79 = pygame.transform.scale(star79, (15, 15))
+  screen.blit(star79, star_79)
+
+  star_80 = pygame.Rect(130, 320, 15, 15)
+  star80 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star80 = pygame.transform.scale(star80, (15, 15))
+  screen.blit(star80, star_80)
+
+  star_81 = pygame.Rect(160, 320, 15, 15)
+  star81 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star81 = pygame.transform.scale(star81, (15, 15))
+  screen.blit(star81, star_81)
+
+  star_82 = pygame.Rect(190, 320, 15, 15)
+  star82 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star82 = pygame.transform.scale(star82, (15, 15))
+  screen.blit(star82, star_82)
+
+  hat_3 = pygame.Rect(218, 320, 15, 15)
+  hat3 = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
+  hat3 = pygame.transform.scale(hat3, (20, 20))
+  screen.blit(hat3, hat_3)
+
+  star_83 = pygame.Rect(250, 320, 15, 15)
+  star83 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star83 = pygame.transform.scale(star83, (15, 15))
+  screen.blit(star83, star_83)
+
+  star_84 = pygame.Rect(280, 320, 15, 15)
+  star84 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star84 = pygame.transform.scale(star84, (15, 15))
+  screen.blit(star84, star_84)
+
+  star_85 = pygame.Rect(310, 320, 15, 15)
+  star85 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star85 = pygame.transform.scale(star85, (15, 15))
+  screen.blit(star85, star_85)
+
+  star_86 = pygame.Rect(310, 290, 15, 15)
+  star86 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star86 = pygame.transform.scale(star86, (15, 15))
+  screen.blit(star86, star_86)
+
+  star_87 = pygame.Rect(380, 290, 15, 15)
+  star87 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star87 = pygame.transform.scale(star87, (15, 15))
+  screen.blit(star87, star_87)
+
+  star_88 = pygame.Rect(380, 320, 15, 15)
+  star88 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star88 = pygame.transform.scale(star88, (15, 15))
+  screen.blit(star88, star_88)
+
+  star_89 = pygame.Rect(410, 320, 15, 15)
+  star89 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star89 = pygame.transform.scale(star89, (15, 15))
+  screen.blit(star89, star_89)
+
+  hat_4 = pygame.Rect(440, 320, 15, 15)
+  hat4 = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
+  hat4 = pygame.transform.scale(hat4, (20, 20))
+  screen.blit(hat4, hat_4)
   
 def walls(screen_length,screen_height, dim_field, screen, player_rect):
   #Walls:
