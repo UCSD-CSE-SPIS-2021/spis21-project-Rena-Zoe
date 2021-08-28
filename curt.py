@@ -201,6 +201,11 @@ def curt(screen_length,screen_height, dim_field, screen, player_rect):
   star14 = pygame.transform.scale(star14, (15, 15))
   screen.blit(star14, star_14)
 
+  star_90 = pygame.Rect(225, 40, 15, 15)
+  star90 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+  star90 = pygame.transform.scale(star90, (15, 15))
+  screen.blit(star90, star_90)
+
   star_15 = pygame.Rect(157, 95, 15, 15)
   star15 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
   star15 = pygame.transform.scale(star15, (15, 15))
@@ -617,7 +622,7 @@ def curt(screen_length,screen_height, dim_field, screen, player_rect):
   hat4 = pygame.transform.scale(hat4, (20, 20))
   screen.blit(hat4, hat_4)
   
-def walls(screen_length,screen_height, dim_field, screen, player_rect):
+def c_walls(screen_length,screen_height, dim_field, screen, player_rect):
   #Walls:
   g_rect1 = pygame.Rect(40, 120, 45, 15)
   pygame.draw.rect(screen, (64, 224,208), g_rect1)
