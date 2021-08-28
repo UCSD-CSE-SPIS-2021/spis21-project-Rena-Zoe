@@ -106,6 +106,7 @@ def niema(screen_length,screen_height, dim_field, screen, nplayer_rect):
   if (show_lives):
     screen.blit(lives,(385, 7))
 
+#Rings and boba = Total of 650 points
   ring_1 = pygame.Rect(15, 40, 15, 15)
   ring1 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
   ring1 = pygame.transform.scale(ring1, (15, 15))
@@ -158,15 +159,35 @@ def niema(screen_length,screen_height, dim_field, screen, nplayer_rect):
 
 #Boba here
 
-  boba_1 = pygame.Rect(85, 160, 15, 15)
+  boba_1 = pygame.Rect(85, 155, 15, 15)
   boba1 = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
-  boba1 = pygame.transform.scale(boba1, (20, 20))
+  boba1 = pygame.transform.scale(boba1, (25, 25))
   screen.blit(boba1, boba_1)
 
-  ring_12 = pygame.Rect(85, 210, 15, 15)
-  ring12 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
-  ring12 = pygame.transform.scale(ring12, (15, 15))
-  screen.blit(ring12, ring_12)
+  boba_2 = pygame.Rect(85, 200, 15, 15)
+  boba2 = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
+  boba2 = pygame.transform.scale(boba2, (25, 25))
+  screen.blit(boba2, boba_2)
+
+  ring_44 = pygame.Rect(60, 205, 15, 15)
+  ring44 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring44 = pygame.transform.scale(ring44, (15, 15))
+  screen.blit(ring44, ring_44)
+
+  boba_3 = pygame.Rect(350, 155, 15, 15)
+  boba3 = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
+  boba3 = pygame.transform.scale(boba3, (25, 25))
+  screen.blit(boba3, boba_3)
+
+  boba_4 = pygame.Rect(350, 200, 15, 15)
+  boba4 = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
+  boba4 = pygame.transform.scale(boba4, (25, 25))
+  screen.blit(boba4, boba_4)
+
+  ring_45 = pygame.Rect(380, 160, 15, 15)
+  ring45 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring45 = pygame.transform.scale(ring45, (15, 15))
+  screen.blit(ring45, ring_45)
 
 #Back to rings
 
@@ -246,15 +267,95 @@ def niema(screen_length,screen_height, dim_field, screen, nplayer_rect):
   screen.blit(ring27, ring_27)
 
 #These are right of top right pillar
-  ring_11 = pygame.Rect(85, 160, 15, 15)
+  ring_11 = pygame.Rect(250, 40, 15, 15)
   ring11 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
   ring11 = pygame.transform.scale(ring11, (15, 15))
   screen.blit(ring11, ring_11)
 
-  ring_12 = pygame.Rect(85, 210, 15, 15)
+  ring_12 = pygame.Rect(250, 100, 15, 15)
   ring12 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
   ring12 = pygame.transform.scale(ring12, (15, 15))
   screen.blit(ring12, ring_12)
+
+  ring_28 = pygame.Rect(310, 40, 15, 15)
+  ring28 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring28 = pygame.transform.scale(ring28, (15, 15))
+  screen.blit(ring28, ring_28)
+
+  ring_29 = pygame.Rect(310, 100, 15, 15)
+  ring29 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring29 = pygame.transform.scale(ring29, (15, 15))
+  screen.blit(ring29, ring_29)
+
+  ring_30 = pygame.Rect(310, 160, 15, 15)
+  ring30 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring30 = pygame.transform.scale(ring30, (15, 15))
+  screen.blit(ring30, ring_30)
+
+  ring_31 = pygame.Rect(310, 210, 15, 15)
+  ring31 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring31 = pygame.transform.scale(ring31, (15, 15))
+  screen.blit(ring31, ring_31)
+
+  ring_32 = pygame.Rect(310, 260, 15, 15)
+  ring32 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring32 = pygame.transform.scale(ring32, (15, 15))
+  screen.blit(ring32, ring_32)
+
+  ring_33 = pygame.Rect(310, 330, 15, 15)
+  ring33 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring33 = pygame.transform.scale(ring33, (15, 15))
+  screen.blit(ring33, ring_33)
+
+  ring_34 = pygame.Rect(370, 100, 15, 15)
+  ring34 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring34 = pygame.transform.scale(ring34, (15, 15))
+  screen.blit(ring34, ring_34)
+
+  ring_35 = pygame.Rect(370, 260, 15, 15)
+  ring35 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring35 = pygame.transform.scale(ring35, (15, 15))
+  screen.blit(ring35, ring_35)
+
+  ring_36 = pygame.Rect(370, 330, 15, 15)
+  ring36 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring36 = pygame.transform.scale(ring36, (15, 15))
+  screen.blit(ring36, ring_36)
+
+  ring_37 = pygame.Rect(370, 40, 15, 15)
+  ring37 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring37 = pygame.transform.scale(ring37, (15, 15))
+  screen.blit(ring37, ring_37)
+
+  ring_38 = pygame.Rect(430, 40, 15, 15)
+  ring38 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring38 = pygame.transform.scale(ring38, (15, 15))
+  screen.blit(ring38, ring_38)
+
+  ring_39 = pygame.Rect(430, 100, 15, 15)
+  ring39 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring39 = pygame.transform.scale(ring39, (15, 15))
+  screen.blit(ring39, ring_39)
+
+  ring_40 = pygame.Rect(430, 160, 15, 15)
+  ring40 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring40 = pygame.transform.scale(ring40, (15, 15))
+  screen.blit(ring40, ring_40)
+
+  ring_41 = pygame.Rect(430, 220, 15, 15)
+  ring41 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring41 = pygame.transform.scale(ring41, (15, 15))
+  screen.blit(ring41, ring_41)
+
+  ring_42 = pygame.Rect(430, 280, 15, 15)
+  ring42 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring42 = pygame.transform.scale(ring42, (15, 15))
+  screen.blit(ring42, ring_42)
+
+  ring_43 = pygame.Rect(430, 330, 15, 15)
+  ring43 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ring43 = pygame.transform.scale(ring43, (15, 15))
+  screen.blit(ring43, ring_43)
 
 def n_walls(screen_length,screen_height, dim_field, screen, nplayer_rect):
   
