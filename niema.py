@@ -106,6 +106,16 @@ def niema(screen_length,screen_height, dim_field, screen, nplayer_rect):
   if (show_lives):
     screen.blit(lives,(385, 7))
 
+  if nplayer_rect.left < 0:
+    nplayer_rect.left = 0
+  if nplayer_rect.right > screen_length:
+   nplayer_rect.right = screen_length
+  if nplayer_rect.bottom > 340:
+    nplayer_rect.bottom = 340
+  if nplayer_rect.top < 30:
+    nplayer_rect.top = 30
+
+def npoints(screen_length,screen_height, dim_field, screen, player_rect):
 #Rings and boba = Total of 650 points
   ring_1 = pygame.Rect(15, 40, 15, 15)
   ring1 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()

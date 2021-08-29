@@ -121,14 +121,19 @@ from curt import curt
 
 from curt import c_walls
 
+from curt import cpoints
+
 from gary import gary
 
 from gary import g_walls
+
+from gary import gpoints
 
 from niema import niema
 
 from niema import n_walls
 
+from niema import npoints
 
 clock = pygame.time.Clock()
 #This helps the program keep track of time
@@ -160,7 +165,26 @@ while running:
   elif state == "curt":
     curt(screen_length,screen_height, dim_field, screen, player_rect)
     curt_walls = c_walls(screen_length,screen_height, dim_field, screen, player_rect)
-  #   #Draw the player here to continuously draw it as its moving over the frames
+    curt_points = cpoints(screen_length,screen_height, dim_field, screen, player_rect)
+    if direction == "left":
+      player_rect.move_ip(-2, 0)
+      if player_rect.collidelist(curt_walls) != -1:
+        player_rect.move_ip(2,0)
+    elif direction == "right":
+      player_rect.move_ip(2, 0)
+      if player_rect.collidelist(curt_walls) != -1:
+        player_rect.move_ip(-2,0)
+    elif direction == "up":
+      player_rect.move_ip(0, -2)
+      if player_rect.collidelist(curt_walls) != -1:
+        player_rect.move_ip(0, 2)
+    elif direction == "down":
+      player_rect.move_ip(0, 2)
+      if player_rect.collidelist(curt_walls) != -1:
+        player_rect.move_ip(0, -2)
+    else:
+      pass
+  #Draw the player here to continuously draw it as its moving over the frames
     screen.blit(player, player_rect)
     screen.blit(hannah, hannah_rect)
     screen.blit(jonny, jonny_rect)
@@ -169,21 +193,57 @@ while running:
 
   elif page == "gary":
     gary(screen_length,screen_height, dim_field, screen, player_rect)
-    g_walls(screen_length,screen_height, dim_field, screen, gplayer_rect)
+    gary_walls = g_walls(screen_length,screen_height, dim_field, screen, gplayer_rect)
+    gary_points = gpoints(screen_length,screen_height, dim_field, screen, player_rect)
     screen.blit(gplayer, gplayer_rect)
     screen.blit(diego, diego_rect)
     screen.blit(aclock, aclock_rect)
     screen.blit(akshat, akshat_rect)
+    if direction == "left":
+      gplayer_rect.move_ip(-2, 0)
+      if gplayer_rect.collidelist(gary_walls) != -1:
+        gplayer_rect.move_ip(2,0)
+    elif direction == "right":
+      gplayer_rect.move_ip(2, 0)
+      if gplayer_rect.collidelist(gary_walls) != -1:
+        gplayer_rect.move_ip(-2,0)
+    elif direction == "up":
+      gplayer_rect.move_ip(0, -2)
+      if gplayer_rect.collidelist(gary_walls) != -1:
+        gplayer_rect.move_ip(0, 2)
+    elif direction == "down":
+      gplayer_rect.move_ip(0, 2)
+      if gplayer_rect.collidelist(gary_walls) != -1:
+        gplayer_rect.move_ip(0, -2)
+    else:
+      pass
 
   elif page == "niema":
     niema(screen_length,screen_height, dim_field, screen, nplayer_rect)
-    n_walls(screen_length,screen_height, dim_field, screen, player_rect)
+    niema_walls = n_walls(screen_length,screen_height, dim_field, screen, player_rect)
+    niema_points = npoints(screen_length,screen_height, dim_field, screen, player_rect)
     screen.blit(nplayer, nplayer_rect)
     screen.blit(younus, younus_rect)
     screen.blit(belt, belt_rect)
-
-
-    #Note: when you make the other players name them player_g or player_n because curt is player
+    
+    if direction == "left":
+      nplayer_rect.move_ip(-2, 0)
+      if nplayer_rect.collidelist(niema_walls) != -1:
+        nplayer_rect.move_ip(2,0)
+    elif direction == "right":
+      nplayer_rect.move_ip(2, 0)
+      if nplayer_rect.collidelist(niema_walls) != -1:
+        nplayer_rect.move_ip(-2,0)
+    elif direction == "up":
+      nplayer_rect.move_ip(0, -2)
+      if nplayer_rect.collidelist(niema_walls) != -1:
+        nplayer_rect.move_ip(0, 2)
+    elif direction == "down":
+      nplayer_rect.move_ip(0, 2)
+      if nplayer_rect.collidelist(niema_walls) != -1:
+        nplayer_rect.move_ip(0, -2)
+    else:
+      pass
     
   for event in pygame.event.get():
 
@@ -202,33 +262,4 @@ while running:
       if event.key == pygame.K_DOWN:
         direction = "down"
 
-  #State (Variable) = Curt:
-    #Stuff happens and shows up
-  
-  #if player_rect.collidelist(curt_walls) != -1:
-    #direction = "stop"
-      
-
-  # if direction == "left":
-  #   player_rect.move_ip(-2, 0)
-  #   if player_rect.collidelist(curt_walls) != -1:
-  #     player_rect.move_ip(2,0)
-  #   #print("Left!")
-  # elif direction == "right":
-  #   player_rect.move_ip(2, 0)
-  #   if player_rect.collidelist(curt_walls) != -1:
-  #     player_rect.move_ip(-2,0)
-  # elif direction == "up":
-  #   player_rect.move_ip(0, -2)
-  #   if player_rect.collidelist(curt_walls) != -1:
-  #     player_rect.move_ip(0, 2)
-  # elif direction == "down":
-  #   player_rect.move_ip(0, 2)
-  #   if player_rect.collidelist(curt_walls) != -1:
-  #     player_rect.move_ip(0, -2)
-  # else:
-  #   pass #Skips over it, doesn't do anything
-  
-  # #Curt collisions 
-    
   pygame.display.update()

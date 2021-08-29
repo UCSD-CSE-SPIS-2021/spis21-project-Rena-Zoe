@@ -105,7 +105,17 @@ def gary(screen_length,screen_height, dim_field, screen, gplayer_rect):
 
   if (show_lives):
     screen.blit(lives,(385, 7))
-  
+
+  if gplayer_rect.left < 0:
+    gplayer_rect.left = 0
+  if gplayer_rect.right > screen_length:
+   gplayer_rect.right = screen_length
+  if gplayer_rect.bottom > 340:
+    gplayer_rect.bottom = 340
+  if gplayer_rect.top < 30:
+    gplayer_rect.top = 30
+
+def gpoints(screen_length,screen_height, dim_field, screen, player_rect):
   cork_1 = pygame.Rect(50, 40, 15, 20)
   cork1 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
   cork1 = pygame.transform.scale(cork1, (15, 20))
@@ -232,7 +242,7 @@ def gary(screen_length,screen_height, dim_field, screen, gplayer_rect):
   # screen.blit(cork21, cork_21)cork_21 = pygame.Rect(400, 40, 15, 20)
   # cork21 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
   # cork21 = pygame.transform.scale(cork21, (15, 20))
-  # screen.blit(cork21, cork_21)
+  screen.blit(cork21, cork_21)
 
   cork_22 = pygame.Rect(365, 40, 15, 20)
   cork22 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()

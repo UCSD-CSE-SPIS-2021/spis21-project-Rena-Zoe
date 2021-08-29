@@ -109,10 +109,8 @@ def curt(screen_length,screen_height, dim_field, screen, player_rect):
 
   if (show_lives):
     screen.blit(lives,(385, 7))
-
-  #Curt's Maze: game
   
-  #Movement
+  #Boundaries
   if player_rect.left < 0:
     player_rect.left = 0
   if player_rect.right > screen_length:
@@ -122,9 +120,7 @@ def curt(screen_length,screen_height, dim_field, screen, player_rect):
   if player_rect.top < 30:
     player_rect.top = 30
 
-  #When coding collisions/masking
-  #mask_player = pygame.mask.from_surface(player)
-  #mask_wall = pygame.mask.from_surface(wall)
+def cpoints(screen_length,screen_height, dim_field, screen, player_rect):
 
   hat_1 = pygame.Rect(2, 40, 15, 15)
   hat1 = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
@@ -719,5 +715,3 @@ def c_walls(screen_length,screen_height, dim_field, screen, player_rect):
   curt_walls = [g_rect1,g_rect2, g_rect3, g_rect4,g_rect5, a_rect1, a_rect2, a_rect3, a_rect4, a_rect5, a_rect6, m_rect1, m_rect2, m_rect3, m_rect4, m_rect5, e_rect1, e_rect2, e_rect3, e_rect4, e_rect5, e_rect6, wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall7, wall8, wall9,wall10, wall11, wall12]
 
   return curt_walls
-
-#def curt_points(screen_length,screen_height, dim_field, screen, player_rect):
