@@ -136,6 +136,10 @@ def g50points(screen_length,screen_height, dim_field, screen, player_rect):
   wine4 = pygame.transform.scale(wine4, (10, 30))
   screen.blit(wine4, wine_4)
 
+  wine_list = [wine_1, wine_2, wine_3, wine_4]
+
+  return wine_list
+
 def g10points(screen_length,screen_height, dim_field, screen, player_rect):
   cork_1 = pygame.Rect(50, 40, 15, 20)
   cork1 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
@@ -439,6 +443,10 @@ def g10points(screen_length,screen_height, dim_field, screen, player_rect):
   cork60 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
   cork60 = pygame.transform.scale(cork60, (15, 20))
   screen.blit(cork60, cork_60)
+
+  cork_list = [cork_1, cork_2, cork_3, cork_4, cork_5, cork_6, cork_7, cork_8, cork_9, cork_10, cork_11, cork_12, cork_13, cork_14, cork_15, cork_16, cork_17, cork_18, cork_19, cork_20, cork_21, cork_22, cork_23, cork_24, cork_25, cork_26, cork_27, cork_28, cork_29, cork_30, cork_31, cork_32, cork_33, cork_34, cork_35, cork_36, cork_37, cork_38, cork_39, cork_40, cork_41, cork_42, cork_43, cork_44, cork_45, cork_46, cork_47, cork_48, cork_49, cork_50, cork_51, cork_52, cork_53, cork_54, cork_55, cork_56, cork_57, cork_58, cork_59, cork_60]
+
+  return cork_list
 
 def g_walls(screen_length,screen_height, dim_field, screen, gplayer_rect):
   

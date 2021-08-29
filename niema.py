@@ -135,6 +135,10 @@ def n50points(screen_length,screen_height, dim_field, screen, player_rect):
   boba4 = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
   boba4 = pygame.transform.scale(boba4, (25, 25))
   screen.blit(boba4, boba_4)
+  
+  boba_list = [boba_1, boba_2, boba_3, boba_4]
+
+  return boba_list
 
 def n10points(screen_length,screen_height, dim_field, screen, player_rect):
 #Rings and boba = Total of 650 points
@@ -365,6 +369,10 @@ def n10points(screen_length,screen_height, dim_field, screen, player_rect):
   ring43 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
   ring43 = pygame.transform.scale(ring43, (15, 15))
   screen.blit(ring43, ring_43)
+
+  ring_list = [ring_1, ring_2, ring_3, ring_4, ring_5, ring_6, ring_7, ring_8, ring_9, ring_10, ring_11, ring_12, ring_13, ring_14, ring_15, ring_16, ring_17, ring_18, ring_19, ring_20, ring_21, ring_22, ring_23, ring_24, ring_25, ring_26, ring_27, ring_28, ring_29, ring_30, ring_31, ring_32, ring_33, ring_34, ring_35, ring_36, ring_37, ring_38, ring_39, ring_40, ring_41, ring_42, ring_43, ring_44, ring_45]
+
+  return ring_list
   
 def n_walls(screen_length,screen_height, dim_field, screen, nplayer_rect):
   
