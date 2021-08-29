@@ -53,23 +53,23 @@ michael = pygame.transform.scale(michael, (23, 23))
 screen.blit(michael, michael_rect)
 
 #Gary player
-gplayer_x = 20
-gplayer_y = 45
+gplayer_x = 15
+gplayer_y = 40
 gplayer_rect = pygame.Rect(gplayer_x, gplayer_y, 23, 23)
 gplayer = pygame.image.load(os.path.join("gary", "gary.png")).convert()
 gplayer.set_colorkey((0, 255, 0))
 gplayer = pygame.transform.scale(gplayer, (23, 23))
 screen.blit(gplayer, gplayer_rect)
 #Diego
-diego_x = 20
-diego_y = 310
+diego_x = 15
+diego_y = 305
 diego_rect = pygame.Rect(diego_x, diego_y, 23, 23)
 diego = pygame.image.load(os.path.join("gary", "diego.png")).convert()
 diego.set_colorkey((255, 255, 255))
 diego = pygame.transform.scale(diego, (23, 23))
 screen.blit(diego, diego_rect)
 #Alarm clock
-aclock_x = 420
+aclock_x = 425
 aclock_y = 40
 aclock_rect = pygame.Rect(aclock_x, aclock_y, 23, 23)
 aclock = pygame.image.load(os.path.join("gary", "alarm_clock.png")).convert()
@@ -77,8 +77,8 @@ aclock.set_colorkey((0, 0, 0))
 aclock = pygame.transform.scale(aclock, (23, 23))
 screen.blit(aclock, aclock_rect)
 #Akshat
-akshat_x = 420
-akshat_y = 310
+akshat_x = 425
+akshat_y = 305
 akshat_rect = pygame.Rect(akshat_x, akshat_y, 23, 23)
 akshat = pygame.image.load(os.path.join("gary", "akshat.png")).convert()
 akshat.set_colorkey((0, 0, 0))
@@ -129,9 +129,6 @@ from niema import niema
 
 from niema import n_walls
 
-#from niema import niema
-
-#from niema import n_walls
 
 clock = pygame.time.Clock()
 #This helps the program keep track of time
@@ -155,33 +152,35 @@ while running:
   clock.tick(FPS)
   #We want FPS=60
 
-  # if state == "home":
-  # #   #Want some way to keep track of what page you are in -> dont want to be in the menu anymore if don't need it
+  if state == "home":
+  #   #Want some way to keep track of what page you are in -> dont want to be in the menu anymore if don't need it
 
-  #   page = homescreen(screen_length,screen_height, dim_field, screen, player_rect)
-  #   state = page
-  # elif state == "curt":
-  #   curt(screen_length,screen_height, dim_field, screen, player_rect)
-  #   curt_walls = c_walls(screen_length,screen_height, dim_field, screen, player_rect)
-  # #   #Draw the player here to continuously draw it as its moving over the frames
-  #   screen.blit(player, player_rect)
-  #   screen.blit(hannah, hannah_rect)
-  #   screen.blit(jonny, jonny_rect)
-  #   screen.blit(josh, josh_rect)
-  #   screen.blit(michael, michael_rect)
-  # elif page == "gary":
-  #   gary(screen_length,screen_height, dim_field, screen, player_rect)
-  #   g_walls(screen_length,screen_height, dim_field, screen, gplayer_rect)
-  #   screen.blit(gplayer, gplayer_rect)
-  #   screen.blit(diego, diego_rect)
-  #   screen.blit(aclock, aclock_rect)
-  #   screen.blit(akshat, akshat_rect)
-  # elif page == "niema":
-  niema(screen_length,screen_height, dim_field, screen, nplayer_rect)
-  n_walls(screen_length,screen_height, dim_field, screen, player_rect)
-  screen.blit(nplayer, nplayer_rect)
-  screen.blit(younus, younus_rect)
-  screen.blit(belt, belt_rect)
+    page = homescreen(screen_length,screen_height, dim_field, screen, player_rect)
+    state = page
+  elif state == "curt":
+    curt(screen_length,screen_height, dim_field, screen, player_rect)
+    curt_walls = c_walls(screen_length,screen_height, dim_field, screen, player_rect)
+  #   #Draw the player here to continuously draw it as its moving over the frames
+    screen.blit(player, player_rect)
+    screen.blit(hannah, hannah_rect)
+    screen.blit(jonny, jonny_rect)
+    screen.blit(josh, josh_rect)
+    screen.blit(michael, michael_rect)
+
+  elif page == "gary":
+    gary(screen_length,screen_height, dim_field, screen, player_rect)
+    g_walls(screen_length,screen_height, dim_field, screen, gplayer_rect)
+    screen.blit(gplayer, gplayer_rect)
+    screen.blit(diego, diego_rect)
+    screen.blit(aclock, aclock_rect)
+    screen.blit(akshat, akshat_rect)
+
+  elif page == "niema":
+    niema(screen_length,screen_height, dim_field, screen, nplayer_rect)
+    n_walls(screen_length,screen_height, dim_field, screen, player_rect)
+    screen.blit(nplayer, nplayer_rect)
+    screen.blit(younus, younus_rect)
+    screen.blit(belt, belt_rect)
 
 
     #Note: when you make the other players name them player_g or player_n because curt is player
