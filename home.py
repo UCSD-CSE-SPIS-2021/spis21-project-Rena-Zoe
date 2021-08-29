@@ -126,7 +126,7 @@ def homescreen(screen_length,screen_height, dim_field,screen,player_rect):
   inst_x = 25
   inst_y = 125
 
-  inst_text_list = ["Instructions: Your goal is to eat everything and earn points!","         Press arrow keys to move up, down, left, and right.", "             Small items are 10 pts and large items are 50 pts.","                                     Avoid enemies. You have 3 lives. Good luck!"]
+  inst_text_list = ["Instructions: Your goal is to eat everything and earn points!","         Press arrow keys to move up, down, left, and right.", "             Small items are 10 pts and large items are 50 pts.","                      Avoid enemies. You have 3 lives. Good luck!"]
 
   show_inst = True
   

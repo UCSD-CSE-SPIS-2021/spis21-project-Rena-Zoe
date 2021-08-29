@@ -120,12 +120,7 @@ def curt(screen_length,screen_height, dim_field, screen, player_rect):
   if player_rect.top < 30:
     player_rect.top = 30
 
-def cpoints(screen_length,screen_height, dim_field, screen, player_rect):
-
-  hat_1 = pygame.Rect(2, 40, 15, 15)
-  hat1 = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
-  hat1 = pygame.transform.scale(hat1, (20, 20))
-  screen.blit(hat1, hat_1)
+def c10points(screen_length,screen_height, dim_field, screen, player_rect):
 
   star_1 = pygame.Rect(37, 40, 15, 15)
   star1 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
@@ -573,11 +568,6 @@ def cpoints(screen_length,screen_height, dim_field, screen, player_rect):
   star82 = pygame.transform.scale(star82, (15, 15))
   screen.blit(star82, star_82)
 
-  hat_3 = pygame.Rect(218, 320, 15, 15)
-  hat3 = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
-  hat3 = pygame.transform.scale(hat3, (20, 20))
-  screen.blit(hat3, hat_3)
-
   star_83 = pygame.Rect(250, 320, 15, 15)
   star83 = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
   star83 = pygame.transform.scale(star83, (15, 15))
@@ -613,11 +603,29 @@ def cpoints(screen_length,screen_height, dim_field, screen, player_rect):
   star89 = pygame.transform.scale(star89, (15, 15))
   screen.blit(star89, star_89)
 
+
+def c50points(screen_length,screen_height, dim_field, screen, player_rect):
+  hat_1 = pygame.Rect(2, 40, 15, 15)
+  hat1 = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
+  hat1 = pygame.transform.scale(hat1, (20, 20))
+  screen.blit(hat1, hat_1)
+
+  hat_2 = pygame.Rect(247, 145, 15, 15)
+  hat2 = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
+  hat2 = pygame.transform.scale(hat2, (20, 20))
+  screen.blit(hat2, hat_2)
+
+  hat_3 = pygame.Rect(218, 320, 15, 15)
+  hat3 = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
+  hat3 = pygame.transform.scale(hat3, (20, 20))
+  screen.blit(hat3, hat_3)
+
   hat_4 = pygame.Rect(440, 320, 15, 15)
   hat4 = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
   hat4 = pygame.transform.scale(hat4, (20, 20))
   screen.blit(hat4, hat_4)
-  
+
+
 def c_walls(screen_length,screen_height, dim_field, screen, player_rect):
   #Walls:
   g_rect1 = pygame.Rect(40, 120, 45, 15)

@@ -121,19 +121,29 @@ from curt import curt
 
 from curt import c_walls
 
-from curt import cpoints
+from curt import c10points
+
+from curt import c50points
 
 from gary import gary
 
 from gary import g_walls
 
-from gary import gpoints
+from gary import g10points
+
+from gary import g50points
 
 from niema import niema
 
 from niema import n_walls
 
-from niema import npoints
+from niema import n10points
+
+from niema import n50points
+
+from lose_page import lose_page
+
+from win_page import win_page
 
 clock = pygame.time.Clock()
 #This helps the program keep track of time
@@ -157,31 +167,36 @@ while running:
   clock.tick(FPS)
   #We want FPS=60
 
+  #When we have the ability to lose and win we need to tie in these functions:
+  #lose_page(screen_length,screen_height, dim_field, screen, player_rect)
+  #win_page(screen_length,screen_height, dim_field, screen, player_rect)
+
   if state == "home":
-  #   #Want some way to keep track of what page you are in -> dont want to be in the menu anymore if don't need it
+    #Want some way to keep track of what page you are in -> dont want to be in the menu anymore if don't need it
 
     page = homescreen(screen_length,screen_height, dim_field, screen, player_rect)
     state = page
   elif state == "curt":
     curt(screen_length,screen_height, dim_field, screen, player_rect)
     curt_walls = c_walls(screen_length,screen_height, dim_field, screen, player_rect)
-    curt_points = cpoints(screen_length,screen_height, dim_field, screen, player_rect)
+    curt_10_points = c10points(screen_length,screen_height, dim_field, screen, player_rect)
+    curt_50_points = c50points(screen_length,screen_height, dim_field, screen, player_rect)
     if direction == "left":
-      player_rect.move_ip(-2, 0)
+      player_rect.move_ip(-3, 0)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(2,0)
+        player_rect.move_ip(3,0)
     elif direction == "right":
-      player_rect.move_ip(2, 0)
+      player_rect.move_ip(3, 0)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(-2,0)
+        player_rect.move_ip(-3,0)
     elif direction == "up":
-      player_rect.move_ip(0, -2)
+      player_rect.move_ip(0, -3)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(0, 2)
+        player_rect.move_ip(0, 3)
     elif direction == "down":
-      player_rect.move_ip(0, 2)
+      player_rect.move_ip(0, 3)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(0, -2)
+        player_rect.move_ip(0, -3)
     else:
       pass
   #Draw the player here to continuously draw it as its moving over the frames
@@ -194,54 +209,57 @@ while running:
   elif page == "gary":
     gary(screen_length,screen_height, dim_field, screen, player_rect)
     gary_walls = g_walls(screen_length,screen_height, dim_field, screen, gplayer_rect)
-    gary_points = gpoints(screen_length,screen_height, dim_field, screen, player_rect)
+    gary_10_points = g10points(screen_length,screen_height, dim_field, screen, player_rect)
+    gary_50_points = g50points(screen_length,screen_height, dim_field, screen, player_rect)
     screen.blit(gplayer, gplayer_rect)
     screen.blit(diego, diego_rect)
     screen.blit(aclock, aclock_rect)
     screen.blit(akshat, akshat_rect)
+
     if direction == "left":
-      gplayer_rect.move_ip(-2, 0)
+      gplayer_rect.move_ip(-3, 0)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(2,0)
+        gplayer_rect.move_ip(3,0)
     elif direction == "right":
-      gplayer_rect.move_ip(2, 0)
+      gplayer_rect.move_ip(3, 0)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(-2,0)
+        gplayer_rect.move_ip(-3,0)
     elif direction == "up":
-      gplayer_rect.move_ip(0, -2)
+      gplayer_rect.move_ip(0, -3)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(0, 2)
+        gplayer_rect.move_ip(0, 3)
     elif direction == "down":
-      gplayer_rect.move_ip(0, 2)
+      gplayer_rect.move_ip(0, 3)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(0, -2)
+        gplayer_rect.move_ip(0, -3)
     else:
       pass
 
   elif page == "niema":
     niema(screen_length,screen_height, dim_field, screen, nplayer_rect)
     niema_walls = n_walls(screen_length,screen_height, dim_field, screen, player_rect)
-    niema_points = npoints(screen_length,screen_height, dim_field, screen, player_rect)
+    niema_10_points = n10points(screen_length,screen_height, dim_field, screen, player_rect)
+    niema_50_points = n50points(screen_length,screen_height, dim_field, screen, player_rect)
     screen.blit(nplayer, nplayer_rect)
     screen.blit(younus, younus_rect)
     screen.blit(belt, belt_rect)
     
     if direction == "left":
-      nplayer_rect.move_ip(-2, 0)
+      nplayer_rect.move_ip(-4, 0)
       if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(2,0)
+        nplayer_rect.move_ip(4,0)
     elif direction == "right":
-      nplayer_rect.move_ip(2, 0)
+      nplayer_rect.move_ip(4, 0)
       if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(-2,0)
+        nplayer_rect.move_ip(-4,0)
     elif direction == "up":
-      nplayer_rect.move_ip(0, -2)
+      nplayer_rect.move_ip(0, -4)
       if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(0, 2)
+        nplayer_rect.move_ip(0, 4)
     elif direction == "down":
-      nplayer_rect.move_ip(0, 2)
+      nplayer_rect.move_ip(0, 4)
       if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(0, -2)
+        nplayer_rect.move_ip(0, -4)
     else:
       pass
     

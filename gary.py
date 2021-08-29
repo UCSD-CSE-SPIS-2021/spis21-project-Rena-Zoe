@@ -115,7 +115,28 @@ def gary(screen_length,screen_height, dim_field, screen, gplayer_rect):
   if gplayer_rect.top < 30:
     gplayer_rect.top = 30
 
-def gpoints(screen_length,screen_height, dim_field, screen, player_rect):
+def g50points(screen_length,screen_height, dim_field, screen, player_rect):
+  wine_1 = pygame.Rect(72, 170, 10, 30)
+  wine1 = pygame.image.load(os.path.join("gary", "wine1.png")).convert_alpha()
+  wine1 = pygame.transform.scale(wine1, (10, 30))
+  screen.blit(wine1, wine_1)
+
+  wine_2 = pygame.Rect(130, 205, 10, 30)
+  wine2 = pygame.image.load(os.path.join("gary", "wine2.png")).convert_alpha()
+  wine2 = pygame.transform.scale(wine2, (10, 30))
+  screen.blit(wine2, wine_2)
+
+  wine_3 = pygame.Rect(330, 125, 10, 30)
+  wine3 = pygame.image.load(os.path.join("gary", "wine2.png")).convert_alpha()
+  wine3 = pygame.transform.scale(wine3, (10, 30))
+  screen.blit(wine3, wine_3)
+
+  wine_4 = pygame.Rect(288, 185, 10, 30)
+  wine4 = pygame.image.load(os.path.join("gary", "wine1.png")).convert_alpha()
+  wine4 = pygame.transform.scale(wine4, (10, 30))
+  screen.blit(wine4, wine_4)
+
+def g10points(screen_length,screen_height, dim_field, screen, player_rect):
   cork_1 = pygame.Rect(50, 40, 15, 20)
   cork1 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
   cork1 = pygame.transform.scale(cork1, (15, 20))
@@ -186,20 +207,10 @@ def gpoints(screen_length,screen_height, dim_field, screen, player_rect):
   cork14 = pygame.transform.scale(cork14, (15, 20))
   screen.blit(cork14, cork_14)
 
-  wine_1 = pygame.Rect(72, 170, 10, 30)
-  wine1 = pygame.image.load(os.path.join("gary", "wine1.png")).convert_alpha()
-  wine1 = pygame.transform.scale(wine1, (10, 30))
-  screen.blit(wine1, wine_1)
-
   cork_15 = pygame.Rect(130, 170, 15, 20)
   cork15 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
   cork15 = pygame.transform.scale(cork15, (15, 20))
   screen.blit(cork15, cork_15)
-
-  wine_2 = pygame.Rect(130, 205, 10, 30)
-  wine2 = pygame.image.load(os.path.join("gary", "wine2.png")).convert_alpha()
-  wine2 = pygame.transform.scale(wine2, (10, 30))
-  screen.blit(wine2, wine_2)
 
   cork_16 = pygame.Rect(230, 130, 15, 20)
   cork16 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
@@ -221,20 +232,10 @@ def gpoints(screen_length,screen_height, dim_field, screen, player_rect):
   cork19 = pygame.transform.scale(cork19, (15, 20))
   screen.blit(cork19, cork_19)
 
-  wine_3 = pygame.Rect(330, 125, 10, 30)
-  wine3 = pygame.image.load(os.path.join("gary", "wine2.png")).convert_alpha()
-  wine3 = pygame.transform.scale(wine3, (10, 30))
-  screen.blit(wine3, wine_3)
-
   cork_20 = pygame.Rect(330, 170, 15, 20)
   cork20 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
   cork20 = pygame.transform.scale(cork20, (15, 20))
   screen.blit(cork20, cork_20)
-
-  wine_4 = pygame.Rect(288, 185, 10, 30)
-  wine4 = pygame.image.load(os.path.join("gary", "wine1.png")).convert_alpha()
-  wine4 = pygame.transform.scale(wine4, (10, 30))
-  screen.blit(wine4, wine_4)
 
   cork_21 = pygame.Rect(400, 40, 15, 20)
   cork21 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
