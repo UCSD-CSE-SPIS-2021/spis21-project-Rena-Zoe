@@ -85,9 +85,9 @@ akshat = pygame.transform.scale(akshat, (23, 23))
 #Niema
 nplayer_x = 215
 nplayer_y = 210
-nplayer_rect = pygame.Rect(nplayer_x, nplayer_y, 23, 23)
-nplayer = pygame.image.load(os.path.join("niema", "honda.png")).convert()
-nplayer.set_colorkey((255, 255, 255))
+nplayer_rect = pygame.Rect(nplayer_x, nplayer_y, 20, 20)
+nplayer = pygame.image.load(os.path.join("niema", "honda.jpg")).convert()
+nplayer.set_colorkey((0, 0, 0))
 nplayer = pygame.transform.scale(nplayer, (35, 35))
 #Younus
 younus_x =  70
@@ -115,6 +115,8 @@ corksprite = pygame.transform.scale(corksprite, (15, 20))
 #Wine bottles
 winesprite = pygame.image.load(os.path.join("gary", "wine1.png")).convert_alpha()
 winesprite = pygame.transform.scale(winesprite, (10, 30))
+winesprite2 = pygame.image.load(os.path.join("gary", "wine2.png")).convert_alpha()
+winesprite2 = pygame.transform.scale(winesprite2, (10, 30))
 #Lord of the Rings rings
 ringsprite = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
 ringsprite = pygame.transform.scale(ringsprite, (15, 15))
@@ -149,7 +151,11 @@ from gary import g_walls
 
 from gary import g10points
 
+cork_list = g10points(screen_length,screen_height, dim_field, screen, player_rect)
+
 from gary import g50points
+
+wine_list = g50points(screen_length,screen_height, dim_field, screen, player_rect)
 
 from niema import niema
 
@@ -157,7 +163,11 @@ from niema import n_walls
 
 from niema import n10points
 
+ring_list = n10points(screen_length,screen_height, dim_field, screen, player_rect)
+
 from niema import n50points
+
+boba_list = n50points(screen_length,screen_height, dim_field, screen, player_rect)
 
 from lose_page import lose_page
 
@@ -196,7 +206,7 @@ while running:
 
     state = page
 
-  elif state == "curt":
+  elif page == "curt":
     #Calling Curt's screen
     curt(screen_length,screen_height, dim_field, screen, player_rect, num_points)
     #Calling Curt's walls
@@ -215,6 +225,8 @@ while running:
       num_points += 50
     for hat in hat_list:
       screen.blit(hatsprite, hat)
+    if num_points == 1150:
+      page = "win"
       
     screen.blit(player, player_rect)
     screen.blit(hannah, hannah_rect)
@@ -224,34 +236,52 @@ while running:
       #Draw the player here to continuously draw it as its moving over the frames
     #Curt's player's movement
     if direction == "left":
-      player_rect.move_ip(-3, 0)
+      player_rect.move_ip(-1, 0)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(3,0)
+        player_rect.move_ip(1,0)
     elif direction == "right":
-      player_rect.move_ip(3, 0)
+      player_rect.move_ip(1, 0)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(-3,0)
+        player_rect.move_ip(-1,0)
     elif direction == "up":
-      player_rect.move_ip(0, -3)
+      player_rect.move_ip(0, -1)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(0, 3)
+        player_rect.move_ip(0, 1)
     elif direction == "down":
-      player_rect.move_ip(0, 3)
+      player_rect.move_ip(0, 1)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(0, -3)
+        player_rect.move_ip(0, -1)
     else:
       pass
 
   elif page == "gary":
     #Gary's screen is called
-    gary(screen_length,screen_height, dim_field, screen, player_rect)
+    gary(screen_length,screen_height, dim_field, screen, gplayer_rect, num_points)
     
     #Walls get set up
     gary_walls = g_walls(screen_length,screen_height, dim_field, screen, gplayer_rect)
 
     #Gary's points
-    gary_10_points = g10points(screen_length,screen_height, dim_field, screen, player_rect)
-    gary_50_points = g50points(screen_length,screen_height, dim_field, screen, player_rect)
+    bye_cork = gplayer_rect.collidelist(cork_list)
+    if bye_cork != -1:
+      cork_list.remove(cork_list[bye_cork])
+      num_points += 10
+    for cork in cork_list:
+      screen.blit(corksprite, cork)
+    bye_wine = gplayer_rect.collidelist(wine_list)
+    if bye_wine != -1:
+      wine_list.remove(wine_list[bye_wine])
+      num_points += 50
+    for wine in wine_list:
+      screen.blit(winesprite, wine)
+    bye_wine2 = gplayer_rect.collidelist(wine_list)
+    if bye_wine2 != -1:
+      wine_list.remove(wine_list[bye_wine2])
+      num_points += 50
+    for wine in wine_list:
+      screen.blit(winesprite2, wine)
+    if num_points == 800:
+      page = "win"
 
     #Blitting all of Gary's sprites
     screen.blit(gplayer, gplayer_rect)
@@ -261,35 +291,47 @@ while running:
 
     #Gary's movement
     if direction == "left":
-      gplayer_rect.move_ip(-3, 0)
+      gplayer_rect.move_ip(-1, 0)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(3,0)
+        gplayer_rect.move_ip(1,0)
     elif direction == "right":
-      gplayer_rect.move_ip(3, 0)
+      gplayer_rect.move_ip(1, 0)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(-3,0)
+        gplayer_rect.move_ip(-1,0)
     elif direction == "up":
-      gplayer_rect.move_ip(0, -3)
+      gplayer_rect.move_ip(0, -1)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(0, 3)
+        gplayer_rect.move_ip(0, 1)
     elif direction == "down":
-      gplayer_rect.move_ip(0, 3)
+      gplayer_rect.move_ip(0, 1)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(0, -3)
+        gplayer_rect.move_ip(0, -1)
     else:
       pass
 
 
   elif page == "niema":
     #Calling Niema's screen
-    niema(screen_length,screen_height, dim_field, screen, nplayer_rect)
+    niema(screen_length,screen_height, dim_field, screen, nplayer_rect, num_points)
     
     #Calling Niema's walls
     niema_walls = n_walls(screen_length,screen_height, dim_field, screen, player_rect)
 
     #Niema's points
-    niema_10_points = n10points(screen_length,screen_height, dim_field, screen, player_rect)
-    niema_50_points = n50points(screen_length,screen_height, dim_field, screen, player_rect)
+    bye_ring = nplayer_rect.collidelist(ring_list)
+    if bye_ring != -1:
+      ring_list.remove(ring_list[bye_ring])
+      num_points += 10
+    for ring in ring_list:
+      screen.blit(ringsprite, ring)
+    bye_boba = nplayer_rect.collidelist(boba_list)
+    if bye_boba != -1:
+      boba_list.remove(boba_list[bye_boba])
+      num_points += 50
+    for boba in boba_list:
+      screen.blit(bobasprite, boba)
+    if num_points == 650:
+      page = "win"
     
     #Niema's sprites
     screen.blit(nplayer, nplayer_rect)
@@ -298,24 +340,30 @@ while running:
     
     #Niema's movement
     if direction == "left":
-      nplayer_rect.move_ip(-4, 0)
+      nplayer_rect.move_ip(-2, 0)
       if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(4,0)
+        nplayer_rect.move_ip(2,0)
     elif direction == "right":
-      nplayer_rect.move_ip(4, 0)
+      nplayer_rect.move_ip(2, 0)
       if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(-4,0)
+        nplayer_rect.move_ip(-2,0)
     elif direction == "up":
-      nplayer_rect.move_ip(0, -4)
+      nplayer_rect.move_ip(0, -2)
       if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(0, 4)
+        nplayer_rect.move_ip(0, 2)
     elif direction == "down":
-      nplayer_rect.move_ip(0, 4)
+      nplayer_rect.move_ip(0, 2)
       if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(0, -4)
+        nplayer_rect.move_ip(0, -2)
     else:
       pass
     
+  elif page == "win":
+    state = win_page(screen_length,screen_height, dim_field, screen, player_rect)
+
+  #elif page == "lose":
+    #state = lose_page(screen_length,screen_height, dim_field, screen, player_rect)
+
   for event in pygame.event.get():
 
     if event.type == pygame.KEYDOWN: 
