@@ -6,7 +6,7 @@ import os
  #background = pygame.image.load(os.path.join("curt","curt.background.png"))
 
 #Curt
-def curt(screen_length,screen_height, dim_field, screen, player_rect):
+def curt(screen_length,screen_height, dim_field, screen, player_rect, num_points):
 
   background = pygame.image.load(os.path.join("curt","curt.background.png"))
 
@@ -57,7 +57,7 @@ def curt(screen_length,screen_height, dim_field, screen, player_rect):
 
   font = pygame.font.Font("./Bungee-Regular.ttf",15)
   
-  num_points = 0
+  #num_points = 0
 
   point_num = str(num_points)
 
@@ -126,7 +126,7 @@ def c10points(screen_length,screen_height, dim_field, screen, player_rect):
 
   star_1 = pygame.Rect(37, 40, 15, 15)
   starsprite = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
-  star1 = pygame.transform.scale(starsprite, (15, 15))
+  starsprite = pygame.transform.scale(starsprite, (15, 15))
   screen.blit(starsprite, star_1)
 
   star_2 = pygame.Rect(67, 40, 15, 15)

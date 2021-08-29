@@ -109,6 +109,19 @@ starsprite = pygame.transform.scale(starsprite, (15, 15))
 #Hat sprites
 hatsprite = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
 hatsprite = pygame.transform.scale(hatsprite, (20, 20))
+#Wine glasses
+corksprite = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
+corksprite = pygame.transform.scale(corksprite, (15, 20))
+#Wine bottles
+winesprite = pygame.image.load(os.path.join("gary", "wine1.png")).convert_alpha()
+winesprite = pygame.transform.scale(winesprite, (10, 30))
+#Lord of the Rings rings
+ringsprite = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+ringsprite = pygame.transform.scale(ringsprite, (15, 15))
+#Boba Drinks
+bobasprite = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
+bobasprite = pygame.transform.scale(bobasprite, (25, 25))
+
 
 #Classes - Blueprint of an object
   #Object is code representation of a real life thing
@@ -185,7 +198,7 @@ while running:
 
   elif state == "curt":
     #Calling Curt's screen
-    curt(screen_length,screen_height, dim_field, screen, player_rect)
+    curt(screen_length,screen_height, dim_field, screen, player_rect, num_points)
     #Calling Curt's walls
     curt_walls = c_walls(screen_length,screen_height, dim_field, screen, player_rect)
 
@@ -193,12 +206,13 @@ while running:
     bye_star = player_rect.collidelist(star_list)
     if bye_star != -1:
       star_list.remove(star_list[bye_star])
-      num_points = int(num_points) + 10
+      num_points += 10
     for star in star_list:
       screen.blit(starsprite, star)
     bye_hat = player_rect.collidelist(hat_list)
     if bye_hat != -1:
       hat_list.remove(hat_list[bye_hat])
+      num_points += 50
     for hat in hat_list:
       screen.blit(hatsprite, hat)
       

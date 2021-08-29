@@ -117,9 +117,9 @@ def niema(screen_length,screen_height, dim_field, screen, nplayer_rect):
 
 def n50points(screen_length,screen_height, dim_field, screen, player_rect):
   boba_1 = pygame.Rect(85, 155, 15, 15)
-  boba1 = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
-  boba1 = pygame.transform.scale(boba1, (25, 25))
-  screen.blit(boba1, boba_1)
+  bobasprite = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
+  bobasprite = pygame.transform.scale(bobasprite, (25, 25))
+  screen.blit(bobasprite, boba_1)
 
   boba_2 = pygame.Rect(85, 200, 15, 15)
   boba2 = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
@@ -143,9 +143,9 @@ def n50points(screen_length,screen_height, dim_field, screen, player_rect):
 def n10points(screen_length,screen_height, dim_field, screen, player_rect):
 #Rings and boba = Total of 650 points
   ring_1 = pygame.Rect(15, 40, 15, 15)
-  ring1 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
-  ring1 = pygame.transform.scale(ring1, (15, 15))
-  screen.blit(ring1, ring_1)
+  ringsprite = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+  ringsprite = pygame.transform.scale(ringsprite, (15, 15))
+  screen.blit(ringsprite, ring_1)
 
   ring_2 = pygame.Rect(75, 40, 15, 15)
   ring2 = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
