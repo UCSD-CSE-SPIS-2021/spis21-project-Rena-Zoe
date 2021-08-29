@@ -171,12 +171,12 @@ def gary(screen_length,screen_height, dim_field, screen, gplayer_rect):
   cork13 = pygame.transform.scale(cork13, (15, 20))
   screen.blit(cork13, cork_13)
 
-  cork_14 = pygame.Rect(70, 170, 15, 20)
+  cork_14 = pygame.Rect(130, 130, 15, 20)
   cork14 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
   cork14 = pygame.transform.scale(cork14, (15, 20))
   screen.blit(cork14, cork_14)
 
-  wine_1 = pygame.Rect(130, 120, 10, 30)
+  wine_1 = pygame.Rect(72, 170, 10, 30)
   wine1 = pygame.image.load(os.path.join("gary", "wine1.png")).convert_alpha()
   wine1 = pygame.transform.scale(wine1, (10, 30))
   screen.blit(wine1, wine_1)
@@ -221,7 +221,7 @@ def gary(screen_length,screen_height, dim_field, screen, gplayer_rect):
   cork20 = pygame.transform.scale(cork20, (15, 20))
   screen.blit(cork20, cork_20)
 
-  wine_4 = pygame.Rect(330, 205, 10, 30)
+  wine_4 = pygame.Rect(288, 185, 10, 30)
   wine4 = pygame.image.load(os.path.join("gary", "wine1.png")).convert_alpha()
   wine4 = pygame.transform.scale(wine4, (10, 30))
   screen.blit(wine4, wine_4)
@@ -229,7 +229,10 @@ def gary(screen_length,screen_height, dim_field, screen, gplayer_rect):
   cork_21 = pygame.Rect(400, 40, 15, 20)
   cork21 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
   cork21 = pygame.transform.scale(cork21, (15, 20))
-  screen.blit(cork21, cork_21)
+  # screen.blit(cork21, cork_21)cork_21 = pygame.Rect(400, 40, 15, 20)
+  # cork21 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
+  # cork21 = pygame.transform.scale(cork21, (15, 20))
+  # screen.blit(cork21, cork_21)
 
   cork_22 = pygame.Rect(365, 40, 15, 20)
   cork22 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
@@ -416,7 +419,15 @@ def gary(screen_length,screen_height, dim_field, screen, gplayer_rect):
   cork58 = pygame.transform.scale(cork58, (15, 20))
   screen.blit(cork58, cork_58)
 
+  cork_59 = pygame.Rect(285, 148, 15, 20)
+  cork59 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
+  cork59 = pygame.transform.scale(cork59, (15, 20))
+  screen.blit(cork59, cork_59)
 
+  cork_60 = pygame.Rect(330, 205, 15, 20)
+  cork60 = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
+  cork60 = pygame.transform.scale(cork60, (15, 20))
+  screen.blit(cork60, cork_60)
 
 def g_walls(screen_length,screen_height, dim_field, screen, gplayer_rect):
   
