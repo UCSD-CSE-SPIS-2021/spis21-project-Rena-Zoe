@@ -12,6 +12,8 @@ screen = pygame.display.set_mode(dim_field)
 
 num_points = 0
 
+num_lives = 3
+
 #Draw all the players out here in future
 player_x = 218
 player_y = 40
@@ -53,6 +55,7 @@ michael = pygame.image.load(os.path.join("curt", "michael.png")).convert()
 michael.set_colorkey((0, 0, 0))
 michael = pygame.transform.scale(michael, (23, 23))
 
+
 #Gary player
 gplayer_x = 15
 gplayer_y = 40
@@ -85,10 +88,10 @@ akshat = pygame.transform.scale(akshat, (23, 23))
 #Niema
 nplayer_x = 215
 nplayer_y = 210
-nplayer_rect = pygame.Rect(nplayer_x, nplayer_y, 20, 20)
-nplayer = pygame.image.load(os.path.join("niema", "honda.jpg")).convert()
+nplayer_rect = pygame.Rect(nplayer_x, nplayer_y, 20, 15)
+nplayer = pygame.image.load(os.path.join("niema", "honda.png")).convert()
 nplayer.set_colorkey((0, 0, 0))
-nplayer = pygame.transform.scale(nplayer, (35, 35))
+nplayer = pygame.transform.scale(nplayer, (35, 25))
 #Younus
 younus_x =  70
 younus_y = 200
@@ -103,12 +106,14 @@ belt_rect = pygame.Rect(belt_x, belt_y, 23, 23)
 belt = pygame.image.load(os.path.join("niema", "belt.png")).convert()
 belt.set_colorkey((0, 0, 0))
 belt = pygame.transform.scale(belt, (26, 26))
+
 #Star sprites
 starsprite = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
 starsprite = pygame.transform.scale(starsprite, (15, 15))
 #Hat sprites
 hatsprite = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
 hatsprite = pygame.transform.scale(hatsprite, (20, 20))
+
 #Wine glasses
 corksprite = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
 corksprite = pygame.transform.scale(corksprite, (15, 20))
@@ -130,6 +135,7 @@ bobasprite = pygame.transform.scale(bobasprite, (25, 25))
 #Classes == Factories
   #Class(dog) -> can make lots of dogs on a whim
     #Just call for the dog richard = dog
+from time import sleep, time
 
 from home import homescreen
 #From the home.py module import homescreen function
@@ -139,11 +145,7 @@ from curt import c_walls
 
 from curt import c10points
 
-star_list = c10points(screen_length,screen_height, dim_field, screen, player_rect)
-
 from curt import c50points
-
-hat_list = c50points(screen_length,screen_height, dim_field, screen, player_rect)
 
 from gary import gary
 
@@ -151,11 +153,7 @@ from gary import g_walls
 
 from gary import g10points
 
-cork_list = g10points(screen_length,screen_height, dim_field, screen, player_rect)
-
 from gary import g50points
-
-wine_list = g50points(screen_length,screen_height, dim_field, screen, player_rect)
 
 from niema import niema
 
@@ -163,11 +161,7 @@ from niema import n_walls
 
 from niema import n10points
 
-ring_list = n10points(screen_length,screen_height, dim_field, screen, player_rect)
-
 from niema import n50points
-
-boba_list = n50points(screen_length,screen_height, dim_field, screen, player_rect)
 
 from lose_page import lose_page
 
@@ -202,13 +196,82 @@ while running:
   if state == "home":
     #Want some way to keep track of what page you are in -> dont want to be in the menu anymore if don't need it
 
+    #Curt's point lists
+    star_list = c10points(screen_length,screen_height, dim_field, screen, player_rect)
+
+    hat_list = c50points(screen_length,screen_height, dim_field, screen, player_rect)
+
+    #Gary's point lists
+    cork_list = g10points(screen_length,screen_height, dim_field, screen, player_rect)
+
+    wine_list = g50points(screen_length,screen_height, dim_field, screen, player_rect)
+
+    #Niema's point lists
+    ring_list = n10points(screen_length,screen_height, dim_field, screen, player_rect)
+
+    boba_list = n50points(screen_length,screen_height, dim_field, screen, player_rect)
+
+    #Niema's enemy list
+    niema_enemy = [younus_rect, belt_rect]
+
+    #Gary's enemy list
+    gary_enemy = [diego_rect, aclock_rect, akshat_rect]
+
+    #Curt's enemy list
+    curt_enemy = [hannah_rect, michael_rect, jonny_rect, josh_rect]
+
+    num_points = 0
+
+    num_lives = 3
+
+    #Curt's starting point:
+    player_rect.left = player_x
+    player_rect.top = player_y
+    #Hannah's starting point:
+    hannah_rect.left = hannah_x
+    hannah_rect.top = hannah_y
+    #Jonny's starting point:
+    jonny_rect.left = jonny_x
+    jonny_rect.top = jonny_y
+    #Michael's starting point:
+    michael_rect.left = michael_x
+    michael_rect.top = michael_y
+    #Josh's starting point:
+    josh_rect.left = josh_x
+    josh_rect.top = josh_y
+    #Gary's starting point:
+    gplayer_rect.left = gplayer_x
+    gplayer_rect.top = gplayer_y
+    #Diego's starting point:
+    diego_rect.left = diego_x
+    diego_rect.top = diego_y
+    #Akshat's starting point:
+    akshat_rect.left = akshat_x
+    akshat_rect.top = akshat_y
+    #Clock's starting point:
+    aclock_rect.left = aclock_x
+    aclock_rect.top = aclock_y
+    #Niema's starting point:
+    nplayer_rect.left = nplayer_x
+    nplayer_rect.top = nplayer_y
+    #Younus' starting point:
+    younus_rect.left = younus_x
+    younus_rect.top = younus_y
+    #Belt's starting point:
+    belt_rect.left = belt_x
+    belt_rect.top = belt_y
+    direction = "none"
+
+    #Counter before player death
+    counter = 0
+
     page = homescreen(screen_length,screen_height, dim_field, screen, player_rect)
 
     state = page
 
   elif page == "curt":
     #Calling Curt's screen
-    curt(screen_length,screen_height, dim_field, screen, player_rect, num_points)
+    curt(screen_length,screen_height, dim_field, screen, player_rect, num_points, num_lives)
     #Calling Curt's walls
     curt_walls = c_walls(screen_length,screen_height, dim_field, screen, player_rect)
 
@@ -227,6 +290,15 @@ while running:
       screen.blit(hatsprite, hat)
     if num_points == 1150:
       page = "win"
+
+    bye_lives = player_rect.collidelist(curt_enemy)
+    if bye_lives != -1 and counter < 1:
+      num_lives -= 1
+      counter = 100
+    elif counter > 0:
+      counter -= 1
+    if num_lives == 0:
+      page = "lose"
       
     screen.blit(player, player_rect)
     screen.blit(hannah, hannah_rect)
@@ -256,7 +328,7 @@ while running:
 
   elif page == "gary":
     #Gary's screen is called
-    gary(screen_length,screen_height, dim_field, screen, gplayer_rect, num_points)
+    gary(screen_length,screen_height, dim_field, screen, gplayer_rect, num_points, num_lives)
     
     #Walls get set up
     gary_walls = g_walls(screen_length,screen_height, dim_field, screen, gplayer_rect)
@@ -282,6 +354,16 @@ while running:
       screen.blit(winesprite2, wine)
     if num_points == 800:
       page = "win"
+
+    #Gary's lives
+    bye_lives = gplayer_rect.collidelist(gary_enemy)
+    if bye_lives != -1 and counter < 1:
+      num_lives -= 1
+      counter = 100
+    elif counter > 0:
+      counter -= 1
+    if num_lives == 0:
+      page = "lose"
 
     #Blitting all of Gary's sprites
     screen.blit(gplayer, gplayer_rect)
@@ -312,7 +394,7 @@ while running:
 
   elif page == "niema":
     #Calling Niema's screen
-    niema(screen_length,screen_height, dim_field, screen, nplayer_rect, num_points)
+    niema(screen_length,screen_height, dim_field, screen, nplayer_rect, num_points, num_lives)
     
     #Calling Niema's walls
     niema_walls = n_walls(screen_length,screen_height, dim_field, screen, player_rect)
@@ -331,7 +413,23 @@ while running:
     for boba in boba_list:
       screen.blit(bobasprite, boba)
     if num_points == 650:
+      # Pauses at 640 points, but we want them to see how many points they earned
+      # started = time()
+      # sleep(5)
+      # ended = time()
       page = "win"
+    
+    #Niema's number of lives
+    bye_lives = nplayer_rect.collidelist(niema_enemy)
+    #Neima's enemies are Younus and a belt
+    if bye_lives != -1 and counter < 1:
+      # niema_enemy.remove(niema_enemy[bye_lives])
+      num_lives -= 1
+      counter = 100
+    elif counter > 0:
+      counter -= 1
+    if num_lives == 0:
+      page = "lose"
     
     #Niema's sprites
     screen.blit(nplayer, nplayer_rect)
@@ -359,10 +457,13 @@ while running:
       pass
     
   elif page == "win":
+  #win/lose page is called
     state = win_page(screen_length,screen_height, dim_field, screen, player_rect)
 
-  #elif page == "lose":
-    #state = lose_page(screen_length,screen_height, dim_field, screen, player_rect)
+  elif page == "lose":
+    state = lose_page(screen_length,screen_height, dim_field, screen, player_rect)
+
+    #It's not calling the functions again/reseting the lives and the points
 
   for event in pygame.event.get():
 

@@ -27,12 +27,12 @@ def win_page(screen_length,screen_height, dim_field, screen, player_rect):
       show_win_title = False
 
   if (show_win_title):
-    screen.blit(win_title,(125, 90))
+    screen.blit(win_title,(125, 70))
 
   font = pygame.font.Font("./Staatliches-Regular.ttf",18)
 
   win_x = 20
-  win_y = 160
+  win_y = 140
 
   win_text_list = ["                                                    Thanks for playing!", "    And a special thanks to all of our professors and mentors!", "                If you would like to retry or try a different level", "                                      please click the 'Home' button."]
 
@@ -54,7 +54,7 @@ def win_page(screen_length,screen_height, dim_field, screen, player_rect):
       screen.blit(lose,(win_x, win_y))
       win_y += 16
   
-  home_rect = pygame.Rect(200, 235, 85, 50)
+  home_rect = pygame.Rect(200, 215, 85, 50)
   pygame.draw.rect(screen, (255,192,203), home_rect)
   
   font = pygame.font.Font("./RampartOne-Regular.ttf",25)
@@ -72,7 +72,24 @@ def win_page(screen_length,screen_height, dim_field, screen, player_rect):
       show_home = False
 
   if (show_home):
-    screen.blit(home,(208, 240))
+    screen.blit(home,(208, 220))
+
+  font = pygame.font.Font("./Staatliches-Regular.ttf",15)
+
+  point = font.render("Niema pts: 650, Gary pts: 800, Curt pts: 1150",True,(0,0,0))
+
+  show_point = True
+  
+  start_time = pygame.time.get_ticks()
+
+  if (show_point):
+    
+    now_time = pygame.time.get_ticks()
+    if (now_time - start_time > 500):
+      show_point = False
+
+  if (show_point):
+    screen.blit(point,(125, 275))
     
   for event in pygame.event.get():
     if event.type == pygame.MOUSEBUTTONUP:

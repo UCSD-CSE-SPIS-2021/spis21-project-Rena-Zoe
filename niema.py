@@ -2,7 +2,7 @@ import pygame
 
 import os
 
-def niema(screen_length,screen_height, dim_field, screen, nplayer_rect, num_points):
+def niema(screen_length,screen_height, dim_field, screen, nplayer_rect, num_points, num_lives):
   
   background = pygame.image.load(os.path.join("niema","niema_background.png"))
 
@@ -72,7 +72,7 @@ def niema(screen_length,screen_height, dim_field, screen, nplayer_rect, num_poin
 
   font = pygame.font.Font("./Bungee-Regular.ttf",15)
   
-  lives_num = "3"
+  lives_num = str(num_lives)
 
   lives_num_txt = font.render(lives_num,True,(0,0,0))
 
