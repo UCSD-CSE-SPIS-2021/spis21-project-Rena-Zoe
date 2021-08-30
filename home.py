@@ -81,7 +81,7 @@ def homescreen(screen_length,screen_height, dim_field,screen,player_rect):
   curt_x = 310
   curt_y= 215
 
-  curt_list = ["  Curt", "(Hard)"]
+  curt_list = ["   Curt", "(Hard)"]
 
   show_curt_list = True
   

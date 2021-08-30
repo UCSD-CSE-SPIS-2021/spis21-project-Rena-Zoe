@@ -458,21 +458,21 @@ while running:
 
     #Gary's movement
     if direction == "left":
-      gplayer_rect.move_ip(-2, 0)
+      gplayer_rect.move_ip(-1, 0)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(2,0)
+        gplayer_rect.move_ip(1,0)
     elif direction == "right":
-      gplayer_rect.move_ip(2, 0)
+      gplayer_rect.move_ip(1, 0)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(-2,0)
+        gplayer_rect.move_ip(-1,0)
     elif direction == "up":
-      gplayer_rect.move_ip(0, -2)
+      gplayer_rect.move_ip(0, -1)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(0, 2)
+        gplayer_rect.move_ip(0, 1)
     elif direction == "down":
-      gplayer_rect.move_ip(0,2)
+      gplayer_rect.move_ip(0,1)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(0, -2)
+        gplayer_rect.move_ip(0, -1)
     else:
       pass
 
@@ -485,31 +485,31 @@ while running:
         gary_enemy_variable[enemy][0] = random.randint(0, 3)
         gary_enemy_variable[enemy][1] = 60
       if gary_enemy_variable[enemy][0] == 0:
-        gary_enemy[enemy].move_ip(-2,0) #Left
+        gary_enemy[enemy].move_ip(-1,0) #Left
         gary_enemy_variable[enemy][1] -= 2
         if gary_enemy[enemy].collidelist(gary_walls) > -1:
-          gary_enemy[enemy].move_ip(2,0)
+          gary_enemy[enemy].move_ip(1,0)
           gary_enemy_variable[enemy][0] = random.randint(0, 3)
           gary_enemy_variable[enemy][1] = 60
       elif gary_enemy_variable[enemy][0] == 1:
-        gary_enemy[enemy].move_ip(2,0) #Right
+        gary_enemy[enemy].move_ip(1,0) #Right
         gary_enemy_variable[enemy][1] -= 2
         if gary_enemy[enemy].collidelist(gary_walls) > -1:
-          gary_enemy[enemy].move_ip(-2,0)
+          gary_enemy[enemy].move_ip(-1,0)
           gary_enemy_variable[enemy][0] = random.randint(0, 3)
           gary_enemy_variable[enemy][1] = 60
       elif gary_enemy_variable[enemy][0] == 2:
-        gary_enemy[enemy].move_ip(0,-2) #Up
+        gary_enemy[enemy].move_ip(0,-1) #Up
         gary_enemy_variable[enemy][1] -= 2
         if gary_enemy[enemy].collidelist(gary_walls) > -1:
-          gary_enemy[enemy].move_ip(0,2)
+          gary_enemy[enemy].move_ip(0,1)
           gary_enemy_variable[enemy][0] = random.randint(0, 3)
           gary_enemy_variable[enemy][1] = 60
       elif gary_enemy_variable[enemy][0] == 3:
-        gary_enemy[enemy].move_ip(0,2) #Down
+        gary_enemy[enemy].move_ip(0,1) #Down
         gary_enemy_variable[enemy][1] -= 2
         if gary_enemy[enemy].collidelist(gary_walls) > -1:
-          gary_enemy[enemy].move_ip(0,-2)
+          gary_enemy[enemy].move_ip(0,-1)
           gary_enemy_variable[enemy][0] = random.randint(0, 3)
           gary_enemy_variable[enemy][1] = 60
 
