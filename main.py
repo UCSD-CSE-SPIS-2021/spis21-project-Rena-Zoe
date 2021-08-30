@@ -174,7 +174,7 @@ clock = pygame.time.Clock()
 
 running = True
 
-FPS = 60
+FPS = 120
 
 in_home = True
 
@@ -321,6 +321,12 @@ while running:
     if bye_lives != -1 and counter < 1:
       num_lives -= 1
       counter = 100
+      if num_lives == 1:
+        player_rect.left = player_x
+        player_rect.top = player_y
+      if num_lives == 2:
+        player_rect.left = player_x
+        player_rect.top = player_y
     elif counter > 0:
       counter -= 1
     if num_lives == 0:
@@ -364,28 +370,28 @@ while running:
         curt_enemy[enemy].move_ip(-1,0) #Left
         curt_enemy_variable[enemy][1] -= 2
         if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(1,0)
+          curt_enemy[enemy].move_ip(2,0)
           curt_enemy_variable[enemy][0] = random.randint(0, 3)
           curt_enemy_variable[enemy][1] = 60
       elif curt_enemy_variable[enemy][0] == 1:
-        curt_enemy[enemy].move_ip(1,0) #Right
+        curt_enemy[enemy].move_ip(2,0) #Right
         curt_enemy_variable[enemy][1] -= 2
         if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(-1,0)
+          curt_enemy[enemy].move_ip(-2,0)
           curt_enemy_variable[enemy][0] = random.randint(0, 3)
           curt_enemy_variable[enemy][1] = 60
       elif curt_enemy_variable[enemy][0] == 2:
-        curt_enemy[enemy].move_ip(0,-1) #Up
+        curt_enemy[enemy].move_ip(0,-2) #Up
         curt_enemy_variable[enemy][1] -= 2
         if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(0,1)
+          curt_enemy[enemy].move_ip(0,2)
           curt_enemy_variable[enemy][0] = random.randint(0, 3)
           curt_enemy_variable[enemy][1] = 60
       elif curt_enemy_variable[enemy][0] == 3:
-        curt_enemy[enemy].move_ip(0,1) #Down
+        curt_enemy[enemy].move_ip(0,2) #Down
         curt_enemy_variable[enemy][1] -= 2
         if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(0,-1)
+          curt_enemy[enemy].move_ip(0,-2)
           curt_enemy_variable[enemy][0] = random.randint(0, 3)
           curt_enemy_variable[enemy][1] = 60
           
@@ -433,6 +439,12 @@ while running:
     if bye_lives != -1 and counter < 1:
       num_lives -= 1
       counter = 100
+      if num_lives == 1:
+        gplayer_rect.left = gplayer_x
+        gplayer_rect.top = gplayer_y
+      if num_lives == 2:
+        gplayer_rect.left = gplayer_x
+        gplayer_rect.top = gplayer_y
     elif counter > 0:
       counter -= 1
     if num_lives == 0:
@@ -546,6 +558,12 @@ while running:
       # niema_enemy.remove(niema_enemy[bye_lives])
       num_lives -= 1
       counter = 100
+      if num_lives == 1:
+        nplayer_rect.left = nplayer_x
+        nplayer_rect.top = nplayer_y
+      if num_lives == 2:
+        nplayer_rect.left = nplayer_x
+        nplayer_rect.top = nplayer_y
     elif counter > 0:
       counter -= 1
     if num_lives == 0:
