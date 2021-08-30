@@ -2,6 +2,8 @@ import pygame
 
 import os
 
+import random
+
 screen_length = 465
 
 screen_height = 350
@@ -182,7 +184,31 @@ loaded = False
 
 direction = "stop"
 
-#in_game = True
+#First zero = direction
+#Second zero = steps
+younus_variable = [0,0]
+
+belt_variable = [0,0]
+
+niema_enemy_variable = [younus_variable,belt_variable]
+
+akshat_variable = [0,0]
+
+diego_variable = [0,0]
+
+clock_variable = [0,0]
+
+gary_enemy_variable = [akshat_variable, diego_variable, clock_variable]
+
+hannah_variable = [0,0]
+
+josh_variable = [0,0]
+
+michael_variable = [0,0]
+
+jonny_variable = [0,0]
+
+curt_enemy_variable = [hannah_variable, josh_variable, michael_variable, jonny_variable]
 
 while running:
 
@@ -325,7 +351,54 @@ while running:
         player_rect.move_ip(0, -1)
     else:
       pass
-
+      
+    #Curt Enemy movement
+    for enemy in range(len(curt_enemy_variable)):
+      curt_enemy_variable[enemy][0] #Direction
+      curt_enemy_variable[enemy][1] #Steps/Distance
+      
+      if curt_enemy_variable[enemy][1] <= 0:
+        curt_enemy_variable[enemy][0] = random.randint(0, 3)
+        curt_enemy_variable[enemy][1] = 60
+      if curt_enemy_variable[enemy][0] == 0:
+        curt_enemy[enemy].move_ip(-2,0) #Left
+        curt_enemy_variable[enemy][1] -= 2
+        if curt_enemy[enemy].collidelist(curt_walls) > -1:
+          curt_enemy[enemy].move_ip(2,0)
+          curt_enemy_variable[enemy][0] = random.randint(0, 3)
+          curt_enemy_variable[enemy][1] = 60
+      elif curt_enemy_variable[enemy][0] == 1:
+        curt_enemy[enemy].move_ip(2,0) #Right
+        curt_enemy_variable[enemy][1] -= 2
+        if curt_enemy[enemy].collidelist(curt_walls) > -1:
+          curt_enemy[enemy].move_ip(-2,0)
+          curt_enemy_variable[enemy][0] = random.randint(0, 3)
+          curt_enemy_variable[enemy][1] = 60
+      elif curt_enemy_variable[enemy][0] == 2:
+        curt_enemy[enemy].move_ip(0,-2) #Up
+        curt_enemy_variable[enemy][1] -= 2
+        if curt_enemy[enemy].collidelist(curt_walls) > -1:
+          curt_enemy[enemy].move_ip(0,2)
+          curt_enemy_variable[enemy][0] = random.randint(0, 3)
+          curt_enemy_variable[enemy][1] = 60
+      elif curt_enemy_variable[enemy][0] == 3:
+        curt_enemy[enemy].move_ip(0,2) #Down
+        curt_enemy_variable[enemy][1] -= 2
+        if curt_enemy[enemy].collidelist(curt_walls) > -1:
+          curt_enemy[enemy].move_ip(0,-2)
+          curt_enemy_variable[enemy][0] = random.randint(0, 3)
+          curt_enemy_variable[enemy][1] = 60
+          
+      #Curt enemy boundaries
+      if curt_enemy[enemy].left < 0:
+        curt_enemy[enemy].left = 0
+      if curt_enemy[enemy].right > screen_length:
+        curt_enemy[enemy].right = screen_length
+      if curt_enemy[enemy].bottom > 340:
+        curt_enemy[enemy].bottom = 340
+      if curt_enemy[enemy].top < 30:
+        curt_enemy[enemy].top = 30
+        
   elif page == "gary":
     #Gary's screen is called
     gary(screen_length,screen_height, dim_field, screen, gplayer_rect, num_points, num_lives)
@@ -391,6 +464,53 @@ while running:
     else:
       pass
 
+    #Gary Enemy movement
+    for enemy in range(len(gary_enemy_variable)):
+      gary_enemy_variable[enemy][0] #Direction
+      gary_enemy_variable[enemy][1] #Steps/Distance
+      
+      if gary_enemy_variable[enemy][1] <= 0:
+        gary_enemy_variable[enemy][0] = random.randint(0, 3)
+        gary_enemy_variable[enemy][1] = 60
+      if gary_enemy_variable[enemy][0] == 0:
+        gary_enemy[enemy].move_ip(-2,0) #Left
+        gary_enemy_variable[enemy][1] -= 2
+        if gary_enemy[enemy].collidelist(gary_walls) > -1:
+          gary_enemy[enemy].move_ip(2,0)
+          gary_enemy_variable[enemy][0] = random.randint(0, 3)
+          gary_enemy_variable[enemy][1] = 60
+      elif gary_enemy_variable[enemy][0] == 1:
+        gary_enemy[enemy].move_ip(2,0) #Right
+        gary_enemy_variable[enemy][1] -= 2
+        if gary_enemy[enemy].collidelist(gary_walls) > -1:
+          gary_enemy[enemy].move_ip(-2,0)
+          gary_enemy_variable[enemy][0] = random.randint(0, 3)
+          gary_enemy_variable[enemy][1] = 60
+      elif gary_enemy_variable[enemy][0] == 2:
+        gary_enemy[enemy].move_ip(0,-2) #Up
+        gary_enemy_variable[enemy][1] -= 2
+        if gary_enemy[enemy].collidelist(gary_walls) > -1:
+          gary_enemy[enemy].move_ip(0,2)
+          gary_enemy_variable[enemy][0] = random.randint(0, 3)
+          gary_enemy_variable[enemy][1] = 60
+      elif gary_enemy_variable[enemy][0] == 3:
+        gary_enemy[enemy].move_ip(0,2) #Down
+        gary_enemy_variable[enemy][1] -= 2
+        if gary_enemy[enemy].collidelist(gary_walls) > -1:
+          gary_enemy[enemy].move_ip(0,-2)
+          gary_enemy_variable[enemy][0] = random.randint(0, 3)
+          gary_enemy_variable[enemy][1] = 60
+
+      #Gary enemy boundaries, Shift tab makes it unindent
+      if gary_enemy[enemy].left < 0:
+        gary_enemy[enemy].left = 0
+      if gary_enemy[enemy].right > screen_length:
+        gary_enemy[enemy].right = screen_length
+      if gary_enemy[enemy].bottom > 340:
+        gary_enemy[enemy].bottom = 340
+      if gary_enemy[enemy].top < 30:
+        gary_enemy[enemy].top = 30
+
 
   elif page == "niema":
     #Calling Niema's screen
@@ -455,6 +575,55 @@ while running:
         nplayer_rect.move_ip(0, -2)
     else:
       pass
+
+    # print(len(niema_enemy_variable[0]))
+    #Niema Enemy movement
+    for enemy in range(len(niema_enemy_variable)):
+      niema_enemy_variable[enemy][0] #Direction
+      niema_enemy_variable[enemy][1] #Steps/Distance
+      
+      if niema_enemy_variable[enemy][1] <= 0:
+        niema_enemy_variable[enemy][0] = random.randint(0, 3)
+        niema_enemy_variable[enemy][1] = 60
+      if niema_enemy_variable[enemy][0] == 0:
+        niema_enemy[enemy].move_ip(-2,0) #Left
+        niema_enemy_variable[enemy][1] -= 2
+        if niema_enemy[enemy].collidelist(niema_walls) > -1:
+          niema_enemy[enemy].move_ip(2,0)
+          niema_enemy_variable[enemy][0] = random.randint(0, 3)
+          niema_enemy_variable[enemy][1] = 60
+      elif niema_enemy_variable[enemy][0] == 1:
+        niema_enemy[enemy].move_ip(2,0) #Right
+        niema_enemy_variable[enemy][1] -= 2
+        if niema_enemy[enemy].collidelist(niema_walls) > -1:
+          niema_enemy[enemy].move_ip(-2,0)
+          niema_enemy_variable[enemy][0] = random.randint(0, 3)
+          niema_enemy_variable[enemy][1] = 60
+      elif niema_enemy_variable[enemy][0] == 2:
+        niema_enemy[enemy].move_ip(0,-2) #Up
+        niema_enemy_variable[enemy][1] -= 2
+        if niema_enemy[enemy].collidelist(niema_walls) > -1:
+          niema_enemy[enemy].move_ip(0,2)
+          niema_enemy_variable[enemy][0] = random.randint(0, 3)
+          niema_enemy_variable[enemy][1] = 60
+      elif niema_enemy_variable[enemy][0] == 3:
+        niema_enemy[enemy].move_ip(0,2) #Down
+        niema_enemy_variable[enemy][1] -= 2
+        if niema_enemy[enemy].collidelist(niema_walls) > -1:
+          niema_enemy[enemy].move_ip(0,-2)
+          niema_enemy_variable[enemy][0] = random.randint(0, 3)
+          niema_enemy_variable[enemy][1] = 60
+
+      #Niema enemy boundaries, Shift tab makes it unindent
+      if niema_enemy[enemy].left < 0:
+        niema_enemy[enemy].left = 0
+      if niema_enemy[enemy].right > screen_length:
+        niema_enemy[enemy].right = screen_length
+      if niema_enemy[enemy].bottom > 340:
+        niema_enemy[enemy].bottom = 340
+      if niema_enemy[enemy].top < 30:
+        niema_enemy[enemy].top = 30
+
     
   elif page == "win":
   #win/lose page is called
