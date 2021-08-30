@@ -27,7 +27,7 @@ player.set_colorkey((0, 0, 0))
 player = pygame.transform.scale(player, (player_width, player_height))
 #Hannah
 hannah_x = 385
-hannah_y = 200
+hannah_y = 250
 hannah_rect = pygame.Rect(hannah_x, hannah_y, 23, 23)
 hannah = pygame.image.load(os.path.join("curt", "hannah.png")).convert()
 hannah.set_colorkey((0, 0, 0))
@@ -51,7 +51,7 @@ josh = pygame.transform.scale(josh, (23, 23))
 
 #Michael
 michael_x = 285
-michael_y = 145
+michael_y = 200
 michael_rect = pygame.Rect(michael_x, michael_y, 23, 23)
 michael = pygame.image.load(os.path.join("curt", "michael.png")).convert()
 michael.set_colorkey((0, 0, 0))
@@ -334,21 +334,21 @@ while running:
       #Draw the player here to continuously draw it as its moving over the frames
     #Curt's player's movement
     if direction == "left":
-      player_rect.move_ip(-1, 0)
+      player_rect.move_ip(-2, 0)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(1,0)
+        player_rect.move_ip(2,0)
     elif direction == "right":
-      player_rect.move_ip(1, 0)
+      player_rect.move_ip(2, 0)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(-1,0)
+        player_rect.move_ip(-2,0)
     elif direction == "up":
-      player_rect.move_ip(0, -1)
+      player_rect.move_ip(0, -2)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(0, 1)
+        player_rect.move_ip(0, 2)
     elif direction == "down":
-      player_rect.move_ip(0, 1)
+      player_rect.move_ip(0, 2)
       if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(0, -1)
+        player_rect.move_ip(0, -2)
     else:
       pass
       
@@ -361,31 +361,31 @@ while running:
         curt_enemy_variable[enemy][0] = random.randint(0, 3)
         curt_enemy_variable[enemy][1] = 60
       if curt_enemy_variable[enemy][0] == 0:
-        curt_enemy[enemy].move_ip(-2,0) #Left
+        curt_enemy[enemy].move_ip(-1,0) #Left
         curt_enemy_variable[enemy][1] -= 2
         if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(2,0)
+          curt_enemy[enemy].move_ip(1,0)
           curt_enemy_variable[enemy][0] = random.randint(0, 3)
           curt_enemy_variable[enemy][1] = 60
       elif curt_enemy_variable[enemy][0] == 1:
-        curt_enemy[enemy].move_ip(2,0) #Right
+        curt_enemy[enemy].move_ip(1,0) #Right
         curt_enemy_variable[enemy][1] -= 2
         if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(-2,0)
+          curt_enemy[enemy].move_ip(-1,0)
           curt_enemy_variable[enemy][0] = random.randint(0, 3)
           curt_enemy_variable[enemy][1] = 60
       elif curt_enemy_variable[enemy][0] == 2:
-        curt_enemy[enemy].move_ip(0,-2) #Up
+        curt_enemy[enemy].move_ip(0,-1) #Up
         curt_enemy_variable[enemy][1] -= 2
         if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(0,2)
+          curt_enemy[enemy].move_ip(0,1)
           curt_enemy_variable[enemy][0] = random.randint(0, 3)
           curt_enemy_variable[enemy][1] = 60
       elif curt_enemy_variable[enemy][0] == 3:
-        curt_enemy[enemy].move_ip(0,2) #Down
+        curt_enemy[enemy].move_ip(0,1) #Down
         curt_enemy_variable[enemy][1] -= 2
         if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(0,-2)
+          curt_enemy[enemy].move_ip(0,-1)
           curt_enemy_variable[enemy][0] = random.randint(0, 3)
           curt_enemy_variable[enemy][1] = 60
           
@@ -446,21 +446,21 @@ while running:
 
     #Gary's movement
     if direction == "left":
-      gplayer_rect.move_ip(-1, 0)
+      gplayer_rect.move_ip(-2, 0)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(1,0)
+        gplayer_rect.move_ip(2,0)
     elif direction == "right":
-      gplayer_rect.move_ip(1, 0)
+      gplayer_rect.move_ip(2, 0)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(-1,0)
+        gplayer_rect.move_ip(-2,0)
     elif direction == "up":
-      gplayer_rect.move_ip(0, -1)
+      gplayer_rect.move_ip(0, -2)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(0, 1)
+        gplayer_rect.move_ip(0, 2)
     elif direction == "down":
-      gplayer_rect.move_ip(0, 1)
+      gplayer_rect.move_ip(0,2)
       if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(0, -1)
+        gplayer_rect.move_ip(0, -2)
     else:
       pass
 
