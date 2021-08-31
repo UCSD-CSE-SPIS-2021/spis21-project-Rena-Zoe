@@ -30,7 +30,7 @@ hannah_x = 385
 hannah_y = 250
 hannah_rect = pygame.Rect(hannah_x, hannah_y, 23, 23)
 hannah = pygame.image.load(os.path.join("curt", "hannah.png")).convert()
-hannah.set_colorkey((0, 0, 0))
+hannah.set_colorkey((255, 0, 0))
 hannah = pygame.transform.scale(hannah, (23, 23))
 
 #Jonny
@@ -38,7 +38,7 @@ jonny_x = 150
 jonny_y = 145
 jonny_rect = pygame.Rect(jonny_x, jonny_y, 23, 23)
 jonny = pygame.image.load(os.path.join("curt", "jonny.png")).convert()
-jonny.set_colorkey((0, 0, 0))
+jonny.set_colorkey((0, 255, 0))
 jonny = pygame.transform.scale(jonny, (25, 25))
 
 #Josh
@@ -109,6 +109,79 @@ belt = pygame.image.load(os.path.join("niema", "belt.png")).convert()
 belt.set_colorkey((0, 0, 0))
 belt = pygame.transform.scale(belt, (26, 26))
 
+#Secret mohan map players
+#Elisa
+elisa_x =  70
+elisa_y = 200
+elisa_rect = pygame.Rect(elisa_x, elisa_y, 32, 32)
+elisa = pygame.image.load(os.path.join("secret", "elisa.png")).convert()
+elisa.set_colorkey((0, 0, 0))
+elisa = pygame.transform.scale(elisa, (32, 32))
+
+#Henry L
+henryl_x =  70
+henryl_y = 200
+henryl_rect = pygame.Rect(henryl_x, henryl_y, 23, 23)
+henryl = pygame.image.load(os.path.join("secret", "henryl.png")).convert()
+henryl.set_colorkey((0, 0, 0))
+henryl = pygame.transform.scale(henryl, (23, 23))
+
+#Henry X
+henryx_x =  70
+henryx_y = 200
+henryx_rect = pygame.Rect(henryx_x, henryx_y, 23, 23)
+henryx = pygame.image.load(os.path.join("secret", "henryx.png")).convert()
+henryx.set_colorkey((0, 0, 255))
+henryx = pygame.transform.scale(henryx, (23, 23))
+
+#Jenelle
+jenelle_x =  70
+jenelle_y = 200
+jenelle_rect = pygame.Rect(jenelle_x, jenelle_y, 23, 23)
+jenelle = pygame.image.load(os.path.join("secret", "jenelle.png")).convert()
+jenelle.set_colorkey((0, 255, 0))
+jenelle = pygame.transform.scale(jenelle, (23, 23))
+
+#Lindsey
+lindsey_x =  70
+lindsey_y = 200
+lindsey_rect = pygame.Rect(lindsey_x, lindsey_y, 23, 23)
+lindsey = pygame.image.load(os.path.join("secret", "lindsey.png")).convert()
+lindsey.set_colorkey((0, 0, 0))
+lindsey = pygame.transform.scale(lindsey, (23, 23))
+
+#Tristin
+tristin_x =  70
+tristin_y = 200
+tristin_rect = pygame.Rect(tristin_x, tristin_y, 23, 23)
+tristin = pygame.image.load(os.path.join("secret", "tristin.png")).convert()
+tristin.set_colorkey((0, 255, 0))
+tristin = pygame.transform.scale(tristin, (23, 23))
+
+#Prothit
+prothit_x =  70
+prothit_y = 200
+prothit_rect = pygame.Rect(prothit_x, prothit_y, 23, 23)
+prothit = pygame.image.load(os.path.join("secret", "prothit.png")).convert()
+prothit.set_colorkey((0, 0, 255))
+prothit = pygame.transform.scale(prothit, (23, 23))
+#Nikki
+nikki_x =  70
+nikki_y = 200
+nikki_rect = pygame.Rect(nikki_x, nikki_y, 23, 23)
+nikki = pygame.image.load(os.path.join("secret", "nikki.png")).convert()
+nikki.set_colorkey((0, 255, 0))
+nikki = pygame.transform.scale(nikki, (23, 23))
+#Yukati
+yukati_x =  70
+yukati_y = 200
+yukati_rect = pygame.Rect(yukati_x, yukati_y, 23, 23)
+yukati = pygame.image.load(os.path.join("secret", "yukati.png")).convert()
+yukati.set_colorkey((0, 255, 0))
+yukati = pygame.transform.scale(yukati, (23, 23))
+
+
+#Points
 #Star sprites
 starsprite = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
 starsprite = pygame.transform.scale(starsprite, (15, 15))
@@ -168,6 +241,10 @@ from niema import n50points
 from lose_page import lose_page
 
 from win_page import win_page
+
+from directory import directory
+
+from secret import secret
 
 clock = pygame.time.Clock()
 #This helps the program keep track of time
@@ -641,7 +718,95 @@ while running:
         niema_enemy[enemy].bottom = 340
       if niema_enemy[enemy].top < 30:
         niema_enemy[enemy].top = 30
+  elif page == "secret":
+    secret(screen_length,screen_height, dim_field, screen)#, mplayer_rect)
+  elif page == "directory":
+    state = directory(screen_length, screen_height, dim_field, screen)
+    #Curt's starting point:
+    player_rect.left = 115
+    player_rect.top = 55
+    #Hannah's starting point:
+    hannah_rect.left = 115
+    hannah_rect.top = 85
+    #Jonny's starting point:
+    jonny_rect.left = 115
+    jonny_rect.top = 115
+    #Michael's starting point:
+    michael_rect.left = 115
+    michael_rect.top = 175
+    #Josh's starting point:
+    josh_rect.left = 115
+    josh_rect.top = 145
+    #Gary's starting point:
+    gplayer_rect.left = 265
+    gplayer_rect.top = 55
+    #Diego's starting point:
+    diego_rect.left = 265
+    diego_rect.top = 85
+    #Akshat's starting point:
+    akshat_rect.left = 265
+    akshat_rect.top = 115
+    #John
+    #john_rect.left = 265
+    #john_rect.top = 115
+    #Younus' starting point:
+    younus_rect.left = 265
+    younus_rect.top = 175
+    #Elisa
+    elisa_rect.left = 260
+    elisa_rect.top = 205
+    #Henry L
+    henryl_rect.left = 265
+    henryl_rect.top = 237
+    #Jenelle
+    jenelle_rect.left = 115
+    jenelle_rect.top = 205
+    #Lindsey
+    lindsey_rect.left = 115
+    lindsey_rect.top = 235
+    #Niema's starting point:
+    nplayer_rect.left = 415
+    nplayer_rect.top = 55
+    #Mohan
+    #mohan_rect.left = 415
+    #mohan_rect.top = 85
+    #Tristin
+    tristin_rect.left = 415
+    tristin_rect.top = 115
+    #Prothit
+    prothit_rect.left = 415
+    prothit_rect.top = 145
+    #Henry X
+    henryx_rect.left = 415
+    henryx_rect.top = 175
+    #Nikki
+    nikki_rect.left = 415
+    nikki_rect.top = 205
+    #Yukati
+    yukati_rect.left = 415
+    yukati_rect.top = 235
+    #Blitting
+    screen.blit(player, player_rect)
+    screen.blit(hannah, hannah_rect)
+    screen.blit(jonny, jonny_rect)
+    screen.blit(josh, josh_rect)
+    screen.blit(michael, michael_rect)
+    screen.blit(gplayer, gplayer_rect)
+    screen.blit(diego, diego_rect)
+    screen.blit(akshat, akshat_rect)
+    screen.blit(nplayer, nplayer_rect)
+    screen.blit(younus, younus_rect)
+    screen.blit(elisa, elisa_rect)
+    screen.blit(henryl, henryl_rect)
+    screen.blit(henryx, henryx_rect)
+    screen.blit(jenelle, jenelle_rect)
+    screen.blit(lindsey, lindsey_rect)
+    screen.blit(tristin, tristin_rect)
+    screen.blit(prothit, prothit_rect)
+    screen.blit(nikki, nikki_rect)
+    screen.blit(yukati, yukati_rect)
 
+    #Need to figure out if possible to update x and y coordinates for rectangle
     
   elif page == "win":
   #win/lose page is called

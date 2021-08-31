@@ -100,6 +100,29 @@ def homescreen(screen_length,screen_height, dim_field,screen,player_rect):
     if (show_curt_list):
       screen.blit(inst,(curt_x, curt_y))
       curt_y += 15
+  
+  #Directory button
+
+  direct_rect = pygame.Rect(10, 310, 100, 30)
+  pygame.draw.rect(screen, (83,134,150), direct_rect)
+
+  #Directory text
+  font = pygame.font.Font("./Staatliches-Regular.ttf",20)
+
+  direct = font.render("Directory",True,(255, 255, 255))
+
+  show_direct = True
+  
+  start_time = pygame.time.get_ticks()
+
+  if (show_direct):
+    
+    now_time = pygame.time.get_ticks()
+    if (now_time - start_time > 500):
+      show_direct = False
+
+  if (show_direct):
+    screen.blit(direct,(23, 313))
       
 #This is our Welcome!
 
@@ -175,5 +198,7 @@ def homescreen(screen_length,screen_height, dim_field,screen,player_rect):
         return "gary"
       elif niema_rect.collidepoint(pos):
         return "niema"
+      elif direct_rect.collidepoint(pos):
+        return "directory"
 
   return "home"
