@@ -365,9 +365,9 @@ while running:
       
       if curt_enemy_variable[enemy][1] <= 0:
         curt_enemy_variable[enemy][0] = random.randint(0, 3)
-        curt_enemy_variable[enemy][1] = 60
+        curt_enemy_variable[enemy][1] = 120
       if curt_enemy_variable[enemy][0] == 0:
-        curt_enemy[enemy].move_ip(-1,0) #Left
+        curt_enemy[enemy].move_ip(-2,0) #Left
         curt_enemy_variable[enemy][1] -= 2
         if curt_enemy[enemy].collidelist(curt_walls) > -1:
           curt_enemy[enemy].move_ip(2,0)
