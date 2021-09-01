@@ -16,7 +16,27 @@ num_points = 0
 
 num_lives = 3
 
-quote = "Walk into mentors or professors."
+quote = "Move into mentors or professors."
+
+#Make sound affect for Jonny - duh duh duh duh duh duh duh duh
+
+quote_list = [
+    "My favorite mode of transportation is local transportation. - Curt",
+    "hannah quote", "What does the sloth say? - Jonny",
+    "Science compels us to explode the sun! - Josh",
+    "Do or do not. There is no try. – Michael",
+    "I'm gonna spill some hot tea!!! - Gary", "Your mom. - Diego",
+    "You miss 100% of the naps you don't take. - Akshat",
+    "I want to thank the students for starting a cult in my name - Niema",
+    "Does Geisel have a lot of books? - Younus",
+    "Start Early, Start Often. - Elisa", "Word - Henry L",
+    "Not all who wonder are lost. - Henry X", "Jenelle quote",
+    "Be the best version of yourself - Lindsey",
+    "Shoot for the moon. If you miss you'll land on a star. - Tristin",
+    "When life gives you lemons make lemonade - Prothit", "Nikki quote",
+    "SHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEESH - Yukati",
+    "Live, laugh, Love - John"
+]
 
 #Draw all the players out here in future
 player_x = 218
@@ -59,7 +79,6 @@ michael = pygame.image.load(os.path.join("curt", "michael.png")).convert()
 michael.set_colorkey((0, 0, 0))
 michael = pygame.transform.scale(michael, (23, 23))
 
-
 #Gary player
 gplayer_x = 15
 gplayer_y = 40
@@ -97,7 +116,7 @@ nplayer = pygame.image.load(os.path.join("niema", "honda.png")).convert()
 nplayer.set_colorkey((0, 0, 0))
 nplayer = pygame.transform.scale(nplayer, (35, 25))
 #Younus
-younus_x =  70
+younus_x = 70
 younus_y = 200
 younus_rect = pygame.Rect(younus_x, younus_y, 23, 23)
 younus = pygame.image.load(os.path.join("niema", "younus.png")).convert()
@@ -113,7 +132,7 @@ belt = pygame.transform.scale(belt, (26, 26))
 
 #Secret mohan map players
 #Elisa
-elisa_x =  70
+elisa_x = 70
 elisa_y = 200
 elisa_rect = pygame.Rect(elisa_x, elisa_y, 32, 32)
 elisa = pygame.image.load(os.path.join("secret", "elisa.png")).convert()
@@ -121,7 +140,7 @@ elisa.set_colorkey((0, 0, 0))
 elisa = pygame.transform.scale(elisa, (32, 32))
 
 #Henry L
-henryl_x =  70
+henryl_x = 70
 henryl_y = 200
 henryl_rect = pygame.Rect(henryl_x, henryl_y, 23, 23)
 henryl = pygame.image.load(os.path.join("secret", "henryl.png")).convert()
@@ -129,7 +148,7 @@ henryl.set_colorkey((0, 0, 0))
 henryl = pygame.transform.scale(henryl, (23, 23))
 
 #Henry X
-henryx_x =  70
+henryx_x = 70
 henryx_y = 200
 henryx_rect = pygame.Rect(henryx_x, henryx_y, 23, 23)
 henryx = pygame.image.load(os.path.join("secret", "henryx.png")).convert()
@@ -137,7 +156,7 @@ henryx.set_colorkey((0, 0, 255))
 henryx = pygame.transform.scale(henryx, (23, 23))
 
 #Jenelle
-jenelle_x =  70
+jenelle_x = 70
 jenelle_y = 200
 jenelle_rect = pygame.Rect(jenelle_x, jenelle_y, 23, 23)
 jenelle = pygame.image.load(os.path.join("secret", "jenelle.png")).convert()
@@ -145,7 +164,7 @@ jenelle.set_colorkey((0, 255, 0))
 jenelle = pygame.transform.scale(jenelle, (23, 23))
 
 #Lindsey
-lindsey_x =  70
+lindsey_x = 70
 lindsey_y = 200
 lindsey_rect = pygame.Rect(lindsey_x, lindsey_y, 23, 23)
 lindsey = pygame.image.load(os.path.join("secret", "lindsey.png")).convert()
@@ -153,7 +172,7 @@ lindsey.set_colorkey((0, 0, 0))
 lindsey = pygame.transform.scale(lindsey, (23, 23))
 
 #Tristin
-tristin_x =  70
+tristin_x = 70
 tristin_y = 200
 tristin_rect = pygame.Rect(tristin_x, tristin_y, 23, 23)
 tristin = pygame.image.load(os.path.join("secret", "tristin.png")).convert()
@@ -161,33 +180,39 @@ tristin.set_colorkey((0, 255, 0))
 tristin = pygame.transform.scale(tristin, (23, 23))
 
 #Prothit
-prothit_x =  70
+prothit_x = 70
 prothit_y = 200
 prothit_rect = pygame.Rect(prothit_x, prothit_y, 23, 23)
 prothit = pygame.image.load(os.path.join("secret", "prothit.png")).convert()
 prothit.set_colorkey((0, 0, 255))
 prothit = pygame.transform.scale(prothit, (23, 23))
 #Nikki
-nikki_x =  70
+nikki_x = 70
 nikki_y = 200
 nikki_rect = pygame.Rect(nikki_x, nikki_y, 23, 23)
 nikki = pygame.image.load(os.path.join("secret", "nikki.png")).convert()
 nikki.set_colorkey((0, 255, 0))
 nikki = pygame.transform.scale(nikki, (23, 23))
 #Yukati
-yukati_x =  70
+yukati_x = 70
 yukati_y = 200
 yukati_rect = pygame.Rect(yukati_x, yukati_y, 23, 23)
 yukati = pygame.image.load(os.path.join("secret", "yukati.png")).convert()
 yukati.set_colorkey((0, 255, 0))
 yukati = pygame.transform.scale(yukati, (23, 23))
 #Mohan
-mplayer_x =  70
-mplayer_y = 200
-mplayer_rect = pygame.Rect(mplayer_x, mplayer_y, 23, 23)
+mplayer_x = 220
+mplayer_y = 165
+mplayer_rect = pygame.Rect(mplayer_x, mplayer_y, 10, 10)
 mplayer = pygame.image.load(os.path.join("secret", "mohan.png")).convert()
 mplayer.set_colorkey((255, 255, 255))
 mplayer = pygame.transform.scale(mplayer, (23, 23))
+mohan_x = 220
+mohan_y = 165
+mohan_rect = pygame.Rect(mohan_x, mohan_y, 23, 23)
+mohan = pygame.image.load(os.path.join("secret", "mohan.png")).convert()
+mohan.set_colorkey((255, 255, 255))
+mohan = pygame.transform.scale(mohan, (23, 23))
 #John
 john_x = 285
 john_y = 200
@@ -196,36 +221,47 @@ john = pygame.image.load(os.path.join("secret", "john.png")).convert()
 john.set_colorkey((0, 255, 0))
 john = pygame.transform.scale(john, (23, 23))
 
-
 #Points
 #Star sprites
-starsprite = pygame.image.load(os.path.join("curt", "star.png")).convert_alpha()
+starsprite = pygame.image.load(os.path.join("curt",
+                                            "star.png")).convert_alpha()
 starsprite = pygame.transform.scale(starsprite, (15, 15))
 #Hat sprites
 hatsprite = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
 hatsprite = pygame.transform.scale(hatsprite, (20, 20))
 
 #Wine glasses
-corksprite = pygame.image.load(os.path.join("gary", "cork.png")).convert_alpha()
+corksprite = pygame.image.load(os.path.join("gary",
+                                            "cork.png")).convert_alpha()
 corksprite = pygame.transform.scale(corksprite, (15, 20))
 #Wine bottles
-winesprite = pygame.image.load(os.path.join("gary", "wine1.png")).convert_alpha()
+winesprite = pygame.image.load(os.path.join("gary",
+                                            "wine1.png")).convert_alpha()
 winesprite = pygame.transform.scale(winesprite, (10, 30))
-winesprite2 = pygame.image.load(os.path.join("gary", "wine2.png")).convert_alpha()
+winesprite2 = pygame.image.load(os.path.join("gary",
+                                             "wine2.png")).convert_alpha()
 winesprite2 = pygame.transform.scale(winesprite2, (10, 30))
 #Lord of the Rings rings
-ringsprite = pygame.image.load(os.path.join("niema", "ring.png")).convert_alpha()
+ringsprite = pygame.image.load(os.path.join("niema",
+                                            "ring.png")).convert_alpha()
 ringsprite = pygame.transform.scale(ringsprite, (15, 15))
 #Boba Drinks
-bobasprite = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
+bobasprite = pygame.image.load(os.path.join("niema",
+                                            "boba.png")).convert_alpha()
 bobasprite = pygame.transform.scale(bobasprite, (25, 25))
 
+mentor_list = [
+    player_rect, hannah_rect, jonny_rect, josh_rect, michael_rect,
+    gplayer_rect, diego_rect, akshat_rect, nplayer_rect, younus_rect,
+    elisa_rect, henryl_rect, henryx_rect, jenelle_rect, lindsey_rect,
+    tristin_rect, prothit_rect, nikki_rect, yukati_rect, john_rect
+]
 
 #Classes - Blueprint of an object
-  #Object is code representation of a real life thing
+#Object is code representation of a real life thing
 #Classes == Factories
-  #Class(dog) -> can make lots of dogs on a whim
-    #Just call for the dog richard = dog
+#Class(dog) -> can make lots of dogs on a whim
+#Just call for the dog richard = dog
 from time import sleep, time
 
 from home import homescreen
@@ -261,723 +297,737 @@ direction = "stop"
 
 #First zero = direction
 #Second zero = steps
-younus_variable = [0,0]
+younus_variable = [0, 0]
 
-belt_variable = [0,0]
+belt_variable = [0, 0]
 
-niema_enemy_variable = [younus_variable,belt_variable]
+niema_enemy_variable = [younus_variable, belt_variable]
 
-akshat_variable = [0,0]
+akshat_variable = [0, 0]
 
-diego_variable = [0,0]
+diego_variable = [0, 0]
 
-clock_variable = [0,0]
+clock_variable = [0, 0]
 
 gary_enemy_variable = [akshat_variable, diego_variable, clock_variable]
 
-hannah_variable = [0,0]
+hannah_variable = [0, 0]
 
-josh_variable = [0,0]
+josh_variable = [0, 0]
 
-michael_variable = [0,0]
+michael_variable = [0, 0]
 
-jonny_variable = [0,0]
+jonny_variable = [0, 0]
 
-curt_enemy_variable = [hannah_variable, josh_variable, michael_variable, jonny_variable]
+curt_enemy_variable = [
+    hannah_variable, josh_variable, michael_variable, jonny_variable
+]
 
 while running:
 
-  clock.tick(FPS)
+    clock.tick(FPS)
 
-  if state == "home":
-    #Want some way to keep track of what page you are in -> dont want to be in the menu anymore if don't need it
+    if state == "home":
+        #Want some way to keep track of what page you are in -> dont want to be in the menu anymore if don't need it
 
-    #Curt's point lists
-    star_list = c10points(screen_length,screen_height, dim_field, screen, player_rect)
+        #Curt's point lists
+        star_list = c10points(screen_length, screen_height, dim_field, screen,
+                              player_rect)
 
-    hat_list = c50points(screen_length,screen_height, dim_field, screen, player_rect)
+        hat_list = c50points(screen_length, screen_height, dim_field, screen,
+                             player_rect)
 
-    #Gary's point lists
-    cork_list = g10points(screen_length,screen_height, dim_field, screen, player_rect)
+        #Gary's point lists
+        cork_list = g10points(screen_length, screen_height, dim_field, screen,
+                              player_rect)
 
-    wine_list = g50points(screen_length,screen_height, dim_field, screen, player_rect)
+        wine_list = g50points(screen_length, screen_height, dim_field, screen,
+                              player_rect)
 
-    #Niema's point lists
-    ring_list = n10points(screen_length,screen_height, dim_field, screen, player_rect)
+        #Niema's point lists
+        ring_list = n10points(screen_length, screen_height, dim_field, screen,
+                              player_rect)
 
-    boba_list = n50points(screen_length,screen_height, dim_field, screen, player_rect)
+        boba_list = n50points(screen_length, screen_height, dim_field, screen,
+                              player_rect)
 
-    #Niema's enemy list
-    niema_enemy = [younus_rect, belt_rect]
+        #Niema's enemy list
+        niema_enemy = [younus_rect, belt_rect]
 
-    #Gary's enemy list
-    gary_enemy = [diego_rect, aclock_rect, akshat_rect]
+        #Gary's enemy list
+        gary_enemy = [diego_rect, aclock_rect, akshat_rect]
 
-    #Curt's enemy list
-    curt_enemy = [hannah_rect, michael_rect, jonny_rect, josh_rect]
+        #Curt's enemy list
+        curt_enemy = [hannah_rect, michael_rect, jonny_rect, josh_rect]
 
-    num_points = 0
+        num_points = 0
 
-    num_lives = 3
+        num_lives = 3
 
-    #Curt's starting point:
-    player_rect.left = player_x
-    player_rect.top = player_y
-    #Hannah's starting point:
-    hannah_rect.left = hannah_x
-    hannah_rect.top = hannah_y
-    #Jonny's starting point:
-    jonny_rect.left = jonny_x
-    jonny_rect.top = jonny_y
-    #Michael's starting point:
-    michael_rect.left = michael_x
-    michael_rect.top = michael_y
-    #Josh's starting point:
-    josh_rect.left = josh_x
-    josh_rect.top = josh_y
-    #Gary's starting point:
-    gplayer_rect.left = gplayer_x
-    gplayer_rect.top = gplayer_y
-    #Diego's starting point:
-    diego_rect.left = diego_x
-    diego_rect.top = diego_y
-    #Akshat's starting point:
-    akshat_rect.left = akshat_x
-    akshat_rect.top = akshat_y
-    #Clock's starting point:
-    aclock_rect.left = aclock_x
-    aclock_rect.top = aclock_y
-    #Niema's starting point:
-    nplayer_rect.left = nplayer_x
-    nplayer_rect.top = nplayer_y
-    #Younus' starting point:
-    younus_rect.left = younus_x
-    younus_rect.top = younus_y
-    #Belt's starting point:
-    belt_rect.left = belt_x
-    belt_rect.top = belt_y
-    direction = "none"
-
-    #Counter before player death
-    counter = 0
-
-    page = homescreen(screen_length,screen_height, dim_field, screen, player_rect)
-    
-    state = page
-
-  elif page == "curt":
-    #Calling Curt's screen
-    curt(screen_length,screen_height, dim_field, screen, player_rect, num_points, num_lives)
-    #Calling Curt's walls
-    curt_walls = c_walls(screen_length,screen_height, dim_field, screen, player_rect)
-
-    #Curt's sprites
-    bye_star = player_rect.collidelist(star_list)
-    if bye_star != -1:
-      star_list.remove(star_list[bye_star])
-      num_points += 10
-    for star in star_list:
-      screen.blit(starsprite, star)
-    bye_hat = player_rect.collidelist(hat_list)
-    if bye_hat != -1:
-      hat_list.remove(hat_list[bye_hat])
-      num_points += 50
-    for hat in hat_list:
-      screen.blit(hatsprite, hat)
-    if num_points == 1150:
-      page = "win"
-
-    bye_lives = player_rect.collidelist(curt_enemy)
-    if bye_lives != -1 and counter < 1:
-      num_lives -= 1
-      counter = 100
-      if num_lives == 1:
+        #Curt's starting point:
         player_rect.left = player_x
         player_rect.top = player_y
-      if num_lives == 2:
-        player_rect.left = player_x
-        player_rect.top = player_y
-    elif counter > 0:
-      counter -= 1
-    if num_lives == 0:
-      page = "lose"
-      
-    screen.blit(player, player_rect)
-    screen.blit(hannah, hannah_rect)
-    screen.blit(jonny, jonny_rect)
-    screen.blit(josh, josh_rect)
-    screen.blit(michael, michael_rect)
-      #Draw the player here to continuously draw it as its moving over the frames
-    #Curt's player's movement
-    if direction == "left":
-      player_rect.move_ip(-2, 0)
-      if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(2,0)
-    elif direction == "right":
-      player_rect.move_ip(2, 0)
-      if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(-2,0)
-    elif direction == "up":
-      player_rect.move_ip(0, -2)
-      if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(0, 2)
-    elif direction == "down":
-      player_rect.move_ip(0, 2)
-      if player_rect.collidelist(curt_walls) != -1:
-        player_rect.move_ip(0, -2)
-    else:
-      pass
-      
-    #Curt Enemy movement
-    for enemy in range(len(curt_enemy_variable)):
-      curt_enemy_variable[enemy][0] #Direction
-      curt_enemy_variable[enemy][1] #Steps/Distance
-      
-      if curt_enemy_variable[enemy][1] <= 0:
-        curt_enemy_variable[enemy][0] = random.randint(0, 3)
-        curt_enemy_variable[enemy][1] = 120
-      if curt_enemy_variable[enemy][0] == 0:
-        curt_enemy[enemy].move_ip(-2,0) #Left
-        curt_enemy_variable[enemy][1] -= 2
-        if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(2,0)
-          curt_enemy_variable[enemy][0] = random.randint(0, 3)
-          curt_enemy_variable[enemy][1] = 60
-      elif curt_enemy_variable[enemy][0] == 1:
-        curt_enemy[enemy].move_ip(2,0) #Right
-        curt_enemy_variable[enemy][1] -= 2
-        if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(-2,0)
-          curt_enemy_variable[enemy][0] = random.randint(0, 3)
-          curt_enemy_variable[enemy][1] = 60
-      elif curt_enemy_variable[enemy][0] == 2:
-        curt_enemy[enemy].move_ip(0,-2) #Up
-        curt_enemy_variable[enemy][1] -= 2
-        if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(0,2)
-          curt_enemy_variable[enemy][0] = random.randint(0, 3)
-          curt_enemy_variable[enemy][1] = 60
-      elif curt_enemy_variable[enemy][0] == 3:
-        curt_enemy[enemy].move_ip(0,2) #Down
-        curt_enemy_variable[enemy][1] -= 2
-        if curt_enemy[enemy].collidelist(curt_walls) > -1:
-          curt_enemy[enemy].move_ip(0,-2)
-          curt_enemy_variable[enemy][0] = random.randint(0, 3)
-          curt_enemy_variable[enemy][1] = 60
-          
-      #Curt enemy boundaries
-      if curt_enemy[enemy].left < 0:
-        curt_enemy[enemy].left = 0
-      if curt_enemy[enemy].right > screen_length:
-        curt_enemy[enemy].right = screen_length
-      if curt_enemy[enemy].bottom > 340:
-        curt_enemy[enemy].bottom = 340
-      if curt_enemy[enemy].top < 30:
-        curt_enemy[enemy].top = 30
-        
-  elif page == "gary":
-    #Gary's screen is called
-    gary(screen_length,screen_height, dim_field, screen, gplayer_rect, num_points, num_lives)
-    
-    #Walls get set up
-    gary_walls = g_walls(screen_length,screen_height, dim_field, screen, gplayer_rect)
-
-    #Gary's points
-    bye_cork = gplayer_rect.collidelist(cork_list)
-    if bye_cork != -1:
-      cork_list.remove(cork_list[bye_cork])
-      num_points += 10
-    for cork in cork_list:
-      screen.blit(corksprite, cork)
-    bye_wine = gplayer_rect.collidelist(wine_list)
-    if bye_wine != -1:
-      wine_list.remove(wine_list[bye_wine])
-      num_points += 50
-    for wine in wine_list:
-      screen.blit(winesprite, wine)
-    bye_wine2 = gplayer_rect.collidelist(wine_list)
-    if bye_wine2 != -1:
-      wine_list.remove(wine_list[bye_wine2])
-      num_points += 50
-    for wine in wine_list:
-      screen.blit(winesprite2, wine)
-    if num_points == 800:
-      page = "win"
-
-    #Gary's lives
-    bye_lives = gplayer_rect.collidelist(gary_enemy)
-    if bye_lives != -1 and counter < 1:
-      num_lives -= 1
-      counter = 100
-      if num_lives == 1:
+        #Hannah's starting point:
+        hannah_rect.left = hannah_x
+        hannah_rect.top = hannah_y
+        #Jonny's starting point:
+        jonny_rect.left = jonny_x
+        jonny_rect.top = jonny_y
+        #Michael's starting point:
+        michael_rect.left = michael_x
+        michael_rect.top = michael_y
+        #Josh's starting point:
+        josh_rect.left = josh_x
+        josh_rect.top = josh_y
+        #Gary's starting point:
         gplayer_rect.left = gplayer_x
         gplayer_rect.top = gplayer_y
-      if num_lives == 2:
-        gplayer_rect.left = gplayer_x
-        gplayer_rect.top = gplayer_y
-    elif counter > 0:
-      counter -= 1
-    if num_lives == 0:
-      page = "lose"
-
-    #Blitting all of Gary's sprites
-    screen.blit(gplayer, gplayer_rect)
-    screen.blit(diego, diego_rect)
-    screen.blit(aclock, aclock_rect)
-    screen.blit(akshat, akshat_rect)
-
-    #Gary's movement
-    if direction == "left":
-      gplayer_rect.move_ip(-1, 0)
-      if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(1,0)
-    elif direction == "right":
-      gplayer_rect.move_ip(1, 0)
-      if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(-1,0)
-    elif direction == "up":
-      gplayer_rect.move_ip(0, -1)
-      if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(0, 1)
-    elif direction == "down":
-      gplayer_rect.move_ip(0,1)
-      if gplayer_rect.collidelist(gary_walls) != -1:
-        gplayer_rect.move_ip(0, -1)
-    else:
-      pass
-
-    #Gary Enemy movement
-    for enemy in range(len(gary_enemy_variable)):
-      gary_enemy_variable[enemy][0] #Direction
-      gary_enemy_variable[enemy][1] #Steps/Distance
-      
-      if gary_enemy_variable[enemy][1] <= 0:
-        gary_enemy_variable[enemy][0] = random.randint(0, 3)
-        gary_enemy_variable[enemy][1] = 60
-      if gary_enemy_variable[enemy][0] == 0:
-        gary_enemy[enemy].move_ip(-1,0) #Left
-        gary_enemy_variable[enemy][1] -= 2
-        if gary_enemy[enemy].collidelist(gary_walls) > -1:
-          gary_enemy[enemy].move_ip(1,0)
-          gary_enemy_variable[enemy][0] = random.randint(0, 3)
-          gary_enemy_variable[enemy][1] = 60
-      elif gary_enemy_variable[enemy][0] == 1:
-        gary_enemy[enemy].move_ip(1,0) #Right
-        gary_enemy_variable[enemy][1] -= 2
-        if gary_enemy[enemy].collidelist(gary_walls) > -1:
-          gary_enemy[enemy].move_ip(-1,0)
-          gary_enemy_variable[enemy][0] = random.randint(0, 3)
-          gary_enemy_variable[enemy][1] = 60
-      elif gary_enemy_variable[enemy][0] == 2:
-        gary_enemy[enemy].move_ip(0,-1) #Up
-        gary_enemy_variable[enemy][1] -= 2
-        if gary_enemy[enemy].collidelist(gary_walls) > -1:
-          gary_enemy[enemy].move_ip(0,1)
-          gary_enemy_variable[enemy][0] = random.randint(0, 3)
-          gary_enemy_variable[enemy][1] = 60
-      elif gary_enemy_variable[enemy][0] == 3:
-        gary_enemy[enemy].move_ip(0,1) #Down
-        gary_enemy_variable[enemy][1] -= 2
-        if gary_enemy[enemy].collidelist(gary_walls) > -1:
-          gary_enemy[enemy].move_ip(0,-1)
-          gary_enemy_variable[enemy][0] = random.randint(0, 3)
-          gary_enemy_variable[enemy][1] = 60
-
-      #Gary enemy boundaries, Shift tab makes it unindent
-      if gary_enemy[enemy].left < 0:
-        gary_enemy[enemy].left = 0
-      if gary_enemy[enemy].right > screen_length:
-        gary_enemy[enemy].right = screen_length
-      if gary_enemy[enemy].bottom > 340:
-        gary_enemy[enemy].bottom = 340
-      if gary_enemy[enemy].top < 30:
-        gary_enemy[enemy].top = 30
-
-  elif page == "niema":
-    #Calling Niema's screen
-    niema(screen_length,screen_height, dim_field, screen, nplayer_rect, num_points, num_lives)
-    
-    #Calling Niema's walls
-    niema_walls = n_walls(screen_length,screen_height, dim_field, screen, player_rect)
-
-    #Niema's points
-    bye_ring = nplayer_rect.collidelist(ring_list)
-    if bye_ring != -1:
-      ring_list.remove(ring_list[bye_ring])
-      num_points += 10
-    for ring in ring_list:
-      screen.blit(ringsprite, ring)
-    bye_boba = nplayer_rect.collidelist(boba_list)
-    if bye_boba != -1:
-      boba_list.remove(boba_list[bye_boba])
-      num_points += 50
-    for boba in boba_list:
-      screen.blit(bobasprite, boba)
-    if num_points == 650:
-      # Pauses at 640 points, but we want them to see how many points they earned
-      # started = time()
-      # sleep(5)
-      # ended = time()
-      page = "win"
-    
-    #Niema's number of lives
-    bye_lives = nplayer_rect.collidelist(niema_enemy)
-    #Neima's enemies are Younus and a belt
-    if bye_lives != -1 and counter < 1:
-      # niema_enemy.remove(niema_enemy[bye_lives])
-      num_lives -= 1
-      counter = 100
-      if num_lives == 1:
+        #Diego's starting point:
+        diego_rect.left = diego_x
+        diego_rect.top = diego_y
+        #Akshat's starting point:
+        akshat_rect.left = akshat_x
+        akshat_rect.top = akshat_y
+        #Clock's starting point:
+        aclock_rect.left = aclock_x
+        aclock_rect.top = aclock_y
+        #Niema's starting point:
         nplayer_rect.left = nplayer_x
         nplayer_rect.top = nplayer_y
-      if num_lives == 2:
-        nplayer_rect.left = nplayer_x
-        nplayer_rect.top = nplayer_y
-    elif counter > 0:
-      counter -= 1
-    if num_lives == 0:
-      page = "lose"
-    
-    #Niema's sprites
-    screen.blit(nplayer, nplayer_rect)
-    screen.blit(younus, younus_rect)
-    screen.blit(belt, belt_rect)
-    
-    #Niema's movement
-    if direction == "left":
-      nplayer_rect.move_ip(-2, 0)
-      if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(2,0)
-    elif direction == "right":
-      nplayer_rect.move_ip(2, 0)
-      if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(-2,0)
-    elif direction == "up":
-      nplayer_rect.move_ip(0, -2)
-      if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(0, 2)
-    elif direction == "down":
-      nplayer_rect.move_ip(0, 2)
-      if nplayer_rect.collidelist(niema_walls) != -1:
-        nplayer_rect.move_ip(0, -2)
-    else:
-      pass
+        #Younus' starting point:
+        younus_rect.left = younus_x
+        younus_rect.top = younus_y
+        #Belt's starting point:
+        belt_rect.left = belt_x
+        belt_rect.top = belt_y
+        #Mohan's starting point:
+        mplayer_rect.left = mplayer_x
+        mplayer_rect.top = mplayer_y
+        direction = "none"
 
-    # print(len(niema_enemy_variable[0]))
-    #Niema Enemy movement
-    for enemy in range(len(niema_enemy_variable)):
-      niema_enemy_variable[enemy][0] #Direction
-      niema_enemy_variable[enemy][1] #Steps/Distance
-      
-      if niema_enemy_variable[enemy][1] <= 0:
-        niema_enemy_variable[enemy][0] = random.randint(0, 3)
-        niema_enemy_variable[enemy][1] = 60
-      if niema_enemy_variable[enemy][0] == 0:
-        niema_enemy[enemy].move_ip(-2,0) #Left
-        niema_enemy_variable[enemy][1] -= 2
-        if niema_enemy[enemy].collidelist(niema_walls) > -1:
-          niema_enemy[enemy].move_ip(2,0)
-          niema_enemy_variable[enemy][0] = random.randint(0, 3)
-          niema_enemy_variable[enemy][1] = 60
-      elif niema_enemy_variable[enemy][0] == 1:
-        niema_enemy[enemy].move_ip(2,0) #Right
-        niema_enemy_variable[enemy][1] -= 2
-        if niema_enemy[enemy].collidelist(niema_walls) > -1:
-          niema_enemy[enemy].move_ip(-2,0)
-          niema_enemy_variable[enemy][0] = random.randint(0, 3)
-          niema_enemy_variable[enemy][1] = 60
-      elif niema_enemy_variable[enemy][0] == 2:
-        niema_enemy[enemy].move_ip(0,-2) #Up
-        niema_enemy_variable[enemy][1] -= 2
-        if niema_enemy[enemy].collidelist(niema_walls) > -1:
-          niema_enemy[enemy].move_ip(0,2)
-          niema_enemy_variable[enemy][0] = random.randint(0, 3)
-          niema_enemy_variable[enemy][1] = 60
-      elif niema_enemy_variable[enemy][0] == 3:
-        niema_enemy[enemy].move_ip(0,2) #Down
-        niema_enemy_variable[enemy][1] -= 2
-        if niema_enemy[enemy].collidelist(niema_walls) > -1:
-          niema_enemy[enemy].move_ip(0,-2)
-          niema_enemy_variable[enemy][0] = random.randint(0, 3)
-          niema_enemy_variable[enemy][1] = 60
+        #Counter before player death
+        counter = 0
 
-      #Niema enemy boundaries, Shift tab makes it unindent
-      if niema_enemy[enemy].left < 0:
-        niema_enemy[enemy].left = 0
-      if niema_enemy[enemy].right > screen_length:
-        niema_enemy[enemy].right = screen_length
-      if niema_enemy[enemy].bottom > 340:
-        niema_enemy[enemy].bottom = 340
-      if niema_enemy[enemy].top < 30:
-        niema_enemy[enemy].top = 30
+        page = homescreen(screen_length, screen_height, dim_field, screen,
+                          player_rect)
 
-  elif page == "directory":
-    state = directory(screen_length, screen_height, dim_field, screen)
-    if state == "secret":
-     page = state
-    #Curt's starting point:
-    player_rect.left = 115
-    player_rect.top = 55
-    #Hannah's starting point:
-    hannah_rect.left = 115
-    hannah_rect.top = 85
-    #Jonny's starting point:
-    jonny_rect.left = 115
-    jonny_rect.top = 115
-    #Michael's starting point:
-    michael_rect.left = 115
-    michael_rect.top = 175
-    #Josh's starting point:
-    josh_rect.left = 115
-    josh_rect.top = 145
-    #Gary's starting point:
-    gplayer_rect.left = 265
-    gplayer_rect.top = 55
-    #Diego's starting point:
-    diego_rect.left = 265
-    diego_rect.top = 85
-    #Akshat's starting point:
-    akshat_rect.left = 265
-    akshat_rect.top = 115
-    #John
-    john_rect.left = 265
-    john_rect.top = 145
-    #Younus' starting point:
-    younus_rect.left = 265
-    younus_rect.top = 175
-    #Elisa
-    elisa_rect.left = 260
-    elisa_rect.top = 205
-    #Henry L
-    henryl_rect.left = 265
-    henryl_rect.top = 237
-    #Jenelle
-    jenelle_rect.left = 115
-    jenelle_rect.top = 205
-    #Lindsey
-    lindsey_rect.left = 115
-    lindsey_rect.top = 235
-    #Niema's starting point:
-    nplayer_rect.left = 415
-    nplayer_rect.top = 55
-    #MohanMohan
-    mplayer_rect.left = 415
-    mplayer_rect.top = 85
-    #Tristin
-    tristin_rect.left = 415
-    tristin_rect.top = 115
-    #Prothit
-    prothit_rect.left = 415
-    prothit_rect.top = 145
-    #Henry X
-    henryx_rect.left = 415
-    henryx_rect.top = 175
-    #Nikki
-    nikki_rect.left = 415
-    nikki_rect.top = 205
-    #Yukati
-    yukati_rect.left = 415
-    yukati_rect.top = 235
-    #Blitting
-    screen.blit(player, player_rect)
-    screen.blit(hannah, hannah_rect)
-    screen.blit(jonny, jonny_rect)
-    screen.blit(josh, josh_rect)
-    screen.blit(michael, michael_rect)
-    screen.blit(gplayer, gplayer_rect)
-    screen.blit(diego, diego_rect)
-    screen.blit(akshat, akshat_rect)
-    screen.blit(nplayer, nplayer_rect)
-    screen.blit(younus, younus_rect)
-    screen.blit(elisa, elisa_rect)
-    screen.blit(henryl, henryl_rect)
-    screen.blit(henryx, henryx_rect)
-    screen.blit(jenelle, jenelle_rect)
-    screen.blit(lindsey, lindsey_rect)
-    screen.blit(tristin, tristin_rect)
-    screen.blit(prothit, prothit_rect)
-    screen.blit(nikki, nikki_rect)
-    screen.blit(yukati, yukati_rect)
-    screen.blit(mplayer, mplayer_rect)
-    screen.blit(john, john_rect)
+        state = page
 
-    #Need to figure out if possible to update x and y coordinates for rectangle
-  elif page == "secret":
-    state = secret(screen_length,screen_height, dim_field, screen,mplayer_rect, quote)
-    #Mohan's walls
-    mohan_walls = m_walls(screen_length,screen_height, dim_field, screen,mplayer_rect, quote)
-    
-    #Top Row
+    elif page == "curt":
+        #Calling Curt's screen
+        curt(screen_length, screen_height, dim_field, screen, player_rect,
+             num_points, num_lives)
+        #Calling Curt's walls
+        curt_walls = c_walls(screen_length, screen_height, dim_field, screen,
+                             player_rect)
 
-    #Diego's starting point:
-    diego_rect.left = 65
-    diego_rect.top = 55
-    #Hannah's starting point:
-    hannah_rect.left = 128
-    hannah_rect.top = 55
-    #Jonny's starting point:
-    jonny_rect.left = 191
-    jonny_rect.top = 55
-    #Michael's starting point:
-    michael_rect.left = 254
-    michael_rect.top = 55
-    #Josh's starting point:
-    josh_rect.left = 317
-    josh_rect.top = 55
-    #Akshat's starting point:
-    akshat_rect.left = 380
-    akshat_rect.top = 55
+        #Curt's sprites
+        bye_star = player_rect.collidelist(star_list)
+        if bye_star != -1:
+            star_list.remove(star_list[bye_star])
+            num_points += 10
+        for star in star_list:
+            screen.blit(starsprite, star)
+        bye_hat = player_rect.collidelist(hat_list)
+        if bye_hat != -1:
+            hat_list.remove(hat_list[bye_hat])
+            num_points += 50
+        for hat in hat_list:
+            screen.blit(hatsprite, hat)
+        if num_points == 1150:
+            page = "win"
 
+        bye_lives = player_rect.collidelist(curt_enemy)
+        if bye_lives != -1 and counter < 1:
+            num_lives -= 1
+            counter = 100
+            if num_lives == 1:
+                player_rect.left = player_x
+                player_rect.top = player_y
+            if num_lives == 2:
+                player_rect.left = player_x
+                player_rect.top = player_y
+        elif counter > 0:
+            counter -= 1
+        if num_lives == 0:
+            page = "lose"
 
-    #Bottom row
-    #Younus' starting point:
-    younus_rect.left = 65
-    younus_rect.top = 240
-    #Elisa
-    elisa_rect.left = 128
-    elisa_rect.top = 240
-    #Henry L
-    henryl_rect.left = 191
-    henryl_rect.top = 240
-    #Jenelle
-    jenelle_rect.left = 254
-    jenelle_rect.top = 240
-    #Lindsey
-    lindsey_rect.left = 317
-    lindsey_rect.top = 240
-    #Tristin
-    tristin_rect.left = 380
-    tristin_rect.top = 240
+        screen.blit(player, player_rect)
+        screen.blit(hannah, hannah_rect)
+        screen.blit(jonny, jonny_rect)
+        screen.blit(josh, josh_rect)
+        screen.blit(michael, michael_rect)
+        #Draw the player here to continuously draw it as its moving over the frames
 
-    #Top of first 2:
-    #Curt's starting point:
-    player_rect.left = 50
-    player_rect.top = 125
+        #Curt's player's movement
+        if direction == "left":
+            player_rect.move_ip(-2, 0)
+            if player_rect.collidelist(curt_walls) != -1:
+                player_rect.move_ip(2, 0)
+        elif direction == "right":
+            player_rect.move_ip(2, 0)
+            if player_rect.collidelist(curt_walls) != -1:
+                player_rect.move_ip(-2, 0)
+        elif direction == "up":
+            player_rect.move_ip(0, -2)
+            if player_rect.collidelist(curt_walls) != -1:
+                player_rect.move_ip(0, 2)
+        elif direction == "down":
+            player_rect.move_ip(0, 2)
+            if player_rect.collidelist(curt_walls) != -1:
+                player_rect.move_ip(0, -2)
+        else:
+            pass
 
-    #Top of second 2:
-    #Gary's starting point:
-    gplayer_rect.left = 255
-    gplayer_rect.top = 125
+        #Curt Enemy movement
+        for enemy in range(len(curt_enemy_variable)):
+            curt_enemy_variable[enemy][0]  #Direction
+            curt_enemy_variable[enemy][1]  #Steps/Distance
 
-    #Top of 5:
-    #Niema's starting point:
-    nplayer_rect.left = 380
-    nplayer_rect.top = 125
+            if curt_enemy_variable[enemy][1] <= 0:
+                curt_enemy_variable[enemy][0] = random.randint(0, 3)
+                curt_enemy_variable[enemy][1] = 120
+            if curt_enemy_variable[enemy][0] == 0:
+                curt_enemy[enemy].move_ip(-2, 0)  #Left
+                curt_enemy_variable[enemy][1] -= 2
+                if curt_enemy[enemy].collidelist(curt_walls) > -1:
+                    curt_enemy[enemy].move_ip(2, 0)
+                    curt_enemy_variable[enemy][0] = random.randint(0, 3)
+                    curt_enemy_variable[enemy][1] = 60
+            elif curt_enemy_variable[enemy][0] == 1:
+                curt_enemy[enemy].move_ip(2, 0)  #Right
+                curt_enemy_variable[enemy][1] -= 2
+                if curt_enemy[enemy].collidelist(curt_walls) > -1:
+                    curt_enemy[enemy].move_ip(-2, 0)
+                    curt_enemy_variable[enemy][0] = random.randint(0, 3)
+                    curt_enemy_variable[enemy][1] = 60
+            elif curt_enemy_variable[enemy][0] == 2:
+                curt_enemy[enemy].move_ip(0, -2)  #Up
+                curt_enemy_variable[enemy][1] -= 2
+                if curt_enemy[enemy].collidelist(curt_walls) > -1:
+                    curt_enemy[enemy].move_ip(0, 2)
+                    curt_enemy_variable[enemy][0] = random.randint(0, 3)
+                    curt_enemy_variable[enemy][1] = 60
+            elif curt_enemy_variable[enemy][0] == 3:
+                curt_enemy[enemy].move_ip(0, 2)  #Down
+                curt_enemy_variable[enemy][1] -= 2
+                if curt_enemy[enemy].collidelist(curt_walls) > -1:
+                    curt_enemy[enemy].move_ip(0, -2)
+                    curt_enemy_variable[enemy][0] = random.randint(0, 3)
+                    curt_enemy_variable[enemy][1] = 60
 
-    #Bottom of first 2
-    #John
-    john_rect.left = 70
-    john_rect.top = 170
-    
-    #Bottom of second 2
-    #Prothit
-    prothit_rect.left = 275
-    prothit_rect.top = 170
+            #Curt enemy boundaries
+            if curt_enemy[enemy].left < 0:
+                curt_enemy[enemy].left = 0
+            if curt_enemy[enemy].right > screen_length:
+                curt_enemy[enemy].right = screen_length
+            if curt_enemy[enemy].bottom > 340:
+                curt_enemy[enemy].bottom = 340
+            if curt_enemy[enemy].top < 30:
+                curt_enemy[enemy].top = 30
 
-    #Bottom of 5
-    #Henry X
-    henryx_rect.left = 370
-    henryx_rect.top = 170
+    elif page == "gary":
+        #Gary's screen is called
+        gary(screen_length, screen_height, dim_field, screen, gplayer_rect,
+             num_points, num_lives)
 
-    #Left of first 2
-    #Nikki
-    nikki_rect.left = 10
-    nikki_rect.top = 165
-    
-    #Right of 5
-    #Yukati
-    yukati_rect.left = 430
-    yukati_rect.top = 165
+        #Walls get set up
+        gary_walls = g_walls(screen_length, screen_height, dim_field, screen,
+                             gplayer_rect)
 
+        #Gary's points
+        bye_cork = gplayer_rect.collidelist(cork_list)
+        if bye_cork != -1:
+            cork_list.remove(cork_list[bye_cork])
+            num_points += 10
+        for cork in cork_list:
+            screen.blit(corksprite, cork)
+        bye_wine = gplayer_rect.collidelist(wine_list)
+        if bye_wine != -1:
+            wine_list.remove(wine_list[bye_wine])
+            num_points += 50
+        for wine in wine_list:
+            screen.blit(winesprite, wine)
+        bye_wine2 = gplayer_rect.collidelist(wine_list)
+        if bye_wine2 != -1:
+            wine_list.remove(wine_list[bye_wine2])
+            num_points += 50
+        for wine in wine_list:
+            screen.blit(winesprite2, wine)
+        if num_points == 800:
+            page = "win"
 
-    #Player starting point:
-    #Mohan
-    mplayer_rect.left = 220
-    mplayer_rect.top = 165
+        #Gary's lives
+        bye_lives = gplayer_rect.collidelist(gary_enemy)
+        if bye_lives != -1 and counter < 1:
+            num_lives -= 1
+            counter = 100
+            if num_lives == 1:
+                gplayer_rect.left = gplayer_x
+                gplayer_rect.top = gplayer_y
+            if num_lives == 2:
+                gplayer_rect.left = gplayer_x
+                gplayer_rect.top = gplayer_y
+        elif counter > 0:
+            counter -= 1
+        if num_lives == 0:
+            page = "lose"
 
-    #Blitting
-    screen.blit(player, player_rect)
-    screen.blit(hannah, hannah_rect)
-    screen.blit(jonny, jonny_rect)
-    screen.blit(josh, josh_rect)
-    screen.blit(michael, michael_rect)
-    screen.blit(gplayer, gplayer_rect)
-    screen.blit(diego, diego_rect)
-    screen.blit(akshat, akshat_rect)
-    screen.blit(nplayer, nplayer_rect)
-    screen.blit(younus, younus_rect)
-    screen.blit(elisa, elisa_rect)
-    screen.blit(henryl, henryl_rect)
-    screen.blit(henryx, henryx_rect)
-    screen.blit(jenelle, jenelle_rect)
-    screen.blit(lindsey, lindsey_rect)
-    screen.blit(tristin, tristin_rect)
-    screen.blit(prothit, prothit_rect)
-    screen.blit(nikki, nikki_rect)
-    screen.blit(yukati, yukati_rect)
-    screen.blit(mplayer, mplayer_rect)
-    screen.blit(john, john_rect)
+        #Blitting all of Gary's sprites
+        screen.blit(gplayer, gplayer_rect)
+        screen.blit(diego, diego_rect)
+        screen.blit(aclock, aclock_rect)
+        screen.blit(akshat, akshat_rect)
 
-  #Mohan's movement
-      
-    if direction == "left":
-      mplayer_rect.move_ip(-2, 0)
-      if nplayer_rect.collidelist(mohan_walls) != -1:
-        mplayer_rect.move_ip(2,0)
-    elif direction == "right":
-      mplayer_rect.move_ip(2, 0)
-      if mplayer_rect.collidelist(mohan_walls) != -1:
-        mplayer_rect.move_ip(-2,0)
-    elif direction == "up":
-      mplayer_rect.move_ip(0, -2)
-      if mplayer_rect.collidelist(mohan_walls) != -1:
-        mplayer_rect.move_ip(0, 2)
-    elif direction == "down":
-      mplayer_rect.move_ip(0, 2)
-      if mplayer_rect.collidelist(mohan_walls) != -1:
-        mplayer_rect.move_ip(0, -2)
-    else:
-      pass
+        #Gary's movement
+        if direction == "left":
+            gplayer_rect.move_ip(-1, 0)
+            if gplayer_rect.collidelist(gary_walls) != -1:
+                gplayer_rect.move_ip(1, 0)
+        elif direction == "right":
+            gplayer_rect.move_ip(1, 0)
+            if gplayer_rect.collidelist(gary_walls) != -1:
+                gplayer_rect.move_ip(-1, 0)
+        elif direction == "up":
+            gplayer_rect.move_ip(0, -1)
+            if gplayer_rect.collidelist(gary_walls) != -1:
+                gplayer_rect.move_ip(0, 1)
+        elif direction == "down":
+            gplayer_rect.move_ip(0, 1)
+            if gplayer_rect.collidelist(gary_walls) != -1:
+                gplayer_rect.move_ip(0, -1)
+        else:
+            pass
 
-    #Quote
-    # print_quote = mplayer_rect.collidelist(quote_list)
-    # if print_quote != -1:
-    #   #We want to make it so when touches a mentor or proffessor that the quote changes
-    #   num_points += 10
-    # for ring in ring_list:
-    #   screen.blit(ringsprite, ring)
-    # bye_boba = nplayer_rect.collidelist(boba_list)
-    # if bye_boba != -1:
-    #   boba_list.remove(boba_list[bye_boba])
-    #   num_points += 50
-    # for boba in boba_list:
-    #   screen.blit(bobasprite, boba)
-  
-  elif page == "win":
-  #win/lose page is called
-    state = win_page(screen_length,screen_height, dim_field, screen, player_rect)
+        #Gary Enemy movement
+        for enemy in range(len(gary_enemy_variable)):
+            gary_enemy_variable[enemy][0]  #Direction
+            gary_enemy_variable[enemy][1]  #Steps/Distance
 
-  elif page == "lose":
-    state = lose_page(screen_length,screen_height, dim_field, screen, player_rect)
+            if gary_enemy_variable[enemy][1] <= 0:
+                gary_enemy_variable[enemy][0] = random.randint(0, 3)
+                gary_enemy_variable[enemy][1] = 60
+            if gary_enemy_variable[enemy][0] == 0:
+                gary_enemy[enemy].move_ip(-1, 0)  #Left
+                gary_enemy_variable[enemy][1] -= 2
+                if gary_enemy[enemy].collidelist(gary_walls) > -1:
+                    gary_enemy[enemy].move_ip(1, 0)
+                    gary_enemy_variable[enemy][0] = random.randint(0, 3)
+                    gary_enemy_variable[enemy][1] = 60
+            elif gary_enemy_variable[enemy][0] == 1:
+                gary_enemy[enemy].move_ip(1, 0)  #Right
+                gary_enemy_variable[enemy][1] -= 2
+                if gary_enemy[enemy].collidelist(gary_walls) > -1:
+                    gary_enemy[enemy].move_ip(-1, 0)
+                    gary_enemy_variable[enemy][0] = random.randint(0, 3)
+                    gary_enemy_variable[enemy][1] = 60
+            elif gary_enemy_variable[enemy][0] == 2:
+                gary_enemy[enemy].move_ip(0, -1)  #Up
+                gary_enemy_variable[enemy][1] -= 2
+                if gary_enemy[enemy].collidelist(gary_walls) > -1:
+                    gary_enemy[enemy].move_ip(0, 1)
+                    gary_enemy_variable[enemy][0] = random.randint(0, 3)
+                    gary_enemy_variable[enemy][1] = 60
+            elif gary_enemy_variable[enemy][0] == 3:
+                gary_enemy[enemy].move_ip(0, 1)  #Down
+                gary_enemy_variable[enemy][1] -= 2
+                if gary_enemy[enemy].collidelist(gary_walls) > -1:
+                    gary_enemy[enemy].move_ip(0, -1)
+                    gary_enemy_variable[enemy][0] = random.randint(0, 3)
+                    gary_enemy_variable[enemy][1] = 60
 
-    #It's not calling the functions again/reseting the lives and the points
+            #Gary enemy boundaries, Shift tab makes it unindent
+            if gary_enemy[enemy].left < 0:
+                gary_enemy[enemy].left = 0
+            if gary_enemy[enemy].right > screen_length:
+                gary_enemy[enemy].right = screen_length
+            if gary_enemy[enemy].bottom > 340:
+                gary_enemy[enemy].bottom = 340
+            if gary_enemy[enemy].top < 30:
+                gary_enemy[enemy].top = 30
 
-  for event in pygame.event.get():
+    elif page == "niema":
+        #Calling Niema's screen
+        niema(screen_length, screen_height, dim_field, screen, nplayer_rect,
+              num_points, num_lives)
 
-    if event.type == pygame.KEYDOWN: 
+        #Calling Niema's walls
+        niema_walls = n_walls(screen_length, screen_height, dim_field, screen,
+                              player_rect)
 
-      if event.key == pygame.K_q:
+        #Niema's points
+        bye_ring = nplayer_rect.collidelist(ring_list)
+        if bye_ring != -1:
+            ring_list.remove(ring_list[bye_ring])
+            num_points += 10
+        for ring in ring_list:
+            screen.blit(ringsprite, ring)
+        bye_boba = nplayer_rect.collidelist(boba_list)
+        if bye_boba != -1:
+            boba_list.remove(boba_list[bye_boba])
+            num_points += 50
+        for boba in boba_list:
+            screen.blit(bobasprite, boba)
+        if num_points == 650:
+            # Pauses at 640 points, but we want them to see how many points they earned
+            # started = time()
+            # sleep(5)
+            # ended = time()
+            page = "win"
 
-        running = False
+        #Niema's number of lives
+        bye_lives = nplayer_rect.collidelist(niema_enemy)
+        #Neima's enemies are Younus and a belt
+        if bye_lives != -1 and counter < 1:
+            # niema_enemy.remove(niema_enemy[bye_lives])
+            num_lives -= 1
+            counter = 100
+            if num_lives == 1:
+                nplayer_rect.left = nplayer_x
+                nplayer_rect.top = nplayer_y
+            if num_lives == 2:
+                nplayer_rect.left = nplayer_x
+                nplayer_rect.top = nplayer_y
+        elif counter > 0:
+            counter -= 1
+        if num_lives == 0:
+            page = "lose"
 
-      #Directions, help know what left, right, up and down is, used earlier in loop
-      if event.key == pygame.K_LEFT:
-        direction = "left"
-      if event.key == pygame.K_RIGHT:
-        direction = "right"
-      if event.key == pygame.K_UP:
-        direction = "up"
-      if event.key == pygame.K_DOWN:
-        direction = "down"
+        #Niema's sprites
+        screen.blit(nplayer, nplayer_rect)
+        screen.blit(younus, younus_rect)
+        screen.blit(belt, belt_rect)
 
-  pygame.display.update()
+        #Niema's movement
+        if direction == "left":
+            nplayer_rect.move_ip(-2, 0)
+            if nplayer_rect.collidelist(niema_walls) != -1:
+                nplayer_rect.move_ip(2, 0)
+        elif direction == "right":
+            nplayer_rect.move_ip(2, 0)
+            if nplayer_rect.collidelist(niema_walls) != -1:
+                nplayer_rect.move_ip(-2, 0)
+        elif direction == "up":
+            nplayer_rect.move_ip(0, -2)
+            if nplayer_rect.collidelist(niema_walls) != -1:
+                nplayer_rect.move_ip(0, 2)
+        elif direction == "down":
+            nplayer_rect.move_ip(0, 2)
+            if nplayer_rect.collidelist(niema_walls) != -1:
+                nplayer_rect.move_ip(0, -2)
+        else:
+            pass
+
+        # print(len(niema_enemy_variable[0]))
+        #Niema Enemy movement
+        for enemy in range(len(niema_enemy_variable)):
+            niema_enemy_variable[enemy][0]  #Direction
+            niema_enemy_variable[enemy][1]  #Steps/Distance
+
+            if niema_enemy_variable[enemy][1] <= 0:
+                niema_enemy_variable[enemy][0] = random.randint(0, 3)
+                niema_enemy_variable[enemy][1] = 60
+            if niema_enemy_variable[enemy][0] == 0:
+                niema_enemy[enemy].move_ip(-2, 0)  #Left
+                niema_enemy_variable[enemy][1] -= 2
+                if niema_enemy[enemy].collidelist(niema_walls) > -1:
+                    niema_enemy[enemy].move_ip(2, 0)
+                    niema_enemy_variable[enemy][0] = random.randint(0, 3)
+                    niema_enemy_variable[enemy][1] = 60
+            elif niema_enemy_variable[enemy][0] == 1:
+                niema_enemy[enemy].move_ip(2, 0)  #Right
+                niema_enemy_variable[enemy][1] -= 2
+                if niema_enemy[enemy].collidelist(niema_walls) > -1:
+                    niema_enemy[enemy].move_ip(-2, 0)
+                    niema_enemy_variable[enemy][0] = random.randint(0, 3)
+                    niema_enemy_variable[enemy][1] = 60
+            elif niema_enemy_variable[enemy][0] == 2:
+                niema_enemy[enemy].move_ip(0, -2)  #Up
+                niema_enemy_variable[enemy][1] -= 2
+                if niema_enemy[enemy].collidelist(niema_walls) > -1:
+                    niema_enemy[enemy].move_ip(0, 2)
+                    niema_enemy_variable[enemy][0] = random.randint(0, 3)
+                    niema_enemy_variable[enemy][1] = 60
+            elif niema_enemy_variable[enemy][0] == 3:
+                niema_enemy[enemy].move_ip(0, 2)  #Down
+                niema_enemy_variable[enemy][1] -= 2
+                if niema_enemy[enemy].collidelist(niema_walls) > -1:
+                    niema_enemy[enemy].move_ip(0, -2)
+                    niema_enemy_variable[enemy][0] = random.randint(0, 3)
+                    niema_enemy_variable[enemy][1] = 60
+
+            #Niema enemy boundaries, Shift tab makes it unindent
+            if niema_enemy[enemy].left < 0:
+                niema_enemy[enemy].left = 0
+            if niema_enemy[enemy].right > screen_length:
+                niema_enemy[enemy].right = screen_length
+            if niema_enemy[enemy].bottom > 340:
+                niema_enemy[enemy].bottom = 340
+            if niema_enemy[enemy].top < 30:
+                niema_enemy[enemy].top = 30
+
+    elif page == "secret":
+        secret(screen_length, screen_height, dim_field, screen, mplayer_rect,
+               quote)
+        #Mohan's walls
+        mohan_walls = m_walls(screen_length, screen_height, dim_field, screen,
+                              mplayer_rect)
+
+        #Mohan blit
+        screen.blit(mplayer, mplayer_rect)
+
+        #Top Row
+
+        #Diego's starting point:
+        diego_rect.left = 65
+        diego_rect.top = 55
+        #Hannah's starting point:
+        hannah_rect.left = 128
+        hannah_rect.top = 55
+        #Jonny's starting point:
+        jonny_rect.left = 191
+        jonny_rect.top = 55
+        #Michael's starting point:
+        michael_rect.left = 254
+        michael_rect.top = 55
+        #Josh's starting point:
+        josh_rect.left = 317
+        josh_rect.top = 55
+        #Akshat's starting point:
+        akshat_rect.left = 380
+        akshat_rect.top = 55
+
+        #Bottom row
+        #Younus' starting point:
+        younus_rect.left = 65
+        younus_rect.top = 240
+        #Elisa
+        elisa_rect.left = 128
+        elisa_rect.top = 235
+        #Henry L
+        henryl_rect.left = 191
+        henryl_rect.top = 242
+        #Jenelle
+        jenelle_rect.left = 254
+        jenelle_rect.top = 240
+        #Lindsey
+        lindsey_rect.left = 317
+        lindsey_rect.top = 240
+        #Tristin
+        tristin_rect.left = 380
+        tristin_rect.top = 240
+
+        #Top of first 2:
+        #Curt's starting point:
+        player_rect.left = 50
+        player_rect.top = 125
+
+        #Top of second 2:
+        #Gary's starting point:
+        gplayer_rect.left = 255
+        gplayer_rect.top = 125
+
+        #Top of 5:
+        #Niema's starting point:
+        nplayer_rect.left = 380
+        nplayer_rect.top = 125
+
+        #Bottom of first 2
+        #John
+        john_rect.left = 70
+        john_rect.top = 170
+
+        #Bottom of second 2
+        #Prothit
+        prothit_rect.left = 275
+        prothit_rect.top = 170
+
+        #Bottom of 5
+        #Henry X
+        henryx_rect.left = 370
+        henryx_rect.top = 170
+
+        #Left of first 2
+        #Nikki
+        nikki_rect.left = 10
+        nikki_rect.top = 165
+
+        #Right of 5
+        #Yukati
+        yukati_rect.left = 430
+        yukati_rect.top = 165
+
+        #Blitting
+        screen.blit(player, player_rect)
+        screen.blit(hannah, hannah_rect)
+        screen.blit(jonny, jonny_rect)
+        screen.blit(josh, josh_rect)
+        screen.blit(michael, michael_rect)
+        screen.blit(gplayer, gplayer_rect)
+        screen.blit(diego, diego_rect)
+        screen.blit(akshat, akshat_rect)
+        screen.blit(nplayer, nplayer_rect)
+        screen.blit(younus, younus_rect)
+        screen.blit(elisa, elisa_rect)
+        screen.blit(henryl, henryl_rect)
+        screen.blit(henryx, henryx_rect)
+        screen.blit(jenelle, jenelle_rect)
+        screen.blit(lindsey, lindsey_rect)
+        screen.blit(tristin, tristin_rect)
+        screen.blit(prothit, prothit_rect)
+        screen.blit(nikki, nikki_rect)
+        screen.blit(yukati, yukati_rect)
+        screen.blit(john, john_rect)
+
+        #Mohan's movement
+
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_LEFT]:
+            mplayer_rect.move_ip(-3, 0)
+            if mplayer_rect.collidelist(mohan_walls) != -1:
+                mplayer_rect.move_ip(3, 0)
+        if keys[pygame.K_RIGHT]:
+            mplayer_rect.move_ip(2, 0)
+            if mplayer_rect.collidelist(mohan_walls) != -1:
+                mplayer_rect.move_ip(-3, 0)
+        if keys[pygame.K_UP]:
+            mplayer_rect.move_ip(0, -3)
+            if mplayer_rect.collidelist(mohan_walls) != -1:
+                mplayer_rect.move_ip(0, 3)
+        if keys[pygame.K_DOWN]:
+            mplayer_rect.move_ip(0, 3)
+            if mplayer_rect.collidelist(mohan_walls) != -1:
+                mplayer_rect.move_ip(0, -3)
+        else:
+            pass
+
+        #Quote
+        print_quote = mplayer_rect.collidelist(mentor_list)
+        if print_quote != -1:
+            #print_quote gives us the index of the mentor on the list and we want the quote to change to the corresponding quote in the quote list
+            quote = quote_list[print_quote]
+
+    elif page == "directory":
+        state = directory(screen_length, screen_height, dim_field, screen)
+        if state == "secret":
+            page = state
+            state = page
+        #Curt's starting point:
+        player_rect.left = 115
+        player_rect.top = 55
+        #Hannah's starting point:
+        hannah_rect.left = 115
+        hannah_rect.top = 85
+        #Jonny's starting point:
+        jonny_rect.left = 115
+        jonny_rect.top = 115
+        #Michael's starting point:
+        michael_rect.left = 115
+        michael_rect.top = 175
+        #Josh's starting point:
+        josh_rect.left = 115
+        josh_rect.top = 145
+        #Gary's starting point:
+        gplayer_rect.left = 265
+        gplayer_rect.top = 55
+        #Diego's starting point:
+        diego_rect.left = 265
+        diego_rect.top = 85
+        #Akshat's starting point:
+        akshat_rect.left = 265
+        akshat_rect.top = 115
+        #John
+        john_rect.left = 265
+        john_rect.top = 145
+        #Younus' starting point:
+        younus_rect.left = 265
+        younus_rect.top = 175
+        #Elisa
+        elisa_rect.left = 260
+        elisa_rect.top = 205
+        #Henry L
+        henryl_rect.left = 265
+        henryl_rect.top = 237
+        #Jenelle
+        jenelle_rect.left = 115
+        jenelle_rect.top = 205
+        #Lindsey
+        lindsey_rect.left = 115
+        lindsey_rect.top = 235
+        #Niema's starting point:
+        nplayer_rect.left = 415
+        nplayer_rect.top = 55
+        #Mohan
+        mohan_rect.left = 415
+        mohan_rect.top = 85
+        #Tristin
+        tristin_rect.left = 415
+        tristin_rect.top = 115
+        #Prothit
+        prothit_rect.left = 415
+        prothit_rect.top = 145
+        #Henry X
+        henryx_rect.left = 415
+        henryx_rect.top = 175
+        #Nikki
+        nikki_rect.left = 415
+        nikki_rect.top = 205
+        #Yukati
+        yukati_rect.left = 415
+        yukati_rect.top = 235
+        #Blitting
+        screen.blit(player, player_rect)
+        screen.blit(hannah, hannah_rect)
+        screen.blit(jonny, jonny_rect)
+        screen.blit(josh, josh_rect)
+        screen.blit(michael, michael_rect)
+        screen.blit(gplayer, gplayer_rect)
+        screen.blit(diego, diego_rect)
+        screen.blit(akshat, akshat_rect)
+        screen.blit(nplayer, nplayer_rect)
+        screen.blit(younus, younus_rect)
+        screen.blit(elisa, elisa_rect)
+        screen.blit(henryl, henryl_rect)
+        screen.blit(henryx, henryx_rect)
+        screen.blit(jenelle, jenelle_rect)
+        screen.blit(lindsey, lindsey_rect)
+        screen.blit(tristin, tristin_rect)
+        screen.blit(prothit, prothit_rect)
+        screen.blit(nikki, nikki_rect)
+        screen.blit(yukati, yukati_rect)
+        screen.blit(mohan, mohan_rect)
+        screen.blit(john, john_rect)
+
+        #Need to figure out if possible to update x and y coordinates for rectangle
+
+    elif page == "win":
+        #win/lose page is called
+        state = win_page(screen_length, screen_height, dim_field, screen,
+                         player_rect)
+
+    elif page == "lose":
+        state = lose_page(screen_length, screen_height, dim_field, screen,
+                          player_rect)
+
+        #It's not calling the functions again/reseting the lives and the points
+
+    for event in pygame.event.get():
+
+        if event.type == pygame.KEYDOWN:
+
+            if event.key == pygame.K_q:
+
+                running = False
+
+            #Directions, help know what left, right, up and down is, used earlier in loop
+            if event.key == pygame.K_LEFT:
+                direction = "left"
+            if event.key == pygame.K_RIGHT:
+                direction = "right"
+            if event.key == pygame.K_UP:
+                direction = "up"
+            if event.key == pygame.K_DOWN:
+                direction = "down"
+
+    pygame.display.update()

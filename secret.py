@@ -63,8 +63,8 @@ def secret(screen_length,screen_height, dim_field, screen, mplayer_rect, quote):
     mplayer_rect.left = 0
   if mplayer_rect.right > screen_length:
     mplayer_rect.right = screen_length
-  if mplayer_rect.bottom > 340:
-    mplayer_rect.bottom = 340
+  if mplayer_rect.bottom > 310:
+    mplayer_rect.bottom = 310
   if mplayer_rect.top < 30:
     mplayer_rect.top = 30
 
@@ -91,17 +91,73 @@ def secret(screen_length,screen_height, dim_field, screen, mplayer_rect, quote):
       show_a_quote = False
 
   if (show_a_quote):
-    screen.blit(a_quote,(10, 320))
+    screen.blit(a_quote,(10, 325))
+
+  # mentor_list = [player_rect, hannah_rect, jonny_rect, josh_rect, michael_rect, gplayer_rect, diego_rect, akshat_rect, nplayer_rect, younus_rect, elisa_rect, henryl_rect, henryx_rect, jenelle_rect, lindsey_rect, tristin_rect, prothit_rect, nikki_rect, yukati_rect, john_rect]
+
+  # quote_list = ["curt quote", "hannah quote", "jonny quote", "josh quote", "Do or do not. There is no try. – Michael","I'm gonna spill some hot tea!!! - Gary", "You miss 100% of the naps you don't take. - Akshat","I want to thank the students for starting a cult in my name - Niema", "Does Geisel have a lot of books? - Younus" , "Start Early, Start Often. - Elisa", "henry l quote", "Not all who wonder are lost. - Henry X", "Jenelle uote", "Be the best version of yourself - Lindsey", "Shoot for the moon. If you miss you'll land amongst the stars. - Tristin", "When life gives you lemons make lemonade - Prothit" , "Nikki quote", "SHEEEEEEEEEEEEEEEEEEEEEEEEEEEESH - Yukati", "Live, laugh, Love - John"]
 
   #Gary's quote:
-  #"I'm gonna some hot tea!!! - Gary"
-  #Michael quote:
-  #"Do or do not. There is no try. – Michael"
+  #"I'm gonna some hot tea!!!" - Gary
+
   #Niema's quote:
-  #"I want to thank the students for starting a cult in my name - Niema"
+  #"I want to thank the students for starting a cult in my name" - Niema
+
+  #Curt's quote:
+  #
+
+  #Michael quote:
+  #"Do or do not. There is no try." – Michael
+
+  #Diego's quote:
+  #"Your mom. - Diego"
+
+  #Elisa quote:
+  #"Start Early, Start Often. - Elisa"
+
+  #Prothit quote:
+  #"When life gives you lemons make lemonade - Prothit"
+
+  #Lindsey quote:
+  #"Be the best version of yourself - Lindsey"
+
+  #John quote:
+  #"Live, laugh, Love - John"
+
+  #Henry X quote:
+  #"Not all who wonder are lost. - Henry"
+
+  #Tristin quote:
+  #"Shoot for the moon. If you miss you'll land amongst the stars. - Tristin"
+
+  #Akshat quote:
+  #"You miss 100% of the naps you don't take. - Akshat"
+
+  #Yukati quote:
+  #"SHEEEEEEEEEEEEEEEEEEEEEEEEEEEESH - Yukati"
+
+  #Younus quote:
+  #"Does Geisel have a lot of books? - Younus"
+
+  #Josh quote:
+  #
   
+  #Jonny quote:
+  #
+
+  #Hannah quote:
+  #
+
+  #Jennelle quote:
+  #
+
+  #Henry L quote:
+  #
+
+  #Nikki quote:
+  #
   
-def m_walls(screen_length,screen_height, dim_field, screen, mplayer_rect, quote):
+def m_walls(screen_length,screen_height, dim_field, screen, mplayer_rect):
 
 #mohan walls -- 2025
   #First two
@@ -151,4 +207,6 @@ def m_walls(screen_length,screen_height, dim_field, screen, mplayer_rect, quote)
   five_rect5 = pygame.Rect(350, 200, 45, 15)
   pygame.draw.rect(screen, (255, 255, 255), five_rect5)
   
-  m_walls = [two_rect1,two_rect2,two_rect3,two_rect4,two_rect5,two_rect6,two_rect7,two_rect8,two_rect9,two_rect10,zero_rect1, zero_rect1, zero_rect1, zero_rect1, five_rect1, five_rect2, five_rect3, five_rect4, five_rect5]
+  m_walls = [two_rect1,two_rect2,two_rect3,two_rect4,two_rect5,two_rect6,two_rect7,two_rect8,two_rect9,two_rect10,zero_rect1, zero_rect4, zero_rect2, zero_rect3, five_rect1, five_rect2, five_rect3, five_rect4, five_rect5]
+
+  return m_walls

@@ -467,3 +467,5 @@ def directory(screen_length,screen_height, dim_field, screen):
         # page = "secret"
         # print("Clicking")
         return "secret"
+
+  return "directory"
