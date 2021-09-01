@@ -68,12 +68,6 @@ def secret(screen_length,screen_height, dim_field, screen, mplayer_rect, quote):
   if mplayer_rect.top < 30:
     mplayer_rect.top = 30
 
-  for event in pygame.event.get():
-    if event.type == pygame.MOUSEBUTTONUP:
-      pos = pygame.mouse.get_pos()
-      if home_rect3.collidepoint(pos):
-        return "home"
-
   font = pygame.font.Font("./Bungee-Regular.ttf",11)
 
   the_quote = str(quote)
@@ -92,6 +86,14 @@ def secret(screen_length,screen_height, dim_field, screen, mplayer_rect, quote):
 
   if (show_a_quote):
     screen.blit(a_quote,(10, 325))
+
+  for event in pygame.event.get():
+    if event.type == pygame.MOUSEBUTTONUP:
+      pos = pygame.mouse.get_pos()
+      if home_rect3.collidepoint(pos):
+        return "home"
+
+  return "secret"
 
   # mentor_list = [player_rect, hannah_rect, jonny_rect, josh_rect, michael_rect, gplayer_rect, diego_rect, akshat_rect, nplayer_rect, younus_rect, elisa_rect, henryl_rect, henryx_rect, jenelle_rect, lindsey_rect, tristin_rect, prothit_rect, nikki_rect, yukati_rect, john_rect]
 

@@ -33,10 +33,9 @@ quote_list = [
     "Not all who wonder are lost. - Henry X", "Jenelle quote",
     "Be the best version of yourself - Lindsey",
     "Shoot for the moon. If you miss you'll land on a star. - Tristin",
-    "When life gives you lemons make lemonade - Prothit", "Nikki quote",
+    "When life gives you lemons make lemonade - Prothit", ":P - Nikki",
     "SHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEESH - Yukati",
-    "Live, laugh, Love - John"
-]
+    "Live, laugh, Love - John"]
 
 #Draw all the players out here in future
 player_x = 218
@@ -767,8 +766,10 @@ while running:
                 niema_enemy[enemy].top = 30
 
     elif page == "secret":
-        secret(screen_length, screen_height, dim_field, screen, mplayer_rect,
-               quote)
+        secretpage = secret(screen_length, screen_height, dim_field, screen, mplayer_rect, quote)
+        # print(secretpage)
+        if secretpage != "secret":
+          state = "home"
         #Mohan's walls
         mohan_walls = m_walls(screen_length, screen_height, dim_field, screen,
                               mplayer_rect)
