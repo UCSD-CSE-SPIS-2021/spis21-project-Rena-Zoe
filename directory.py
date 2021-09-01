@@ -464,4 +464,6 @@ def directory(screen_length,screen_height, dim_field, screen):
       if home_rect2.collidepoint(pos):
         return "home"
       if mohan_button.collidepoint(pos):
+        # page = "secret"
+        # print("Clicking")
         return "secret"

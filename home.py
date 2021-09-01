@@ -200,5 +200,6 @@ def homescreen(screen_length,screen_height, dim_field,screen,player_rect):
         return "niema"
       elif direct_rect.collidepoint(pos):
         return "directory"
+      
 
   return "home"

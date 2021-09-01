@@ -2,11 +2,19 @@ import pygame
 
 import os
 
-def secret(screen_length,screen_height, dim_field, screen, mplayer_rect):
+def secret(screen_length,screen_height, dim_field, screen, m_player):
 
   screen.fill((255,182,193))
 
+  #Header
   header_rect = pygame.Rect(0, 0, 470, 30)
+  #pos x, pos y, width, length
+  
+  pygame.draw.rect(screen, (238,162,173), header_rect)
+
+  #Quote Area
+  #Header
+  header_rect = pygame.Rect(0, 310, 470, 50)
   #pos x, pos y, width, length
   
   pygame.draw.rect(screen, (238,162,173), header_rect)
@@ -49,3 +57,61 @@ def secret(screen_length,screen_height, dim_field, screen, mplayer_rect):
 
   if (show_home):
     screen.blit(home,(426, 5))
+    
+  for event in pygame.event.get():
+    if event.type == pygame.MOUSEBUTTONUP:
+      pos = pygame.mouse.get_pos()
+      if home_rect3.collidepoint(pos):
+        return "home"
+
+def m_walls(screen_length,screen_height, dim_field, screen, mplayer_rect):
+
+#mohan walls -- 2025
+  #First two
+  two_rect1 = pygame.Rect(45, 110, 45, 15)
+  pygame.draw.rect(screen, (255, 255, 255), two_rect1)
+  two_rect2 = pygame.Rect(95, 110, 15, 55)
+  pygame.draw.rect(screen, (255, 255, 255), two_rect2)
+  two_rect3 = pygame.Rect(45, 150, 45, 15)
+  pygame.draw.rect(screen, (255, 255, 255), two_rect3)
+  two_rect4 = pygame.Rect(45, 170, 15, 45)
+  pygame.draw.rect(screen, (255, 255, 255), two_rect4)
+  two_rect5 = pygame.Rect(65, 200, 45, 15)
+  pygame.draw.rect(screen, (255, 255, 255), two_rect5)
+
+
+  #Zero
+  zero_rect1 = pygame.Rect(145, 110, 70, 15)
+  pygame.draw.rect(screen, (255, 255, 255), zero_rect1)
+  zero_rect2 = pygame.Rect(145, 200, 70, 15)
+  pygame.draw.rect(screen, (255, 255, 255), zero_rect2)
+  zero_rect3 = pygame.Rect(145, 130, 15, 65)
+  pygame.draw.rect(screen, (255, 255, 255), zero_rect3)
+  zero_rect4 = pygame.Rect(200, 130, 15, 65)
+  pygame.draw.rect(screen, (255, 255, 255), zero_rect4)
+
+  #Second two
+  two_rect6 = pygame.Rect(250, 110, 45, 15)
+  pygame.draw.rect(screen, (255, 255, 255), two_rect6)
+  two_rect7 = pygame.Rect(300, 110, 15, 55)
+  pygame.draw.rect(screen, (255, 255, 255), two_rect7)
+  two_rect8 = pygame.Rect(250, 150, 45, 15)
+  pygame.draw.rect(screen, (255, 255, 255), two_rect8)
+  two_rect9 = pygame.Rect(250, 170, 15, 45)
+  pygame.draw.rect(screen, (255, 255, 255), two_rect9)
+  two_rect10 = pygame.Rect(270, 200, 45, 15)
+  pygame.draw.rect(screen, (255, 255, 255), two_rect10)
+
+  #Five
+  five_rect1 = pygame.Rect(370, 110, 45, 15)
+  pygame.draw.rect(screen, (255, 255, 255), five_rect1)
+  five_rect2 = pygame.Rect(350, 110, 15, 55)
+  pygame.draw.rect(screen, (255, 255, 255), five_rect2)
+  five_rect3 = pygame.Rect(370, 150, 45, 15)
+  pygame.draw.rect(screen, (255, 255, 255), five_rect3)
+  five_rect4 = pygame.Rect(400, 170, 15, 45)
+  pygame.draw.rect(screen, (255, 255, 255), five_rect4)
+  five_rect5 = pygame.Rect(350, 200, 45, 15)
+  pygame.draw.rect(screen, (255, 255, 255), five_rect5)
+  
+  m_walls = [two_rect1,two_rect2,two_rect3,two_rect4,two_rect5,two_rect6,two_rect7,two_rect8,two_rect9,two_rect10,zero_rect1, zero_rect1, zero_rect1, zero_rect1, five_rect1, five_rect2, five_rect3, five_rect4, five_rect5]

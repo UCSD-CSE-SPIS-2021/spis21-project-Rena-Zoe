@@ -16,6 +16,8 @@ num_points = 0
 
 num_lives = 3
 
+quote = "Walk into mentors or professors."
+
 #Draw all the players out here in future
 player_x = 218
 player_y = 40
@@ -179,6 +181,20 @@ yukati_rect = pygame.Rect(yukati_x, yukati_y, 23, 23)
 yukati = pygame.image.load(os.path.join("secret", "yukati.png")).convert()
 yukati.set_colorkey((0, 255, 0))
 yukati = pygame.transform.scale(yukati, (23, 23))
+#Mohan
+mplayer_x =  70
+mplayer_y = 200
+mplayer_rect = pygame.Rect(mplayer_x, mplayer_y, 23, 23)
+mplayer = pygame.image.load(os.path.join("secret", "mohan.png")).convert()
+mplayer.set_colorkey((255, 255, 255))
+mplayer = pygame.transform.scale(mplayer, (23, 23))
+#John
+john_x = 285
+john_y = 200
+john_rect = pygame.Rect(john_x, john_y, 23, 23)
+john = pygame.image.load(os.path.join("secret", "john.png")).convert()
+john.set_colorkey((0, 255, 0))
+john = pygame.transform.scale(john, (23, 23))
 
 
 #Points
@@ -214,29 +230,11 @@ from time import sleep, time
 
 from home import homescreen
 #From the home.py module import homescreen function
-from curt import curt
+from curt import curt, c_walls, c10points, c50points
 
-from curt import c_walls
+from gary import gary, g_walls, g10points, g50points
 
-from curt import c10points
-
-from curt import c50points
-
-from gary import gary
-
-from gary import g_walls
-
-from gary import g10points
-
-from gary import g50points
-
-from niema import niema
-
-from niema import n_walls
-
-from niema import n10points
-
-from niema import n50points
+from niema import niema, n_walls, n10points, n50points
 
 from lose_page import lose_page
 
@@ -244,7 +242,7 @@ from win_page import win_page
 
 from directory import directory
 
-from secret import secret
+from secret import secret, m_walls
 
 clock = pygame.time.Clock()
 #This helps the program keep track of time
@@ -290,11 +288,6 @@ curt_enemy_variable = [hannah_variable, josh_variable, michael_variable, jonny_v
 while running:
 
   clock.tick(FPS)
-  #We want FPS=60
-
-  #When we have the ability to lose and win we need to tie in these functions:
-  #lose_page(screen_length,screen_height, dim_field, screen, player_rect)
-  #win_page(screen_length,screen_height, dim_field, screen, player_rect)
 
   if state == "home":
     #Want some way to keep track of what page you are in -> dont want to be in the menu anymore if don't need it
@@ -369,7 +362,7 @@ while running:
     counter = 0
 
     page = homescreen(screen_length,screen_height, dim_field, screen, player_rect)
-
+    
     state = page
 
   elif page == "curt":
@@ -600,7 +593,6 @@ while running:
       if gary_enemy[enemy].top < 30:
         gary_enemy[enemy].top = 30
 
-
   elif page == "niema":
     #Calling Niema's screen
     niema(screen_length,screen_height, dim_field, screen, nplayer_rect, num_points, num_lives)
@@ -718,10 +710,11 @@ while running:
         niema_enemy[enemy].bottom = 340
       if niema_enemy[enemy].top < 30:
         niema_enemy[enemy].top = 30
-  elif page == "secret":
-    secret(screen_length,screen_height, dim_field, screen)#, mplayer_rect)
+
   elif page == "directory":
     state = directory(screen_length, screen_height, dim_field, screen)
+    if state == "secret":
+     page = state
     #Curt's starting point:
     player_rect.left = 115
     player_rect.top = 55
@@ -747,8 +740,8 @@ while running:
     akshat_rect.left = 265
     akshat_rect.top = 115
     #John
-    #john_rect.left = 265
-    #john_rect.top = 115
+    john_rect.left = 265
+    john_rect.top = 145
     #Younus' starting point:
     younus_rect.left = 265
     younus_rect.top = 175
@@ -767,9 +760,9 @@ while running:
     #Niema's starting point:
     nplayer_rect.left = 415
     nplayer_rect.top = 55
-    #Mohan
-    #mohan_rect.left = 415
-    #mohan_rect.top = 85
+    #MohanMohan
+    mplayer_rect.left = 415
+    mplayer_rect.top = 85
     #Tristin
     tristin_rect.left = 415
     tristin_rect.top = 115
@@ -805,9 +798,100 @@ while running:
     screen.blit(prothit, prothit_rect)
     screen.blit(nikki, nikki_rect)
     screen.blit(yukati, yukati_rect)
+    screen.blit(mplayer, mplayer_rect)
+    screen.blit(john, john_rect)
 
     #Need to figure out if possible to update x and y coordinates for rectangle
-    
+  elif page == "secret":
+    state = secret(screen_length,screen_height, dim_field, screen,mplayer_rect)
+    #Mohan's walls
+    m_walls(screen_length,screen_height, dim_field, screen,mplayer_rect)
+    #Curt's starting point:
+    player_rect.left = 115
+    player_rect.top = 55
+    #Hannah's starting point:
+    hannah_rect.left = 115
+    hannah_rect.top = 85
+    #Jonny's starting point:
+    jonny_rect.left = 115
+    jonny_rect.top = 115
+    #Michael's starting point:
+    michael_rect.left = 115
+    michael_rect.top = 175
+    #Josh's starting point:
+    josh_rect.left = 115
+    josh_rect.top = 145
+    #Gary's starting point:
+    gplayer_rect.left = 265
+    gplayer_rect.top = 55
+    #Diego's starting point:
+    diego_rect.left = 265
+    diego_rect.top = 85
+    #Akshat's starting point:
+    akshat_rect.left = 265
+    akshat_rect.top = 115
+    #John
+    john_rect.left = 265
+    john_rect.top = 145
+    #Younus' starting point:
+    younus_rect.left = 265
+    younus_rect.top = 175
+    #Elisa
+    elisa_rect.left = 260
+    elisa_rect.top = 205
+    #Henry L
+    henryl_rect.left = 265
+    henryl_rect.top = 237
+    #Jenelle
+    jenelle_rect.left = 115
+    jenelle_rect.top = 205
+    #Lindsey
+    lindsey_rect.left = 115
+    lindsey_rect.top = 235
+    #Niema's starting point:
+    nplayer_rect.left = 415
+    nplayer_rect.top = 55
+    #Mohan
+    mplayer_rect.left = 415
+    mplayer_rect.top = 85
+    #Tristin
+    tristin_rect.left = 415
+    tristin_rect.top = 115
+    #Prothit
+    prothit_rect.left = 415
+    prothit_rect.top = 145
+    #Henry X
+    henryx_rect.left = 415
+    henryx_rect.top = 175
+    #Nikki
+    nikki_rect.left = 415
+    nikki_rect.top = 205
+    #Yukati
+    yukati_rect.left = 415
+    yukati_rect.top = 235
+    #Blitting
+    screen.blit(player, player_rect)
+    screen.blit(hannah, hannah_rect)
+    screen.blit(jonny, jonny_rect)
+    screen.blit(josh, josh_rect)
+    screen.blit(michael, michael_rect)
+    screen.blit(gplayer, gplayer_rect)
+    screen.blit(diego, diego_rect)
+    screen.blit(akshat, akshat_rect)
+    screen.blit(nplayer, nplayer_rect)
+    screen.blit(younus, younus_rect)
+    screen.blit(elisa, elisa_rect)
+    screen.blit(henryl, henryl_rect)
+    screen.blit(henryx, henryx_rect)
+    screen.blit(jenelle, jenelle_rect)
+    screen.blit(lindsey, lindsey_rect)
+    screen.blit(tristin, tristin_rect)
+    screen.blit(prothit, prothit_rect)
+    screen.blit(nikki, nikki_rect)
+    screen.blit(yukati, yukati_rect)
+    screen.blit(mplayer, mplayer_rect)
+    screen.blit(john, john_rect)
+
   elif page == "win":
   #win/lose page is called
     state = win_page(screen_length,screen_height, dim_field, screen, player_rect)
