@@ -803,72 +803,98 @@ while running:
 
     #Need to figure out if possible to update x and y coordinates for rectangle
   elif page == "secret":
-    state = secret(screen_length,screen_height, dim_field, screen,mplayer_rect)
+    state = secret(screen_length,screen_height, dim_field, screen,mplayer_rect, quote)
     #Mohan's walls
-    m_walls(screen_length,screen_height, dim_field, screen,mplayer_rect)
-    #Curt's starting point:
-    player_rect.left = 115
-    player_rect.top = 55
-    #Hannah's starting point:
-    hannah_rect.left = 115
-    hannah_rect.top = 85
-    #Jonny's starting point:
-    jonny_rect.left = 115
-    jonny_rect.top = 115
-    #Michael's starting point:
-    michael_rect.left = 115
-    michael_rect.top = 175
-    #Josh's starting point:
-    josh_rect.left = 115
-    josh_rect.top = 145
-    #Gary's starting point:
-    gplayer_rect.left = 265
-    gplayer_rect.top = 55
+    mohan_walls = m_walls(screen_length,screen_height, dim_field, screen,mplayer_rect, quote)
+    
+    #Top Row
+
     #Diego's starting point:
-    diego_rect.left = 265
-    diego_rect.top = 85
+    diego_rect.left = 65
+    diego_rect.top = 55
+    #Hannah's starting point:
+    hannah_rect.left = 128
+    hannah_rect.top = 55
+    #Jonny's starting point:
+    jonny_rect.left = 191
+    jonny_rect.top = 55
+    #Michael's starting point:
+    michael_rect.left = 254
+    michael_rect.top = 55
+    #Josh's starting point:
+    josh_rect.left = 317
+    josh_rect.top = 55
     #Akshat's starting point:
-    akshat_rect.left = 265
-    akshat_rect.top = 115
-    #John
-    john_rect.left = 265
-    john_rect.top = 145
+    akshat_rect.left = 380
+    akshat_rect.top = 55
+
+
+    #Bottom row
     #Younus' starting point:
-    younus_rect.left = 265
-    younus_rect.top = 175
+    younus_rect.left = 65
+    younus_rect.top = 240
     #Elisa
-    elisa_rect.left = 260
-    elisa_rect.top = 205
+    elisa_rect.left = 128
+    elisa_rect.top = 240
     #Henry L
-    henryl_rect.left = 265
-    henryl_rect.top = 237
+    henryl_rect.left = 191
+    henryl_rect.top = 240
     #Jenelle
-    jenelle_rect.left = 115
-    jenelle_rect.top = 205
+    jenelle_rect.left = 254
+    jenelle_rect.top = 240
     #Lindsey
-    lindsey_rect.left = 115
-    lindsey_rect.top = 235
-    #Niema's starting point:
-    nplayer_rect.left = 415
-    nplayer_rect.top = 55
-    #Mohan
-    mplayer_rect.left = 415
-    mplayer_rect.top = 85
+    lindsey_rect.left = 317
+    lindsey_rect.top = 240
     #Tristin
-    tristin_rect.left = 415
-    tristin_rect.top = 115
+    tristin_rect.left = 380
+    tristin_rect.top = 240
+
+    #Top of first 2:
+    #Curt's starting point:
+    player_rect.left = 50
+    player_rect.top = 125
+
+    #Top of second 2:
+    #Gary's starting point:
+    gplayer_rect.left = 255
+    gplayer_rect.top = 125
+
+    #Top of 5:
+    #Niema's starting point:
+    nplayer_rect.left = 380
+    nplayer_rect.top = 125
+
+    #Bottom of first 2
+    #John
+    john_rect.left = 70
+    john_rect.top = 170
+    
+    #Bottom of second 2
     #Prothit
-    prothit_rect.left = 415
-    prothit_rect.top = 145
+    prothit_rect.left = 275
+    prothit_rect.top = 170
+
+    #Bottom of 5
     #Henry X
-    henryx_rect.left = 415
-    henryx_rect.top = 175
+    henryx_rect.left = 370
+    henryx_rect.top = 170
+
+    #Left of first 2
     #Nikki
-    nikki_rect.left = 415
-    nikki_rect.top = 205
+    nikki_rect.left = 10
+    nikki_rect.top = 165
+    
+    #Right of 5
     #Yukati
-    yukati_rect.left = 415
-    yukati_rect.top = 235
+    yukati_rect.left = 430
+    yukati_rect.top = 165
+
+
+    #Player starting point:
+    #Mohan
+    mplayer_rect.left = 220
+    mplayer_rect.top = 165
+
     #Blitting
     screen.blit(player, player_rect)
     screen.blit(hannah, hannah_rect)
@@ -892,6 +918,41 @@ while running:
     screen.blit(mplayer, mplayer_rect)
     screen.blit(john, john_rect)
 
+  #Mohan's movement
+      
+    if direction == "left":
+      mplayer_rect.move_ip(-2, 0)
+      if nplayer_rect.collidelist(mohan_walls) != -1:
+        mplayer_rect.move_ip(2,0)
+    elif direction == "right":
+      mplayer_rect.move_ip(2, 0)
+      if mplayer_rect.collidelist(mohan_walls) != -1:
+        mplayer_rect.move_ip(-2,0)
+    elif direction == "up":
+      mplayer_rect.move_ip(0, -2)
+      if mplayer_rect.collidelist(mohan_walls) != -1:
+        mplayer_rect.move_ip(0, 2)
+    elif direction == "down":
+      mplayer_rect.move_ip(0, 2)
+      if mplayer_rect.collidelist(mohan_walls) != -1:
+        mplayer_rect.move_ip(0, -2)
+    else:
+      pass
+
+    #Quote
+    # print_quote = mplayer_rect.collidelist(quote_list)
+    # if print_quote != -1:
+    #   #We want to make it so when touches a mentor or proffessor that the quote changes
+    #   num_points += 10
+    # for ring in ring_list:
+    #   screen.blit(ringsprite, ring)
+    # bye_boba = nplayer_rect.collidelist(boba_list)
+    # if bye_boba != -1:
+    #   boba_list.remove(boba_list[bye_boba])
+    #   num_points += 50
+    # for boba in boba_list:
+    #   screen.blit(bobasprite, boba)
+  
   elif page == "win":
   #win/lose page is called
     state = win_page(screen_length,screen_height, dim_field, screen, player_rect)

@@ -2,7 +2,7 @@ import pygame
 
 import os
 
-def secret(screen_length,screen_height, dim_field, screen, m_player):
+def secret(screen_length,screen_height, dim_field, screen, mplayer_rect, quote):
 
   screen.fill((255,182,193))
 
@@ -57,14 +57,51 @@ def secret(screen_length,screen_height, dim_field, screen, m_player):
 
   if (show_home):
     screen.blit(home,(426, 5))
-    
+  
+  #mohan boundaries
+  if mplayer_rect.left < 0:
+    mplayer_rect.left = 0
+  if mplayer_rect.right > screen_length:
+    mplayer_rect.right = screen_length
+  if mplayer_rect.bottom > 340:
+    mplayer_rect.bottom = 340
+  if mplayer_rect.top < 30:
+    mplayer_rect.top = 30
+
   for event in pygame.event.get():
     if event.type == pygame.MOUSEBUTTONUP:
       pos = pygame.mouse.get_pos()
       if home_rect3.collidepoint(pos):
         return "home"
 
-def m_walls(screen_length,screen_height, dim_field, screen, mplayer_rect):
+  font = pygame.font.Font("./Bungee-Regular.ttf",11)
+
+  the_quote = str(quote)
+
+  a_quote = font.render(the_quote,True,(0,0,0))
+
+  show_a_quote = True
+  
+  start_time = pygame.time.get_ticks()
+
+  if (show_a_quote):
+    
+    now_time = pygame.time.get_ticks()
+    if (now_time - start_time > 500):
+      show_a_quote = False
+
+  if (show_a_quote):
+    screen.blit(a_quote,(10, 320))
+
+  #Gary's quote:
+  #"I'm gonna some hot tea!!! - Gary"
+  #Michael quote:
+  #"Do or do not. There is no try. – Michael"
+  #Niema's quote:
+  #"I want to thank the students for starting a cult in my name - Niema"
+  
+  
+def m_walls(screen_length,screen_height, dim_field, screen, mplayer_rect, quote):
 
 #mohan walls -- 2025
   #First two
