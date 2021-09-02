@@ -21,8 +21,8 @@ quote = "Move into mentors or professors."
 #Make sound affect for Jonny - duh duh duh duh duh duh duh duh
 
 quote_list = [
-    "My favorite mode of transportation is local transportation. - Curt",
-    "hannah quote", "What does the sloth say? - Jonny",
+    "My favorite mode of transportation is the 'chicken bus' - Curt",
+    "join the crochet cult >:) we have alliterations - Hannah", "What does the sloth say? - Jonny",
     "Science compels us to explode the sun! - Josh",
     "Do or do not. There is no try. – Michael",
     "I'm gonna spill some hot tea!!! - Gary", "Your mom. - Diego",
@@ -30,7 +30,7 @@ quote_list = [
     "I want to thank the students for starting a cult in my name - Niema",
     "Does Geisel have a lot of books? - Younus",
     "Start Early, Start Often. - Elisa", "Word - Henry L",
-    "Not all who wonder are lost. - Henry X", "Jenelle quote",
+    "Not all who wonder are lost. - Henry X", "Sus it out - Jenelle",
     "Be the best version of yourself - Lindsey",
     "Shoot for the moon. If you miss you'll land on a star. - Tristin",
     "When life gives you lemons make lemonade - Prothit", ":P - Nikki",
@@ -222,31 +222,25 @@ john = pygame.transform.scale(john, (23, 23))
 
 #Points
 #Star sprites
-starsprite = pygame.image.load(os.path.join("curt",
-                                            "star.png")).convert_alpha()
+starsprite = pygame.image.load(os.path.join("curt","star.png")).convert_alpha()
 starsprite = pygame.transform.scale(starsprite, (15, 15))
 #Hat sprites
 hatsprite = pygame.image.load(os.path.join("curt", "hat.png")).convert_alpha()
 hatsprite = pygame.transform.scale(hatsprite, (20, 20))
 
 #Wine glasses
-corksprite = pygame.image.load(os.path.join("gary",
-                                            "cork.png")).convert_alpha()
+corksprite = pygame.image.load(os.path.join("gary","cork.png")).convert_alpha()
 corksprite = pygame.transform.scale(corksprite, (15, 20))
 #Wine bottles
-winesprite = pygame.image.load(os.path.join("gary",
-                                            "wine1.png")).convert_alpha()
+winesprite = pygame.image.load(os.path.join("gary","wine1.png")).convert_alpha()
 winesprite = pygame.transform.scale(winesprite, (10, 30))
-winesprite2 = pygame.image.load(os.path.join("gary",
-                                             "wine2.png")).convert_alpha()
+winesprite2 = pygame.image.load(os.path.join("gary","wine2.png")).convert_alpha()
 winesprite2 = pygame.transform.scale(winesprite2, (10, 30))
 #Lord of the Rings rings
-ringsprite = pygame.image.load(os.path.join("niema",
-                                            "ring.png")).convert_alpha()
+ringsprite = pygame.image.load(os.path.join("niema","ring.png")).convert_alpha()
 ringsprite = pygame.transform.scale(ringsprite, (15, 15))
 #Boba Drinks
-bobasprite = pygame.image.load(os.path.join("niema",
-                                            "boba.png")).convert_alpha()
+bobasprite = pygame.image.load(os.path.join("niema", "boba.png")).convert_alpha()
 bobasprite = pygame.transform.scale(bobasprite, (25, 25))
 
 mentor_list = [
